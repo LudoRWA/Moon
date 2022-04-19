@@ -13,13 +13,16 @@ final class CoreDataStack {
     static let sharedInstance = CoreDataStack()
     
     private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSCustomPersistentContainer(name: "Moon")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        let persistentContainer = NSPersistentContainer(name: "Moon")
+        let storeURL = URL.storeURL(for: "group.co.luggy.moon", databaseName: "Moon")
+        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+        persistentContainer.persistentStoreDescriptions = [storeDescription]
+        persistentContainer.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
-        return container
+        return persistentContainer
     }()
     
     var viewContext: NSManagedObjectContext {

@@ -15,6 +15,9 @@
 		2213584A280E9C6F00FDBEC6 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 22135849280E9C6F00FDBEC6 /* FirebaseCrashlytics */; };
 		2213584B280EA1F500FDBEC6 /* OpenSeaServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F622809A56200E368E7 /* OpenSeaServiceProtocol.swift */; };
 		2213584C280EA33300FDBEC6 /* OpenSeaServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */; };
+		2213584E280EBEFA00FDBEC6 /* URL+StoreURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */; };
+		2213584F280EBF3700FDBEC6 /* URL+StoreURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */; };
+		22135850280EBF3800FDBEC6 /* URL+StoreURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */; };
 		224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */; };
 		224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27D280D675700C2CC61 /* AssetModel.swift */; };
 		224FF280280D676100C2CC61 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27F280D676100C2CC61 /* NFTModel.swift */; };
@@ -33,13 +36,10 @@
 		22A38F6B2809C34300E368E7 /* AssetHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F6A2809C34300E368E7 /* AssetHeaderViewModel.swift */; };
 		22A5E1F32807097900A65EA1 /* Moon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */; };
 		22A9194C28084AF5009C23FD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194B28084AF5009C23FD /* CoreDataStack.swift */; };
-		22A9194E28085703009C23FD /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */; };
 		22A9194F28085790009C23FD /* Moon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */; };
 		22A9195028085790009C23FD /* Moon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */; };
 		22A91951280858C0009C23FD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194B28084AF5009C23FD /* CoreDataStack.swift */; };
 		22A91952280858C0009C23FD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194B28084AF5009C23FD /* CoreDataStack.swift */; };
-		22A919532808599D009C23FD /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */; };
-		22A919542808599D009C23FD /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */; };
 		22BD88DD280ABF5400CCD372 /* AssetsViewModel+Online.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88DC280ABF5400CCD372 /* AssetsViewModel+Online.swift */; };
 		22BD88E0280AC02F00CCD372 /* AssetsViewModel+Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88DF280AC02F00CCD372 /* AssetsViewModel+Amount.swift */; };
 		22BD88E5280AD45500CCD372 /* UITextField+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88E4280AD45500CCD372 /* UITextField+Padding.swift */; };
@@ -121,6 +121,7 @@
 
 /* Begin PBXFileReference section */
 		0E4BF81BE798B5F536F191CC /* Pods-ConfigurableNFTWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableNFTWidget.debug.xcconfig"; path = "Target Support Files/Pods-ConfigurableNFTWidget/Pods-ConfigurableNFTWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StoreURL.swift"; sourceTree = "<group>"; };
 		224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		224FF27D280D675700C2CC61 /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		224FF27F280D676100C2CC61 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 		22A38F6A2809C34300E368E7 /* AssetHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetHeaderViewModel.swift; sourceTree = "<group>"; };
 		22A5E1F22807097900A65EA1 /* Moon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moon.xcdatamodel; sourceTree = "<group>"; };
 		22A9194B28084AF5009C23FD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomPersistentContainer.swift; sourceTree = "<group>"; };
 		22BD88DC280ABF5400CCD372 /* AssetsViewModel+Online.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssetsViewModel+Online.swift"; sourceTree = "<group>"; };
 		22BD88DF280AC02F00CCD372 /* AssetsViewModel+Amount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssetsViewModel+Amount.swift"; sourceTree = "<group>"; };
 		22BD88E4280AD45500CCD372 /* UITextField+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Padding.swift"; sourceTree = "<group>"; };
@@ -325,7 +325,6 @@
 			children = (
 				22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */,
 				22A9194B28084AF5009C23FD /* CoreDataStack.swift */,
-				22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -452,6 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				22BD88E4280AD45500CCD372 /* UITextField+Padding.swift */,
+				2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */,
 				224FF28B280DC52000C2CC61 /* Array+Insertion.swift */,
 				22BD88E6280AD48400CCD372 /* UIVIew+LongTouchEffect.swift */,
 			);
@@ -844,9 +844,9 @@
 				434D7BB92788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift in Sources */,
 				224FF28C280DC52000C2CC61 /* Array+Insertion.swift in Sources */,
 				224FF285280D891900C2CC61 /* WalletsViewModel.swift in Sources */,
-				22A9194E28085703009C23FD /* NSCustomPersistentContainer.swift in Sources */,
 				22BD88EC280AD59600CCD372 /* CoinbaseServiceModel.swift in Sources */,
 				22A38F5F2809A01900E368E7 /* CoreDataServiceProtocol.swift in Sources */,
+				2213584E280EBEFA00FDBEC6 /* URL+StoreURL.swift in Sources */,
 				433E40362784C4E4004AB117 /* AssetHeaderCell.swift in Sources */,
 				22BD88DD280ABF5400CCD372 /* AssetsViewModel+Online.swift in Sources */,
 				434D7BB72788983200A6D711 /* NFTCell.swift in Sources */,
@@ -883,9 +883,9 @@
 				22A91951280858C0009C23FD /* CoreDataStack.swift in Sources */,
 				43D2FC5927919F4800B19A2C /* NFT_Widget.intentdefinition in Sources */,
 				43FA47722791D3C50039F936 /* IntentHandler.swift in Sources */,
+				2213584F280EBF3700FDBEC6 /* URL+StoreURL.swift in Sources */,
 				22A9194F28085790009C23FD /* Moon.xcdatamodeld in Sources */,
 				2213583E280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */,
-				22A919532808599D009C23FD /* NSCustomPersistentContainer.swift in Sources */,
 				43FA476B2791C0E20039F936 /* AppGroup.swift in Sources */,
 				2213584B280EA1F500FDBEC6 /* OpenSeaServiceProtocol.swift in Sources */,
 				43CDB60E27835F8B00FC3AB9 /* NFT_Widget.swift in Sources */,
@@ -898,9 +898,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22A919542808599D009C23FD /* NSCustomPersistentContainer.swift in Sources */,
 				22A91952280858C0009C23FD /* CoreDataStack.swift in Sources */,
 				43FA474A2791A22B0039F936 /* IntentHandler.swift in Sources */,
+				22135850280EBF3800FDBEC6 /* URL+StoreURL.swift in Sources */,
 				43FA476C2791C0E20039F936 /* AppGroup.swift in Sources */,
 				22A9195028085790009C23FD /* Moon.xcdatamodeld in Sources */,
 				43FA47652791A24A0039F936 /* NFT_Widget.intentdefinition in Sources */,
