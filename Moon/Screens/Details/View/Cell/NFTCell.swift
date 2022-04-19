@@ -14,6 +14,9 @@ class NFTCell: UICollectionViewCell {
     
     @IBOutlet weak var mainContentView: UIView!
     
+    class var identifier: String { return String(describing: self) }
+    class var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
+    
     private var task: ImageTask?
     
     var cellViewModel: NFTCellViewModel? {

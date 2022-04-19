@@ -103,7 +103,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NFTCell", for: indexPath) as? NFTCell else { fatalError("xib does not exists") }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  NFTCell.identifier, for: indexPath) as? NFTCell else { fatalError("xib does not exists") }
         cell.cellViewModel = viewModel.getCellViewModel(at: indexPath.row)
         return cell
     }
