@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,4 +18,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
