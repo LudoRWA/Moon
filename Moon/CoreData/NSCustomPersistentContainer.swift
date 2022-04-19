@@ -11,9 +11,8 @@ import CoreData
 class NSCustomPersistentContainer: NSPersistentContainer {
     
     override open class func defaultDirectoryURL() -> URL {
-        var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.co.luggy.moon.group")
+        var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.co.luggy.moon")
         storeURL = storeURL?.appendingPathComponent("Moon.sqlite")
         return storeURL!
     }
-    
 }

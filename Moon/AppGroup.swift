@@ -8,7 +8,7 @@
 import Foundation
 
 public enum AppGroup: String {
-    case facts = "group.co.luggy.moon.group"
+    case facts = "group.co.luggy.moon"
     
     public var containerURL: URL {
         switch self {
