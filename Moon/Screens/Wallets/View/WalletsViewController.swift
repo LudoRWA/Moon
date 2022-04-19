@@ -1,0 +1,132 @@
+//
+//  WalletsViewController.swift
+//  Moon
+//
+//  Created by Ludovic ROULLIER on 12/01/2022.
+//
+
+import UIKit
+import FirebaseCrashlytics
+import CoreData
+
+class WalletsViewController: UIViewController, UITableViewDelegate,  UITableViewDataSource {
+    
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var mainTableView: UITableView!
+    
+    lazy var viewModel = { WalletsViewModel() }()
+    
+    var AssetsViewController:AssetsViewController?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initView()
+        initViewModel()
+    }
+    
+    func initView() {
+        
+        self.isModalInPresentation = true
+        self.mainTableView.register(WalletCell.nib, forCellReuseIdentifier: WalletCell.identifier)
+        self.titleLabel.text = String(format: NSLocalizedString("my_wallet", comment:  "My Wallet"), viewModel.wallets.count)
+    }
+    
+    func initViewModel() {
+        
+        viewModel.updateCellsTableView = { [weak self] movedRows, isEmpty in
+            DispatchQueue.main.async {
+                if (isEmpty) {
+                    
+                    self?.dismissAction()
+                } else {
+                    
+                    self?.titleLabel.text = String(format: NSLocalizedString("my_wallet", comment:  "My Wallet"), self?.viewModel.wallets.count ?? 0)
+                    
+                    if (self?.mainTableView.window != nil) {
+                        self?.updateRows(insertedRows: movedRows.0, deletedRows: movedRows.1)
+                    } else {
+                        self?.mainTableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "addWallet") {
+            if let addWalletVC = segue.destination as? AddWalletViewController {
+                addWalletVC.WalletsViewController = self
+                addWalletVC.viewModel.wallets = viewModel.wallets
+            }
+        }
+    }
+    
+    //MARK: - Style
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.backButton.layer.cornerRadius = self.backButton.frame.height/2
+        self.addButton.layer.cornerRadius = 16
+        self.logoutButton.layer.cornerRadius = 16
+    }
+    
+    //MARK: - UIButton Action
+    @IBAction func backAction(_ sender: Any) {
+        self.dismissAction()
+    }
+    
+    @IBAction func logoutAction(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "", message: String(format: NSLocalizedString("logout", comment:  "Are you sure you want to delete all your wallets?"), viewModel.wallets.count), preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { UIAlertAction in
+            
+            self.viewModel.removeAll()
+        })
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func dismissAction() {
+        dismiss(animated: true) {
+            if (self.viewModel.shouldUpdateViewController) {
+                self.AssetsViewController?.viewModel.setWallets(self.viewModel.wallets, forceSync: true)
+            }
+        }
+    }
+    
+    //MARK: - UITableView
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WalletCell.identifier, for: indexPath) as? WalletCell else { fatalError("xib does not exists") }
+        cell.cellViewModel = viewModel.getCellViewModel(at: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "", message: "Are you sure you want to delete this wallet?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { UIAlertAction in
+            
+            let currentWallet = self.viewModel.getCellViewModel(at: indexPath).wallet
+            self.viewModel.remove(wallet: currentWallet)
+        })
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.wallets.count
+    }
+    
+    func updateRows(insertedRows: [IndexPath], deletedRows: [IndexPath]) {
+        mainTableView.beginUpdates()
+        mainTableView.insertRows(at: insertedRows, with: .automatic)
+        mainTableView.deleteRows(at: deletedRows, with: .automatic)
+        mainTableView.endUpdates()
+    }
+}

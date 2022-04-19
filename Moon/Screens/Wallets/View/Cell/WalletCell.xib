@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="85" id="KGk-i7-Jjw" customClass="WalletCell" customModule="NFT_Tracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVc-TN-QPs" customClass="longTouchEffectView" customModule="NFT_Tracker" customModuleProvider="target">
+                        <rect key="frame" x="16" y="8" width="318" height="69"/>
+                        <subviews>
+                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JMR-eL-Aea">
+                                <rect key="frame" x="16" y="16.5" width="67" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftK-ZT-cQw">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey5-PO-60O">
+                                        <rect key="frame" x="0.0" y="20.5" width="67" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                        <color key="textColor" name="colorSubtitleText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5w-vo-JDS">
+                                <rect key="frame" x="274" y="20.5" width="28" height="28"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="a0w-yI-q8y" customClass="GIFImageView" customModule="Gifu">
+                                        <rect key="frame" x="5" y="5" width="18" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="18" id="jkq-UY-csq"/>
+                                            <constraint firstAttribute="height" constant="18" id="tq7-6g-cWT"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="colorMain"/>
+                                <constraints>
+                                    <constraint firstItem="a0w-yI-q8y" firstAttribute="centerX" secondItem="L5w-vo-JDS" secondAttribute="centerX" id="Fw8-9s-xFy"/>
+                                    <constraint firstAttribute="height" constant="28" id="OcK-3e-tmP"/>
+                                    <constraint firstAttribute="width" constant="28" id="r4E-uU-Wad"/>
+                                    <constraint firstItem="a0w-yI-q8y" firstAttribute="centerY" secondItem="L5w-vo-JDS" secondAttribute="centerY" id="vLf-Wy-Enu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="colorSecondary"/>
+                        <constraints>
+                            <constraint firstItem="L5w-vo-JDS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JMR-eL-Aea" secondAttribute="trailing" constant="16" id="1J3-cU-mFK"/>
+                            <constraint firstItem="JMR-eL-Aea" firstAttribute="leading" secondItem="tVc-TN-QPs" secondAttribute="leading" constant="16" id="AdG-BK-VvL"/>
+                            <constraint firstAttribute="trailing" secondItem="L5w-vo-JDS" secondAttribute="trailing" constant="16" id="QUv-Oc-4xJ"/>
+                            <constraint firstItem="JMR-eL-Aea" firstAttribute="centerY" secondItem="tVc-TN-QPs" secondAttribute="centerY" id="T54-bK-fJ0"/>
+                            <constraint firstItem="L5w-vo-JDS" firstAttribute="centerY" secondItem="tVc-TN-QPs" secondAttribute="centerY" id="jyw-X4-2J9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="colorMain"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="tVc-TN-QPs" secondAttribute="bottom" constant="8" id="DZx-xV-VbP"/>
+                    <constraint firstAttribute="trailing" secondItem="tVc-TN-QPs" secondAttribute="trailing" constant="16" id="E6X-xl-RoY"/>
+                    <constraint firstItem="tVc-TN-QPs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="MZy-4X-usK"/>
+                    <constraint firstItem="tVc-TN-QPs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wTx-4t-gi0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="colorMain"/>
+            <connections>
+                <outlet property="addressLabel" destination="ey5-PO-60O" id="84E-Tn-jMi"/>
+                <outlet property="mainContentView" destination="tVc-TN-QPs" id="yYf-Ft-NEQ"/>
+                <outlet property="trashView" destination="L5w-vo-JDS" id="2Kf-LX-7Fx"/>
+            </connections>
+            <point key="canvasLocation" x="159.42028985507247" y="126.22767857142857"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="trashIcon" width="100" height="100"/>
+        <namedColor name="colorMain">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="colorSecondary">
+            <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="colorSubtitleText">
+            <color red="0.34900000691413879" green="0.34900000691413879" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

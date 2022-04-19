@@ -1,0 +1,1358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2213583E280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F5E2809A01900E368E7 /* CoreDataServiceProtocol.swift */; };
+		2213583F280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F5E2809A01900E368E7 /* CoreDataServiceProtocol.swift */; };
+		22135842280E9C0D00FDBEC6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 22135841280E9C0D00FDBEC6 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		22135844280E9C0D00FDBEC6 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 22135843280E9C0D00FDBEC6 /* FirebaseCrashlytics */; };
+		22135847280E9C4300FDBEC6 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 22135846280E9C4300FDBEC6 /* FirebaseCrashlytics */; };
+		2213584A280E9C6F00FDBEC6 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 22135849280E9C6F00FDBEC6 /* FirebaseCrashlytics */; };
+		2213584B280EA1F500FDBEC6 /* OpenSeaServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F622809A56200E368E7 /* OpenSeaServiceProtocol.swift */; };
+		2213584C280EA33300FDBEC6 /* OpenSeaServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */; };
+		224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */; };
+		224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27D280D675700C2CC61 /* AssetModel.swift */; };
+		224FF280280D676100C2CC61 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27F280D676100C2CC61 /* NFTModel.swift */; };
+		224FF283280D88DA00C2CC61 /* WalletCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF282280D88DA00C2CC61 /* WalletCellViewModel.swift */; };
+		224FF285280D891900C2CC61 /* WalletsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF284280D891900C2CC61 /* WalletsViewModel.swift */; };
+		224FF288280D9AB800C2CC61 /* NFTCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF287280D9AB800C2CC61 /* NFTCellViewModel.swift */; };
+		224FF28A280DA0FE00C2CC61 /* AddWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF289280DA0FE00C2CC61 /* AddWalletViewModel.swift */; };
+		224FF28C280DC52000C2CC61 /* Array+Insertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF28B280DC52000C2CC61 /* Array+Insertion.swift */; };
+		22A38432280B06F400285290 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38431280B06F400285290 /* WelcomeViewModel.swift */; };
+		22A38F5C28099F5700E368E7 /* AssetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F5B28099F5700E368E7 /* AssetsViewModel.swift */; };
+		22A38F5F2809A01900E368E7 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F5E2809A01900E368E7 /* CoreDataServiceProtocol.swift */; };
+		22A38F632809A56200E368E7 /* OpenSeaServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F622809A56200E368E7 /* OpenSeaServiceProtocol.swift */; };
+		22A38F652809A71500E368E7 /* CoinbaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F642809A71500E368E7 /* CoinbaseServiceProtocol.swift */; };
+		22A38F672809AE8B00E368E7 /* AssetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F662809AE8B00E368E7 /* AssetCellViewModel.swift */; };
+		22A38F692809B90A00E368E7 /* AmountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F682809B90A00E368E7 /* AmountModel.swift */; };
+		22A38F6B2809C34300E368E7 /* AssetHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F6A2809C34300E368E7 /* AssetHeaderViewModel.swift */; };
+		22A5E1F32807097900A65EA1 /* Moon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */; };
+		22A9194C28084AF5009C23FD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194B28084AF5009C23FD /* CoreDataStack.swift */; };
+		22A9194E28085703009C23FD /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */; };
+		22A9194F28085790009C23FD /* Moon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */; };
+		22A9195028085790009C23FD /* Moon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */; };
+		22A91951280858C0009C23FD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194B28084AF5009C23FD /* CoreDataStack.swift */; };
+		22A91952280858C0009C23FD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194B28084AF5009C23FD /* CoreDataStack.swift */; };
+		22A919532808599D009C23FD /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */; };
+		22A919542808599D009C23FD /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */; };
+		22BD88DD280ABF5400CCD372 /* AssetsViewModel+Online.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88DC280ABF5400CCD372 /* AssetsViewModel+Online.swift */; };
+		22BD88E0280AC02F00CCD372 /* AssetsViewModel+Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88DF280AC02F00CCD372 /* AssetsViewModel+Amount.swift */; };
+		22BD88E5280AD45500CCD372 /* UITextField+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88E4280AD45500CCD372 /* UITextField+Padding.swift */; };
+		22BD88E7280AD48400CCD372 /* UIVIew+LongTouchEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88E6280AD48400CCD372 /* UIVIew+LongTouchEffect.swift */; };
+		22BD88EA280AD57E00CCD372 /* OpenSeaServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */; };
+		22BD88EC280AD59600CCD372 /* CoinbaseServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */; };
+		2CB5ADAEC48630AE7B32844D /* Pods_ConfigurableMoonWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3271C55FFA86BC9FAC133CE3 /* Pods_ConfigurableMoonWidget.framework */; };
+		433E402E27848614004AB117 /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433E402C27848614004AB117 /* AssetCell.swift */; };
+		433E402F27848614004AB117 /* AssetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433E402D27848614004AB117 /* AssetCell.xib */; };
+		433E40362784C4E4004AB117 /* AssetHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433E40342784C4E4004AB117 /* AssetHeaderCell.swift */; };
+		433E40372784C4E4004AB117 /* AssetHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433E40352784C4E4004AB117 /* AssetHeaderCell.xib */; };
+		434D7BB5278846F000A6D711 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D7BB4278846F000A6D711 /* DetailsViewController.swift */; };
+		434D7BB72788983200A6D711 /* NFTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D7BB62788983200A6D711 /* NFTCell.swift */; };
+		434D7BB92788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434D7BB82788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift */; };
+		439B3481278EECAE007AE1DC /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B3480278EECAE007AE1DC /* WalletsViewController.swift */; };
+		439B3484278F01FC007AE1DC /* WalletCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B3482278F01FC007AE1DC /* WalletCell.swift */; };
+		439B3485278F01FC007AE1DC /* WalletCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 439B3483278F01FC007AE1DC /* WalletCell.xib */; };
+		439B3488278F195F007AE1DC /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 439B348A278F195F007AE1DC /* Localizable.stringsdict */; };
+		439B34A0278F3BAD007AE1DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 439B349F278F3BAD007AE1DC /* GoogleService-Info.plist */; };
+		439B34A1278F3BAD007AE1DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 439B349F278F3BAD007AE1DC /* GoogleService-Info.plist */; };
+		43A6A2A9278D866900330C47 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A6A2A8278D866900330C47 /* WelcomeViewController.swift */; };
+		43A6A2AB278DBF2C00330C47 /* AddWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A6A2AA278DBF2C00330C47 /* AddWalletViewController.swift */; };
+		43CDB5F02783520F00FC3AB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDB5EF2783520F00FC3AB9 /* AppDelegate.swift */; };
+		43CDB5F42783520F00FC3AB9 /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDB5F32783520F00FC3AB9 /* AssetsViewController.swift */; };
+		43CDB5F72783520F00FC3AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CDB5F52783520F00FC3AB9 /* Main.storyboard */; };
+		43CDB5F92783521000FC3AB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CDB5F82783521000FC3AB9 /* Assets.xcassets */; };
+		43CDB5FC2783521000FC3AB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CDB5FA2783521000FC3AB9 /* LaunchScreen.storyboard */; };
+		43CDB60927835F8B00FC3AB9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CDB60827835F8B00FC3AB9 /* WidgetKit.framework */; };
+		43CDB60B27835F8B00FC3AB9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CDB60A27835F8B00FC3AB9 /* SwiftUI.framework */; };
+		43CDB60E27835F8B00FC3AB9 /* NFT_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDB60D27835F8B00FC3AB9 /* NFT_Widget.swift */; };
+		43CDB61127835F8D00FC3AB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CDB61027835F8D00FC3AB9 /* Assets.xcassets */; };
+		43CDB61727835F8D00FC3AB9 /* Moon WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 43CDB60727835F8B00FC3AB9 /* Moon WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		43D2FC5827919F4800B19A2C /* NFT_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */; };
+		43D2FC5927919F4800B19A2C /* NFT_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */; };
+		43FA47472791A22B0039F936 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D2FC3527919D8200B19A2C /* Intents.framework */; };
+		43FA474A2791A22B0039F936 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47492791A22B0039F936 /* IntentHandler.swift */; };
+		43FA475E2791A22B0039F936 /* ConfigurableMoonWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 43FA47462791A22B0039F936 /* ConfigurableMoonWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		43FA47652791A24A0039F936 /* NFT_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */; };
+		43FA476A2791C0D90039F936 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47692791C0D90039F936 /* AppGroup.swift */; };
+		43FA476B2791C0E20039F936 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47692791C0D90039F936 /* AppGroup.swift */; };
+		43FA476C2791C0E20039F936 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47692791C0D90039F936 /* AppGroup.swift */; };
+		43FA47712791D1790039F936 /* NFT_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA476F2791D1390039F936 /* NFT_View.swift */; };
+		43FA47722791D3C50039F936 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47492791A22B0039F936 /* IntentHandler.swift */; };
+		44ED1C568CE821189238D650 /* Pods_Moon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8D2891157985FC391AF2B0 /* Pods_Moon.framework */; };
+		8279E7E0D15C4C061716349A /* Pods_Moon_WidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9779BD02FF03B7715C15EF99 /* Pods_Moon_WidgetExtension.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43CDB61527835F8D00FC3AB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43CDB5E42783520F00FC3AB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43CDB60627835F8B00FC3AB9;
+			remoteInfo = "NFT WidgetExtension";
+		};
+		43FA475C2791A22B0039F936 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43CDB5E42783520F00FC3AB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43FA47452791A22B0039F936;
+			remoteInfo = ConfigurableNFTWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		43CDB61827835F8D00FC3AB9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				43FA475E2791A22B0039F936 /* ConfigurableMoonWidget.appex in Embed App Extensions */,
+				43CDB61727835F8D00FC3AB9 /* Moon WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0E4BF81BE798B5F536F191CC /* Pods-ConfigurableNFTWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableNFTWidget.debug.xcconfig"; path = "Target Support Files/Pods-ConfigurableNFTWidget/Pods-ConfigurableNFTWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		224FF27D280D675700C2CC61 /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
+		224FF27F280D676100C2CC61 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
+		224FF282280D88DA00C2CC61 /* WalletCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellViewModel.swift; sourceTree = "<group>"; };
+		224FF284280D891900C2CC61 /* WalletsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewModel.swift; sourceTree = "<group>"; };
+		224FF287280D9AB800C2CC61 /* NFTCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCellViewModel.swift; sourceTree = "<group>"; };
+		224FF289280DA0FE00C2CC61 /* AddWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWalletViewModel.swift; sourceTree = "<group>"; };
+		224FF28B280DC52000C2CC61 /* Array+Insertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Insertion.swift"; sourceTree = "<group>"; };
+		22A38431280B06F400285290 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		22A38F5B28099F5700E368E7 /* AssetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewModel.swift; sourceTree = "<group>"; };
+		22A38F5E2809A01900E368E7 /* CoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceProtocol.swift; sourceTree = "<group>"; };
+		22A38F622809A56200E368E7 /* OpenSeaServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaServiceProtocol.swift; sourceTree = "<group>"; };
+		22A38F642809A71500E368E7 /* CoinbaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseServiceProtocol.swift; sourceTree = "<group>"; };
+		22A38F662809AE8B00E368E7 /* AssetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCellViewModel.swift; sourceTree = "<group>"; };
+		22A38F682809B90A00E368E7 /* AmountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountModel.swift; sourceTree = "<group>"; };
+		22A38F6A2809C34300E368E7 /* AssetHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetHeaderViewModel.swift; sourceTree = "<group>"; };
+		22A5E1F22807097900A65EA1 /* Moon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moon.xcdatamodel; sourceTree = "<group>"; };
+		22A9194B28084AF5009C23FD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomPersistentContainer.swift; sourceTree = "<group>"; };
+		22BD88DC280ABF5400CCD372 /* AssetsViewModel+Online.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssetsViewModel+Online.swift"; sourceTree = "<group>"; };
+		22BD88DF280AC02F00CCD372 /* AssetsViewModel+Amount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssetsViewModel+Amount.swift"; sourceTree = "<group>"; };
+		22BD88E4280AD45500CCD372 /* UITextField+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Padding.swift"; sourceTree = "<group>"; };
+		22BD88E6280AD48400CCD372 /* UIVIew+LongTouchEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+LongTouchEffect.swift"; sourceTree = "<group>"; };
+		22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaServiceModel.swift; sourceTree = "<group>"; };
+		22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseServiceModel.swift; sourceTree = "<group>"; };
+		2AE874ABD5AD206E0D935F03 /* Pods-Moon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moon.release.xcconfig"; path = "Target Support Files/Pods-Moon/Pods-Moon.release.xcconfig"; sourceTree = "<group>"; };
+		3271C55FFA86BC9FAC133CE3 /* Pods_ConfigurableMoonWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfigurableMoonWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		433E402C27848614004AB117 /* AssetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCell.swift; sourceTree = "<group>"; };
+		433E402D27848614004AB117 /* AssetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetCell.xib; sourceTree = "<group>"; };
+		433E40342784C4E4004AB117 /* AssetHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetHeaderCell.swift; sourceTree = "<group>"; };
+		433E40352784C4E4004AB117 /* AssetHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetHeaderCell.xib; sourceTree = "<group>"; };
+		434D7BB4278846F000A6D711 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		434D7BB62788983200A6D711 /* NFTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCell.swift; sourceTree = "<group>"; };
+		434D7BB82788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCellCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		439B3480278EECAE007AE1DC /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
+		439B3482278F01FC007AE1DC /* WalletCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCell.swift; sourceTree = "<group>"; };
+		439B3483278F01FC007AE1DC /* WalletCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletCell.xib; sourceTree = "<group>"; };
+		439B3489278F195F007AE1DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		439B349F278F3BAD007AE1DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43A6A2A8278D866900330C47 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		43A6A2AA278DBF2C00330C47 /* AddWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWalletViewController.swift; sourceTree = "<group>"; };
+		43CDB5EC2783520F00FC3AB9 /* Moon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43CDB5EF2783520F00FC3AB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43CDB5F32783520F00FC3AB9 /* AssetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
+		43CDB5F62783520F00FC3AB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43CDB5F82783521000FC3AB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43CDB5FB2783521000FC3AB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43CDB60727835F8B00FC3AB9 /* Moon WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Moon WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43CDB60827835F8B00FC3AB9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		43CDB60A27835F8B00FC3AB9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		43CDB60D27835F8B00FC3AB9 /* NFT_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFT_Widget.swift; sourceTree = "<group>"; };
+		43CDB61027835F8D00FC3AB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43CDB61227835F8D00FC3AB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43D2FC3527919D8200B19A2C /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		43D2FC4027919D8200B19A2C /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = NFT_Widget.intentdefinition; sourceTree = "<group>"; };
+		43FA47462791A22B0039F936 /* ConfigurableMoonWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ConfigurableMoonWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FA47492791A22B0039F936 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		43FA474B2791A22B0039F936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43FA47662791BF480039F936 /* Moon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moon.entitlements; sourceTree = "<group>"; };
+		43FA47672791BFFB0039F936 /* Moon WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Moon WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		43FA47682791C0220039F936 /* ConfigurableMoonWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConfigurableMoonWidget.entitlements; sourceTree = "<group>"; };
+		43FA47692791C0D90039F936 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		43FA476F2791D1390039F936 /* NFT_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFT_View.swift; sourceTree = "<group>"; };
+		4FE1EF1CD998A3D70D3D4DF1 /* Pods-Moon WidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moon WidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-Moon WidgetExtension/Pods-Moon WidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		5B4BDD167D344B719810B0C7 /* Pods-ConfigurableMoonWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableMoonWidget.debug.xcconfig"; path = "Target Support Files/Pods-ConfigurableMoonWidget/Pods-ConfigurableMoonWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		5FEAF5D0615B613C3B7069AA /* Pods-NFT Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFT Tracker.debug.xcconfig"; path = "Target Support Files/Pods-NFT Tracker/Pods-NFT Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		66502B0B76E219C5605BC7DE /* Pods-NFT WidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFT WidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-NFT WidgetExtension/Pods-NFT WidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		76ED85674B909DF1CB879F10 /* Pods-Moon WidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moon WidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-Moon WidgetExtension/Pods-Moon WidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		7D3FF555C8065EDE9478B898 /* Pods-ConfigurableMoonWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableMoonWidget.release.xcconfig"; path = "Target Support Files/Pods-ConfigurableMoonWidget/Pods-ConfigurableMoonWidget.release.xcconfig"; sourceTree = "<group>"; };
+		7E0BBD0906BB72202E54AAF6 /* Pods-Moon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moon.debug.xcconfig"; path = "Target Support Files/Pods-Moon/Pods-Moon.debug.xcconfig"; sourceTree = "<group>"; };
+		937A7881D7E2383E6A3F2B92 /* Pods-NFT Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFT Tracker.release.xcconfig"; path = "Target Support Files/Pods-NFT Tracker/Pods-NFT Tracker.release.xcconfig"; sourceTree = "<group>"; };
+		9779BD02FF03B7715C15EF99 /* Pods_Moon_WidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moon_WidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0D5A32A47C057127F6ADF03 /* Pods-ConfigurableNFTWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableNFTWidget.release.xcconfig"; path = "Target Support Files/Pods-ConfigurableNFTWidget/Pods-ConfigurableNFTWidget.release.xcconfig"; sourceTree = "<group>"; };
+		F1336D87783FE2F21F08DBA7 /* Pods-NFT WidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFT WidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-NFT WidgetExtension/Pods-NFT WidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		FA8D2891157985FC391AF2B0 /* Pods_Moon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43CDB5E92783520F00FC3AB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22135844280E9C0D00FDBEC6 /* FirebaseCrashlytics in Frameworks */,
+				44ED1C568CE821189238D650 /* Pods_Moon.framework in Frameworks */,
+				22135842280E9C0D00FDBEC6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43CDB60427835F8B00FC3AB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43CDB60B27835F8B00FC3AB9 /* SwiftUI.framework in Frameworks */,
+				22135847280E9C4300FDBEC6 /* FirebaseCrashlytics in Frameworks */,
+				43CDB60927835F8B00FC3AB9 /* WidgetKit.framework in Frameworks */,
+				8279E7E0D15C4C061716349A /* Pods_Moon_WidgetExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA47432791A22B0039F936 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2213584A280E9C6F00FDBEC6 /* FirebaseCrashlytics in Frameworks */,
+				43FA47472791A22B0039F936 /* Intents.framework in Frameworks */,
+				2CB5ADAEC48630AE7B32844D /* Pods_ConfigurableMoonWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		224FF281280D88C000C2CC61 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				224FF282280D88DA00C2CC61 /* WalletCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		224FF286280D9AA300C2CC61 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				224FF287280D9AB800C2CC61 /* NFTCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		22A38433280B06F700285290 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22A38431280B06F400285290 /* WelcomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22A38F4828099C5100E368E7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F5428099DF400E368E7 /* Welcome */,
+				22A38F4928099C5A00E368E7 /* Assets */,
+				22A38F5628099E0B00E368E7 /* Details */,
+				22A38F4F28099D6900E368E7 /* Wallets */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		22A38F4928099C5A00E368E7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F4B28099C6D00E368E7 /* View */,
+				22A38F4A28099C6400E368E7 /* Model */,
+				22A38F4D28099C7E00E368E7 /* ViewModel */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		22A38F4A28099C6400E368E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F682809B90A00E368E7 /* AmountModel.swift */,
+				224FF27D280D675700C2CC61 /* AssetModel.swift */,
+				224FF27F280D676100C2CC61 /* NFTModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22A38F4B28099C6D00E368E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F4C28099C7600E368E7 /* Cell */,
+				43CDB5F32783520F00FC3AB9 /* AssetsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22A38F4C28099C7600E368E7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				433E402C27848614004AB117 /* AssetCell.swift */,
+				433E402D27848614004AB117 /* AssetCell.xib */,
+				433E40342784C4E4004AB117 /* AssetHeaderCell.swift */,
+				433E40352784C4E4004AB117 /* AssetHeaderCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		22A38F4D28099C7E00E368E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22BD88DE280ABFD600CCD372 /* Cell */,
+				22A38F5B28099F5700E368E7 /* AssetsViewModel.swift */,
+				22BD88DC280ABF5400CCD372 /* AssetsViewModel+Online.swift */,
+				22BD88DF280AC02F00CCD372 /* AssetsViewModel+Amount.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22A38F4E28099CEE00E368E7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */,
+				22A9194B28084AF5009C23FD /* CoreDataStack.swift */,
+				22A9194D28085703009C23FD /* NSCustomPersistentContainer.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		22A38F4F28099D6900E368E7 /* Wallets */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F5228099D8E00E368E7 /* Model */,
+				22A38F5028099D7900E368E7 /* View */,
+				22A38F5328099D9400E368E7 /* ViewModel */,
+			);
+			path = Wallets;
+			sourceTree = "<group>";
+		};
+		22A38F5028099D7900E368E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F5128099D8000E368E7 /* Cell */,
+				439B3480278EECAE007AE1DC /* WalletsViewController.swift */,
+				43A6A2AA278DBF2C00330C47 /* AddWalletViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22A38F5128099D8000E368E7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				439B3482278F01FC007AE1DC /* WalletCell.swift */,
+				439B3483278F01FC007AE1DC /* WalletCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		22A38F5228099D8E00E368E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22A38F5328099D9400E368E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				224FF281280D88C000C2CC61 /* Cell */,
+				224FF284280D891900C2CC61 /* WalletsViewModel.swift */,
+				224FF289280DA0FE00C2CC61 /* AddWalletViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22A38F5428099DF400E368E7 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F5528099DFE00E368E7 /* View */,
+				22A38433280B06F700285290 /* ViewModel */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		22A38F5528099DFE00E368E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43A6A2A8278D866900330C47 /* WelcomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22A38F5628099E0B00E368E7 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F5728099E1A00E368E7 /* View */,
+				22A38F5A28099E2E00E368E7 /* ViewModel */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		22A38F5728099E1A00E368E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F5828099E2000E368E7 /* Cell */,
+				434D7BB4278846F000A6D711 /* DetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22A38F5828099E2000E368E7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				434D7BB62788983200A6D711 /* NFTCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		22A38F5A28099E2E00E368E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				224FF286280D9AA300C2CC61 /* Cell */,
+				224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22A38F5D28099FC000E368E7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				22BD88E8280AD53500CCD372 /* Model */,
+				22A38F5E2809A01900E368E7 /* CoreDataServiceProtocol.swift */,
+				22A38F622809A56200E368E7 /* OpenSeaServiceProtocol.swift */,
+				22A38F642809A71500E368E7 /* CoinbaseServiceProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		22BD88DE280ABFD600CCD372 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				22A38F662809AE8B00E368E7 /* AssetCellViewModel.swift */,
+				22A38F6A2809C34300E368E7 /* AssetHeaderViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		22BD88E3280AD44100CCD372 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				22BD88E4280AD45500CCD372 /* UITextField+Padding.swift */,
+				224FF28B280DC52000C2CC61 /* Array+Insertion.swift */,
+				22BD88E6280AD48400CCD372 /* UIVIew+LongTouchEffect.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		22BD88E8280AD53500CCD372 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */,
+				22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		433E403127848DEB004AB117 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				43CDB5FA2783521000FC3AB9 /* LaunchScreen.storyboard */,
+				43CDB5F82783521000FC3AB9 /* Assets.xcassets */,
+				439B349F278F3BAD007AE1DC /* GoogleService-Info.plist */,
+				434D7BB82788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift */,
+				439B348A278F195F007AE1DC /* Localizable.stringsdict */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		43CDB5E32783520F00FC3AB9 = {
+			isa = PBXGroup;
+			children = (
+				43FA47672791BFFB0039F936 /* Moon WidgetExtension.entitlements */,
+				43CDB5EE2783520F00FC3AB9 /* Moon */,
+				43CDB60C27835F8B00FC3AB9 /* Moon Widget */,
+				43FA47482791A22B0039F936 /* ConfigurableMoonWidget */,
+				43CDB5ED2783520F00FC3AB9 /* Products */,
+				4F177DE0DDC9D9C3AAFC1D83 /* Pods */,
+				5150B21DA69F37917DD0132C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		43CDB5ED2783520F00FC3AB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43CDB5EC2783520F00FC3AB9 /* Moon.app */,
+				43CDB60727835F8B00FC3AB9 /* Moon WidgetExtension.appex */,
+				43FA47462791A22B0039F936 /* ConfigurableMoonWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43CDB5EE2783520F00FC3AB9 /* Moon */ = {
+			isa = PBXGroup;
+			children = (
+				43FA47662791BF480039F936 /* Moon.entitlements */,
+				43FA47692791C0D90039F936 /* AppGroup.swift */,
+				43CDB5EF2783520F00FC3AB9 /* AppDelegate.swift */,
+				22A38F4828099C5100E368E7 /* Screens */,
+				43CDB5F52783520F00FC3AB9 /* Main.storyboard */,
+				22A38F5D28099FC000E368E7 /* Services */,
+				22A38F4E28099CEE00E368E7 /* CoreData */,
+				22BD88E3280AD44100CCD372 /* Extensions */,
+				433E403127848DEB004AB117 /* Resources */,
+			);
+			path = Moon;
+			sourceTree = "<group>";
+		};
+		43CDB60C27835F8B00FC3AB9 /* Moon Widget */ = {
+			isa = PBXGroup;
+			children = (
+				43CDB60D27835F8B00FC3AB9 /* NFT_Widget.swift */,
+				43FA476F2791D1390039F936 /* NFT_View.swift */,
+				43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */,
+				43CDB61027835F8D00FC3AB9 /* Assets.xcassets */,
+				43CDB61227835F8D00FC3AB9 /* Info.plist */,
+			);
+			path = "Moon Widget";
+			sourceTree = "<group>";
+		};
+		43FA47482791A22B0039F936 /* ConfigurableMoonWidget */ = {
+			isa = PBXGroup;
+			children = (
+				43FA47682791C0220039F936 /* ConfigurableMoonWidget.entitlements */,
+				43FA47492791A22B0039F936 /* IntentHandler.swift */,
+				43FA474B2791A22B0039F936 /* Info.plist */,
+			);
+			path = ConfigurableMoonWidget;
+			sourceTree = "<group>";
+		};
+		4F177DE0DDC9D9C3AAFC1D83 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5FEAF5D0615B613C3B7069AA /* Pods-NFT Tracker.debug.xcconfig */,
+				937A7881D7E2383E6A3F2B92 /* Pods-NFT Tracker.release.xcconfig */,
+				66502B0B76E219C5605BC7DE /* Pods-NFT WidgetExtension.debug.xcconfig */,
+				F1336D87783FE2F21F08DBA7 /* Pods-NFT WidgetExtension.release.xcconfig */,
+				0E4BF81BE798B5F536F191CC /* Pods-ConfigurableNFTWidget.debug.xcconfig */,
+				A0D5A32A47C057127F6ADF03 /* Pods-ConfigurableNFTWidget.release.xcconfig */,
+				7E0BBD0906BB72202E54AAF6 /* Pods-Moon.debug.xcconfig */,
+				2AE874ABD5AD206E0D935F03 /* Pods-Moon.release.xcconfig */,
+				5B4BDD167D344B719810B0C7 /* Pods-ConfigurableMoonWidget.debug.xcconfig */,
+				7D3FF555C8065EDE9478B898 /* Pods-ConfigurableMoonWidget.release.xcconfig */,
+				76ED85674B909DF1CB879F10 /* Pods-Moon WidgetExtension.debug.xcconfig */,
+				4FE1EF1CD998A3D70D3D4DF1 /* Pods-Moon WidgetExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5150B21DA69F37917DD0132C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43CDB60827835F8B00FC3AB9 /* WidgetKit.framework */,
+				43CDB60A27835F8B00FC3AB9 /* SwiftUI.framework */,
+				43D2FC3527919D8200B19A2C /* Intents.framework */,
+				43D2FC4027919D8200B19A2C /* IntentsUI.framework */,
+				FA8D2891157985FC391AF2B0 /* Pods_Moon.framework */,
+				3271C55FFA86BC9FAC133CE3 /* Pods_ConfigurableMoonWidget.framework */,
+				9779BD02FF03B7715C15EF99 /* Pods_Moon_WidgetExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43CDB5EB2783520F00FC3AB9 /* Moon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43CDB6002783521000FC3AB9 /* Build configuration list for PBXNativeTarget "Moon" */;
+			buildPhases = (
+				FF7A6BDB3BE00F46F067BD23 /* [CP] Check Pods Manifest.lock */,
+				43CDB5E82783520F00FC3AB9 /* Sources */,
+				43CDB5E92783520F00FC3AB9 /* Frameworks */,
+				43CDB5EA2783520F00FC3AB9 /* Resources */,
+				93C42766525FA065E7FE8533 /* [CP] Embed Pods Frameworks */,
+				43CDB61827835F8D00FC3AB9 /* Embed App Extensions */,
+				439B34A6278F3ED1007AE1DC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43CDB61627835F8D00FC3AB9 /* PBXTargetDependency */,
+				43FA475D2791A22B0039F936 /* PBXTargetDependency */,
+			);
+			name = Moon;
+			packageProductDependencies = (
+				22135841280E9C0D00FDBEC6 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				22135843280E9C0D00FDBEC6 /* FirebaseCrashlytics */,
+			);
+			productName = "NFT Tracker";
+			productReference = 43CDB5EC2783520F00FC3AB9 /* Moon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43CDB60627835F8B00FC3AB9 /* Moon WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43CDB61B27835F8D00FC3AB9 /* Build configuration list for PBXNativeTarget "Moon WidgetExtension" */;
+			buildPhases = (
+				252CAF2F1A1F5F0A411B3B74 /* [CP] Check Pods Manifest.lock */,
+				43CDB60327835F8B00FC3AB9 /* Sources */,
+				43CDB60427835F8B00FC3AB9 /* Frameworks */,
+				43CDB60527835F8B00FC3AB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Moon WidgetExtension";
+			packageProductDependencies = (
+				22135846280E9C4300FDBEC6 /* FirebaseCrashlytics */,
+			);
+			productName = "NFT WidgetExtension";
+			productReference = 43CDB60727835F8B00FC3AB9 /* Moon WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		43FA47452791A22B0039F936 /* ConfigurableMoonWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43FA47622791A22B0039F936 /* Build configuration list for PBXNativeTarget "ConfigurableMoonWidget" */;
+			buildPhases = (
+				27C294AE475F1B8ED46D8B81 /* [CP] Check Pods Manifest.lock */,
+				43FA47422791A22B0039F936 /* Sources */,
+				43FA47432791A22B0039F936 /* Frameworks */,
+				43FA47442791A22B0039F936 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConfigurableMoonWidget;
+			packageProductDependencies = (
+				22135849280E9C6F00FDBEC6 /* FirebaseCrashlytics */,
+			);
+			productName = ConfigurableNFTWidget;
+			productReference = 43FA47462791A22B0039F936 /* ConfigurableMoonWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43CDB5E42783520F00FC3AB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					43CDB5EB2783520F00FC3AB9 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					43CDB60627835F8B00FC3AB9 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					43FA47452791A22B0039F936 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 43CDB5E72783520F00FC3AB9 /* Build configuration list for PBXProject "Moon" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43CDB5E32783520F00FC3AB9;
+			packageReferences = (
+				22135840280E9C0D00FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				22135845280E9C4300FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				22135848280E9C6F00FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 43CDB5ED2783520F00FC3AB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43CDB5EB2783520F00FC3AB9 /* Moon */,
+				43CDB60627835F8B00FC3AB9 /* Moon WidgetExtension */,
+				43FA47452791A22B0039F936 /* ConfigurableMoonWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43CDB5EA2783520F00FC3AB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43CDB5FC2783521000FC3AB9 /* LaunchScreen.storyboard in Resources */,
+				439B34A0278F3BAD007AE1DC /* GoogleService-Info.plist in Resources */,
+				439B3485278F01FC007AE1DC /* WalletCell.xib in Resources */,
+				43CDB5F92783521000FC3AB9 /* Assets.xcassets in Resources */,
+				43CDB5F72783520F00FC3AB9 /* Main.storyboard in Resources */,
+				439B3488278F195F007AE1DC /* Localizable.stringsdict in Resources */,
+				433E402F27848614004AB117 /* AssetCell.xib in Resources */,
+				433E40372784C4E4004AB117 /* AssetHeaderCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43CDB60527835F8B00FC3AB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43CDB61127835F8D00FC3AB9 /* Assets.xcassets in Resources */,
+				439B34A1278F3BAD007AE1DC /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA47442791A22B0039F936 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		252CAF2F1A1F5F0A411B3B74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moon WidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27C294AE475F1B8ED46D8B81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConfigurableMoonWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		439B34A6278F3ED1007AE1DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+		93C42766525FA065E7FE8533 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moon/Pods-Moon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Moon/Pods-Moon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Moon/Pods-Moon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF7A6BDB3BE00F46F067BD23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43CDB5E82783520F00FC3AB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A38F672809AE8B00E368E7 /* AssetCellViewModel.swift in Sources */,
+				22A38F652809A71500E368E7 /* CoinbaseServiceProtocol.swift in Sources */,
+				439B3484278F01FC007AE1DC /* WalletCell.swift in Sources */,
+				22A38F692809B90A00E368E7 /* AmountModel.swift in Sources */,
+				43A6A2A9278D866900330C47 /* WelcomeViewController.swift in Sources */,
+				22A5E1F32807097900A65EA1 /* Moon.xcdatamodeld in Sources */,
+				434D7BB92788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift in Sources */,
+				224FF28C280DC52000C2CC61 /* Array+Insertion.swift in Sources */,
+				224FF285280D891900C2CC61 /* WalletsViewModel.swift in Sources */,
+				22A9194E28085703009C23FD /* NSCustomPersistentContainer.swift in Sources */,
+				22BD88EC280AD59600CCD372 /* CoinbaseServiceModel.swift in Sources */,
+				22A38F5F2809A01900E368E7 /* CoreDataServiceProtocol.swift in Sources */,
+				433E40362784C4E4004AB117 /* AssetHeaderCell.swift in Sources */,
+				22BD88DD280ABF5400CCD372 /* AssetsViewModel+Online.swift in Sources */,
+				434D7BB72788983200A6D711 /* NFTCell.swift in Sources */,
+				43CDB5F42783520F00FC3AB9 /* AssetsViewController.swift in Sources */,
+				224FF28A280DA0FE00C2CC61 /* AddWalletViewModel.swift in Sources */,
+				43FA476A2791C0D90039F936 /* AppGroup.swift in Sources */,
+				22BD88E7280AD48400CCD372 /* UIVIew+LongTouchEffect.swift in Sources */,
+				43A6A2AB278DBF2C00330C47 /* AddWalletViewController.swift in Sources */,
+				22A38F6B2809C34300E368E7 /* AssetHeaderViewModel.swift in Sources */,
+				22A38F632809A56200E368E7 /* OpenSeaServiceProtocol.swift in Sources */,
+				22A38F5C28099F5700E368E7 /* AssetsViewModel.swift in Sources */,
+				439B3481278EECAE007AE1DC /* WalletsViewController.swift in Sources */,
+				22BD88E0280AC02F00CCD372 /* AssetsViewModel+Amount.swift in Sources */,
+				22A38432280B06F400285290 /* WelcomeViewModel.swift in Sources */,
+				43CDB5F02783520F00FC3AB9 /* AppDelegate.swift in Sources */,
+				433E402E27848614004AB117 /* AssetCell.swift in Sources */,
+				22A9194C28084AF5009C23FD /* CoreDataStack.swift in Sources */,
+				43D2FC5827919F4800B19A2C /* NFT_Widget.intentdefinition in Sources */,
+				224FF280280D676100C2CC61 /* NFTModel.swift in Sources */,
+				224FF288280D9AB800C2CC61 /* NFTCellViewModel.swift in Sources */,
+				22BD88EA280AD57E00CCD372 /* OpenSeaServiceModel.swift in Sources */,
+				224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */,
+				224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */,
+				22BD88E5280AD45500CCD372 /* UITextField+Padding.swift in Sources */,
+				434D7BB5278846F000A6D711 /* DetailsViewController.swift in Sources */,
+				224FF283280D88DA00C2CC61 /* WalletCellViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43CDB60327835F8B00FC3AB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A91951280858C0009C23FD /* CoreDataStack.swift in Sources */,
+				43D2FC5927919F4800B19A2C /* NFT_Widget.intentdefinition in Sources */,
+				43FA47722791D3C50039F936 /* IntentHandler.swift in Sources */,
+				22A9194F28085790009C23FD /* Moon.xcdatamodeld in Sources */,
+				2213583E280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */,
+				22A919532808599D009C23FD /* NSCustomPersistentContainer.swift in Sources */,
+				43FA476B2791C0E20039F936 /* AppGroup.swift in Sources */,
+				2213584B280EA1F500FDBEC6 /* OpenSeaServiceProtocol.swift in Sources */,
+				43CDB60E27835F8B00FC3AB9 /* NFT_Widget.swift in Sources */,
+				43FA47712791D1790039F936 /* NFT_View.swift in Sources */,
+				2213584C280EA33300FDBEC6 /* OpenSeaServiceModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43FA47422791A22B0039F936 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A919542808599D009C23FD /* NSCustomPersistentContainer.swift in Sources */,
+				22A91952280858C0009C23FD /* CoreDataStack.swift in Sources */,
+				43FA474A2791A22B0039F936 /* IntentHandler.swift in Sources */,
+				43FA476C2791C0E20039F936 /* AppGroup.swift in Sources */,
+				22A9195028085790009C23FD /* Moon.xcdatamodeld in Sources */,
+				43FA47652791A24A0039F936 /* NFT_Widget.intentdefinition in Sources */,
+				2213583F280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43CDB61627835F8D00FC3AB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43CDB60627835F8B00FC3AB9 /* Moon WidgetExtension */;
+			targetProxy = 43CDB61527835F8D00FC3AB9 /* PBXContainerItemProxy */;
+		};
+		43FA475D2791A22B0039F936 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43FA47452791A22B0039F936 /* ConfigurableMoonWidget */;
+			targetProxy = 43FA475C2791A22B0039F936 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		439B348A278F195F007AE1DC /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				439B3489278F195F007AE1DC /* en */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		43CDB5F52783520F00FC3AB9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43CDB5F62783520F00FC3AB9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43CDB5FA2783521000FC3AB9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43CDB5FB2783521000FC3AB9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43CDB5FE2783521000FC3AB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		43CDB5FF2783521000FC3AB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43CDB6012783521000FC3AB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E0BBD0906BB72202E54AAF6 /* Pods-Moon.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Moon/Moon.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4ABMNPNS6D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moon/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Moon;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xfrontend -debug-time-function-bodies";
+				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		43CDB6022783521000FC3AB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AE874ABD5AD206E0D935F03 /* Pods-Moon.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Moon/Moon.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = 4ABMNPNS6D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moon/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Moon;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xfrontend -debug-time-function-bodies";
+				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		43CDB61927835F8D00FC3AB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76ED85674B909DF1CB879F10 /* Pods-Moon WidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Moon WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4ABMNPNS6D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Moon Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Moon Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.luggy.moon.NFT-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43CDB61A27835F8D00FC3AB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FE1EF1CD998A3D70D3D4DF1 /* Pods-Moon WidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Moon WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = 4ABMNPNS6D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Moon Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Moon Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.luggy.moon.NFT-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		43FA47632791A22B0039F936 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B4BDD167D344B719810B0C7 /* Pods-ConfigurableMoonWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ConfigurableMoonWidget/ConfigurableMoonWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4ABMNPNS6D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConfigurableMoonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ConfigurableMoonWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon.ConfigurableNFTWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		43FA47642791A22B0039F936 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D3FF555C8065EDE9478B898 /* Pods-ConfigurableMoonWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ConfigurableMoonWidget/ConfigurableMoonWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = 4ABMNPNS6D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ConfigurableMoonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ConfigurableMoonWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon.ConfigurableNFTWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43CDB5E72783520F00FC3AB9 /* Build configuration list for PBXProject "Moon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43CDB5FE2783521000FC3AB9 /* Debug */,
+				43CDB5FF2783521000FC3AB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43CDB6002783521000FC3AB9 /* Build configuration list for PBXNativeTarget "Moon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43CDB6012783521000FC3AB9 /* Debug */,
+				43CDB6022783521000FC3AB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43CDB61B27835F8D00FC3AB9 /* Build configuration list for PBXNativeTarget "Moon WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43CDB61927835F8D00FC3AB9 /* Debug */,
+				43CDB61A27835F8D00FC3AB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43FA47622791A22B0039F936 /* Build configuration list for PBXNativeTarget "ConfigurableMoonWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43FA47632791A22B0039F936 /* Debug */,
+				43FA47642791A22B0039F936 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22135840280E9C0D00FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		22135845280E9C4300FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		22135848280E9C6F00FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22135841280E9C0D00FDBEC6 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22135840280E9C0D00FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		22135843280E9C0D00FDBEC6 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22135840280E9C0D00FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		22135846280E9C4300FDBEC6 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22135840280E9C0D00FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		22135849280E9C6F00FDBEC6 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22135840280E9C0D00FDBEC6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				22A5E1F22807097900A65EA1 /* Moon.xcdatamodel */,
+			);
+			currentVersion = 22A5E1F22807097900A65EA1 /* Moon.xcdatamodel */;
+			path = Moon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 43CDB5E42783520F00FC3AB9 /* Project object */;
+}

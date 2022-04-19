@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (5.5.0)
+  - Gifu (3.3.1)
+  - JGProgressHUD (2.2)
+  - Nuke (10.5.2)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - SwiftMessages (9.0.5):
+    - SwiftMessages/App (= 9.0.5)
+  - SwiftMessages/App (9.0.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.5.0)
+  - Gifu
+  - JGProgressHUD
+  - Nuke (~> 10.5.2)
+  - NVActivityIndicatorView
+  - SwiftMessages
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Gifu
+    - JGProgressHUD
+    - Nuke
+    - NVActivityIndicatorView
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  Nuke: 62d6d401e2b3ce553151a6f5e2f9332878710fbd
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  SwiftMessages: 9cca50659fa22bb523b4dd2a958d4442e843a354
+
+PODFILE CHECKSUM: a5241b0b19ae1dd6f74be5f3b5049896e5b34bcc
+
+COCOAPODS: 1.11.3
