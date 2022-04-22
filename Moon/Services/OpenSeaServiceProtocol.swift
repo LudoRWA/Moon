@@ -5,10 +5,7 @@
 //  Created by Ludovic Roullier on 15/04/2022.
 //
 
-import Foundation
-import FirebaseCrashlytics
 import Alamofire
-import CoreData
 
 protocol OpenSeaServiceProtocol {
     func getAssets(_ limit: Int, _ wallet: String, _ cursor: String?, completion: @escaping (_ value: OpenseaAssets?, Int?) -> ())

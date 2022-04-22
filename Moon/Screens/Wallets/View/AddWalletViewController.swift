@@ -6,10 +6,8 @@
 //
 
 import UIKit
-import Alamofire
 import JGProgressHUD
 import SwiftMessages
-import FirebaseCrashlytics
 
 class AddWalletViewController: UIViewController, UITextFieldDelegate {
     

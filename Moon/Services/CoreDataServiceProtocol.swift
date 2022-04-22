@@ -5,7 +5,6 @@
 //  Created by Ludovic Roullier on 15/04/2022.
 //
 
-import Foundation
 import FirebaseCrashlytics
 import CoreData
 

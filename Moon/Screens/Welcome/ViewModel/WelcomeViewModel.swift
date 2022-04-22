@@ -5,7 +5,6 @@
 //  Created by Ludovic Roullier on 16/04/2022.
 //
 
-import FirebaseCrashlytics
 import FirebaseAnalytics
 import Nuke
 

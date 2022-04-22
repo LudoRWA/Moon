@@ -5,10 +5,7 @@
 //  Created by Ludovic Roullier on 15/04/2022.
 //
 
-import Foundation
-import FirebaseCrashlytics
 import Alamofire
-import CoreData
 
 protocol CoinbaseServiceProtocol {
     func getFiatPrice(_ currentCurrency: String, completion: @escaping (_ value: CoinbaseData?) -> ())

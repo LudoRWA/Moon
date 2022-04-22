@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseCrashlytics
-import CoreData
 
 class WalletsViewController: UIViewController, UITableViewDelegate,  UITableViewDataSource {
     

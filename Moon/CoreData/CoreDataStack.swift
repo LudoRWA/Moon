@@ -5,7 +5,6 @@
 //  Created by Ludovic Roullier on 14/04/2022.
 //
 
-import Foundation
 import CoreData
 
 final class CoreDataStack {

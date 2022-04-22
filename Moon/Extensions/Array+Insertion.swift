@@ -5,8 +5,6 @@
 //  Created by Ludovic Roullier on 18/04/2022.
 //
 
-import Foundation
-
 extension Array {
     func insertionIndexOf(_ elem: Element, isOrderedBefore: (Element, Element) -> Bool) -> Int {
         var lo = 0
