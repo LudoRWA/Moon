@@ -114,7 +114,7 @@ extension AssetsViewModel {
                 
             } else {
                 
-                completion(false, [], "OpenSea is not accessible at the moment. Please try again later or check @apiopensea on Twitter.")
+				completion(false, [], "Alert.Failure.OpenSea.Error.Try".localized)
             }
         }
     }

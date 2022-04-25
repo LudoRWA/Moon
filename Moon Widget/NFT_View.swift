@@ -30,8 +30,8 @@ struct NFT_Widget: Widget {
                 NFT_WidgetEntryView(entry: entry)
             }
             .supportedFamilies([.systemSmall, .systemLarge])
-            .configurationDisplayName("Your NFTs")
-            .description("This widget displays your favorite NFT with its current floor price.")
+			.configurationDisplayName("Widgets.Display.Name".localized)
+			.description("Widgets.Description".localized)
     }
 }
 
@@ -76,7 +76,7 @@ struct NFT_WidgetEntryView : View {
                     .brightness(-0.6)
                 
                 VStack(alignment: .center) {
-                    Text("No assets.")
+					Text("Widgets.Empty".localized)
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -85,7 +85,7 @@ struct NFT_WidgetEntryView : View {
                     Spacer()
                         .frame(height: 10)
                     
-                    Text("Add assets in the app to activate the widget.")
+					Text("Widgets.Empty.Add".localized)
                         .font(.caption)
                         .fontWeight(.medium)
                         .foregroundColor(.white)

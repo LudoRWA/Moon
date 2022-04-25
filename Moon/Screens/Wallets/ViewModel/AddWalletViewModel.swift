@@ -35,19 +35,19 @@ class AddWalletViewModel: NSObject {
                             completion(true, newWallet, nil)
                         } catch {
                             Crashlytics.crashlytics().record(error: error)
-                            completion(false, nil, "An error has occurred. Please try again.")
+							completion(false, nil, "Alert.Failure.Error.Try".localized)
                         }
                     } else {
-                        completion(false, nil, "You have already added this wallet.")
+						completion(false, nil, "Alert.Failure.Duplicate.Wallet".localized)
                     }
                     
                 } else {
                     if (statusCode == 400) {
                         
-                        completion(false, nil, "OpenSea doesn't know this wallet. Please verify your wallet address and try again.")
+						completion(false, nil, "Alert.Failure.OpenSea.Unknown.Try".localized)
                     } else {
                         
-                        completion(false, nil, "OpenSea is not accessible at the moment. Please try again later or check @apiopensea on Twitter.")
+						completion(false, nil, "Alert.Failure.OpenSea.Error.Try".localized)
                     }
                 }
             }

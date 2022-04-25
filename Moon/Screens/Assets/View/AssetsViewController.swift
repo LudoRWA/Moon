@@ -81,7 +81,7 @@ class AssetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let view = MessageView.viewFromNib(layout: .cardView)
             view.configureTheme(.error)
             view.configureDropShadow()
-            view.configureContent(title: "", body: String(format: NSLocalizedString("open_wallet", comment:  "You can't access your wallet settings during synchronization."), viewModel.wallets.count))
+            view.configureContent(title: "", body: String(format: NSLocalizedString("Alert.Failure.Open.Wallet.Sync", comment:  "You can't access your wallet settings during synchronization."), viewModel.wallets.count))
             view.button?.isHidden = true
             SwiftMessages.show(view: view)
         }

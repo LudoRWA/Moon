@@ -34,9 +34,11 @@ struct Provider: IntentTimelineProvider {
                 
                 let nft_name = randomNFT.nft_name ?? ""
                 let nft_image = randomNFT.nft_image ?? ""
-                let collection_slug = randomNFT.collection_slug ?? ""
+                let collection_slug = randomNFT.collection_slug
                 
-                self.openseaService.getCollection(collection_slug) { value in
+				guard let collectionSlug = collection_slug else { return }
+				
+                self.openseaService.getCollection(collectionSlug) { value in
                     
                     var floorText = "---"
                     if let floorPrice = value?.collection.stats.floor_price {
@@ -59,15 +61,15 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         let refreshDate = Calendar.current.date(byAdding: .minute, value: 45, to: currentDate)!
         
-        var nft_name = ""
-        var nft_image = ""
-        var collection_slug = ""
+		var nft_name = ""
+		var nft_image = ""
+		var collection_slug: String?
         
         if let selectedNFT = configuration.nft {
             
             nft_name = selectedNFT.nft_name ?? ""
             nft_image = selectedNFT.nft_image ?? ""
-            collection_slug = selectedNFT.collection_slug ?? ""
+            collection_slug = selectedNFT.collection_slug
         } else {
             
             coredataService.getAllAssets() { success, assets, error in
@@ -76,26 +78,23 @@ struct Provider: IntentTimelineProvider {
 
                     nft_name = randomNFT.nft_name ?? ""
                     nft_image = randomNFT.nft_image ?? ""
-                    collection_slug = randomNFT.collection_slug ?? ""
-                } else {
-                    
-                    let entry = NFTEntry(date: currentDate, nft_image: "", nft_name: "", floor_price: "", isEmpty: true, configuration: configuration)
-                    let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
-                    completion(timeline)
+                    collection_slug = randomNFT.collection_slug
                 }
             }
         }
         
-        self.openseaService.getCollection(collection_slug) { value in
+		guard let collectionSlug = collection_slug else { return }
+		
+        self.openseaService.getCollection(collectionSlug) { value in
             
-            var floorText = "---"
             if let floorPrice = value?.collection.stats.floor_price {
-                floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
+				
+                let floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
+				
+				let entry = NFTEntry(date: currentDate, nft_image: nft_image, nft_name: nft_name, floor_price: floorText, isEmpty: false, configuration: configuration)
+				let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
+				completion(timeline)
             }
-            
-            let entry = NFTEntry(date: currentDate, nft_image: nft_image, nft_name: nft_name, floor_price: floorText, isEmpty: false, configuration: configuration)
-            let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
-            completion(timeline)
         }
     }
 }

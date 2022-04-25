@@ -130,12 +130,12 @@ class AssetsViewModel: NSObject {
     
     func updateHeader() {
         if (UserDefaults.standard.bool(forKey: "isAverage")) {
-            assetHeaderViewModel.totalAmountText = "TOTAL AVERAGE VALUE"
+			assetHeaderViewModel.totalAmountText = "Label.Title.Total.Average.Value".localized
             assetHeaderViewModel.totalAmountFiat = totalAmount.average.fiat
             assetHeaderViewModel.totalAmountEth = totalAmount.average.eth
         } else {
             
-            assetHeaderViewModel.totalAmountText = "TOTAL FLOOR VALUE"
+			assetHeaderViewModel.totalAmountText = "Label.Title.Total.Floor.Value".localized
             assetHeaderViewModel.totalAmountFiat = totalAmount.floor.fiat
             assetHeaderViewModel.totalAmountEth = totalAmount.floor.eth
         }
@@ -160,7 +160,7 @@ class AssetsViewModel: NSObject {
     func createCellModel(asset: Asset) -> AssetCellViewModel {
         
         let collection_image_url = URL(string: (asset.collection_image_url ?? ""))
-        let collection_name = asset.collection_name ?? "Unknown"
+		let collection_name = asset.collection_name ?? "Label.Unknown".localized
         let count = String(asset.nfts.count)
         var price = "Ξ \(String(asset.floor_price))"
         

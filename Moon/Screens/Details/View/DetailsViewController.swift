@@ -142,7 +142,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
         let view = MessageView.viewFromNib(layout: .cardView)
         view.configureTheme(.success)
         view.configureDropShadow()
-        view.configureContent(title: "", body: "Item link copied!")
+		view.configureContent(title: "", body: "Alert.Success.Link.Copied".localized)
         view.button?.isHidden = true
         SwiftMessages.show(view: view)
     }

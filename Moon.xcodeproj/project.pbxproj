@@ -18,6 +18,12 @@
 		2213584E280EBEFA00FDBEC6 /* URL+StoreURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */; };
 		2213584F280EBF3700FDBEC6 /* URL+StoreURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */; };
 		22135850280EBF3800FDBEC6 /* URL+StoreURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */; };
+		2214ECC92816902F00AC564C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 228243EB28129C1C000701A5 /* Localizable.strings */; };
+		2214ECCA2816903000AC564C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 228243EB28129C1C000701A5 /* Localizable.strings */; };
+		2214ECCB2816903300AC564C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 439B348A278F195F007AE1DC /* Localizable.stringsdict */; };
+		2214ECCC2816903400AC564C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 439B348A278F195F007AE1DC /* Localizable.stringsdict */; };
+		2214ECCD2816904400AC564C /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243F128129D5F000701A5 /* String+Localized.swift */; };
+		2214ECCE2816904500AC564C /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243F128129D5F000701A5 /* String+Localized.swift */; };
 		224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */; };
 		224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27D280D675700C2CC61 /* AssetModel.swift */; };
 		224FF280280D676100C2CC61 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27F280D676100C2CC61 /* NFTModel.swift */; };
@@ -26,6 +32,12 @@
 		224FF288280D9AB800C2CC61 /* NFTCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF287280D9AB800C2CC61 /* NFTCellViewModel.swift */; };
 		224FF28A280DA0FE00C2CC61 /* AddWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF289280DA0FE00C2CC61 /* AddWalletViewModel.swift */; };
 		224FF28C280DC52000C2CC61 /* Array+Insertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF28B280DC52000C2CC61 /* Array+Insertion.swift */; };
+		228243E928129C1C000701A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 228243EB28129C1C000701A5 /* Localizable.strings */; };
+		228243EE28129C8E000701A5 /* UILabel+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243ED28129C8E000701A5 /* UILabel+Localizable.swift */; };
+		228243F028129CAE000701A5 /* UIButton+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243EF28129CAE000701A5 /* UIButton+Localizable.swift */; };
+		228243F228129D5F000701A5 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243F128129D5F000701A5 /* String+Localized.swift */; };
+		228243F42812A50A000701A5 /* UITextField+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243F32812A50A000701A5 /* UITextField+Localizable.swift */; };
+		228243F62812A637000701A5 /* UITextView+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243F52812A637000701A5 /* UITextView+Localizable.swift */; };
 		22A38432280B06F400285290 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38431280B06F400285290 /* WelcomeViewModel.swift */; };
 		22A38F5C28099F5700E368E7 /* AssetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F5B28099F5700E368E7 /* AssetsViewModel.swift */; };
 		22A38F5F2809A01900E368E7 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F5E2809A01900E368E7 /* CoreDataServiceProtocol.swift */; };
@@ -130,6 +142,12 @@
 		224FF287280D9AB800C2CC61 /* NFTCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCellViewModel.swift; sourceTree = "<group>"; };
 		224FF289280DA0FE00C2CC61 /* AddWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWalletViewModel.swift; sourceTree = "<group>"; };
 		224FF28B280DC52000C2CC61 /* Array+Insertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Insertion.swift"; sourceTree = "<group>"; };
+		228243EA28129C1C000701A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		228243ED28129C8E000701A5 /* UILabel+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Localizable.swift"; sourceTree = "<group>"; };
+		228243EF28129CAE000701A5 /* UIButton+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Localizable.swift"; sourceTree = "<group>"; };
+		228243F128129D5F000701A5 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		228243F32812A50A000701A5 /* UITextField+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Localizable.swift"; sourceTree = "<group>"; };
+		228243F52812A637000701A5 /* UITextView+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Localizable.swift"; sourceTree = "<group>"; };
 		22A38431280B06F400285290 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		22A38F5B28099F5700E368E7 /* AssetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewModel.swift; sourceTree = "<group>"; };
 		22A38F5E2809A01900E368E7 /* CoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceProtocol.swift; sourceTree = "<group>"; };
@@ -234,6 +252,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224763D62816863A0051DBE9 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				228243F32812A50A000701A5 /* UITextField+Localizable.swift */,
+				22BD88E4280AD45500CCD372 /* UITextField+Padding.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
 		224FF281280D88C000C2CC61 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,10 +469,14 @@
 		22BD88E3280AD44100CCD372 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				22BD88E4280AD45500CCD372 /* UITextField+Padding.swift */,
+				224763D62816863A0051DBE9 /* UITextField */,
 				2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */,
 				224FF28B280DC52000C2CC61 /* Array+Insertion.swift */,
+				228243F52812A637000701A5 /* UITextView+Localizable.swift */,
 				22BD88E6280AD48400CCD372 /* UIVIew+LongTouchEffect.swift */,
+				228243ED28129C8E000701A5 /* UILabel+Localizable.swift */,
+				228243EF28129CAE000701A5 /* UIButton+Localizable.swift */,
+				228243F128129D5F000701A5 /* String+Localized.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -466,6 +497,7 @@
 				43CDB5F82783521000FC3AB9 /* Assets.xcassets */,
 				439B349F278F3BAD007AE1DC /* GoogleService-Info.plist */,
 				434D7BB82788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift */,
+				228243EB28129C1C000701A5 /* Localizable.strings */,
 				439B348A278F195F007AE1DC /* Localizable.stringsdict */,
 			);
 			path = Resources;
@@ -692,6 +724,7 @@
 				439B34A0278F3BAD007AE1DC /* GoogleService-Info.plist in Resources */,
 				439B3485278F01FC007AE1DC /* WalletCell.xib in Resources */,
 				43CDB5F92783521000FC3AB9 /* Assets.xcassets in Resources */,
+				228243E928129C1C000701A5 /* Localizable.strings in Resources */,
 				43CDB5F72783520F00FC3AB9 /* Main.storyboard in Resources */,
 				439B3488278F195F007AE1DC /* Localizable.stringsdict in Resources */,
 				433E402F27848614004AB117 /* AssetCell.xib in Resources */,
@@ -704,6 +737,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43CDB61127835F8D00FC3AB9 /* Assets.xcassets in Resources */,
+				2214ECCB2816903300AC564C /* Localizable.stringsdict in Resources */,
+				2214ECC92816902F00AC564C /* Localizable.strings in Resources */,
 				439B34A1278F3BAD007AE1DC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,6 +747,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2214ECCA2816903000AC564C /* Localizable.strings in Resources */,
+				2214ECCC2816903400AC564C /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,8 +866,10 @@
 			files = (
 				22A38F672809AE8B00E368E7 /* AssetCellViewModel.swift in Sources */,
 				22A38F652809A71500E368E7 /* CoinbaseServiceProtocol.swift in Sources */,
+				228243F62812A637000701A5 /* UITextView+Localizable.swift in Sources */,
 				439B3484278F01FC007AE1DC /* WalletCell.swift in Sources */,
 				22A38F692809B90A00E368E7 /* AmountModel.swift in Sources */,
+				228243F028129CAE000701A5 /* UIButton+Localizable.swift in Sources */,
 				43A6A2A9278D866900330C47 /* WelcomeViewController.swift in Sources */,
 				22A5E1F32807097900A65EA1 /* Moon.xcdatamodeld in Sources */,
 				434D7BB92788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift in Sources */,
@@ -851,6 +890,9 @@
 				22A38F632809A56200E368E7 /* OpenSeaServiceProtocol.swift in Sources */,
 				22A38F5C28099F5700E368E7 /* AssetsViewModel.swift in Sources */,
 				439B3481278EECAE007AE1DC /* WalletsViewController.swift in Sources */,
+				228243F228129D5F000701A5 /* String+Localized.swift in Sources */,
+				228243F42812A50A000701A5 /* UITextField+Localizable.swift in Sources */,
+				228243EE28129C8E000701A5 /* UILabel+Localizable.swift in Sources */,
 				22BD88E0280AC02F00CCD372 /* AssetsViewModel+Amount.swift in Sources */,
 				22A38432280B06F400285290 /* WelcomeViewModel.swift in Sources */,
 				43CDB5F02783520F00FC3AB9 /* AppDelegate.swift in Sources */,
@@ -878,6 +920,7 @@
 				2213584F280EBF3700FDBEC6 /* URL+StoreURL.swift in Sources */,
 				22A9194F28085790009C23FD /* Moon.xcdatamodeld in Sources */,
 				2213583E280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */,
+				2214ECCD2816904400AC564C /* String+Localized.swift in Sources */,
 				43FA476B2791C0E20039F936 /* AppGroup.swift in Sources */,
 				2213584B280EA1F500FDBEC6 /* OpenSeaServiceProtocol.swift in Sources */,
 				43CDB60E27835F8B00FC3AB9 /* NFT_Widget.swift in Sources */,
@@ -892,6 +935,7 @@
 			files = (
 				22A91952280858C0009C23FD /* CoreDataStack.swift in Sources */,
 				43FA474A2791A22B0039F936 /* IntentHandler.swift in Sources */,
+				2214ECCE2816904500AC564C /* String+Localized.swift in Sources */,
 				22135850280EBF3800FDBEC6 /* URL+StoreURL.swift in Sources */,
 				43FA476C2791C0E20039F936 /* AppGroup.swift in Sources */,
 				22A9195028085790009C23FD /* Moon.xcdatamodeld in Sources */,
@@ -916,6 +960,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		228243EB28129C1C000701A5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				228243EA28129C1C000701A5 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		439B348A278F195F007AE1DC /* Localizable.stringsdict */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -947,6 +999,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1008,6 +1061,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

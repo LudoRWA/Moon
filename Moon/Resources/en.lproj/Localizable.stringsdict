@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>open_wallet</key>
+	<key>Alert.Failure.Open.Wallet.Sync</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
 		<string>You can&apos;t access your %#@wallet@ settings during synchronization.</string>
@@ -18,7 +18,7 @@
 			<string>wallets</string>
 		</dict>
 	</dict>
-	<key>my_wallet</key>
+	<key>Label.Title.My.Wallet.Plural</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
 		<string>My %#@wallet@</string>
@@ -34,7 +34,7 @@
 			<string>Wallets</string>
 		</dict>
 	</dict>
-	<key>logout</key>
+	<key>Alert.Question.Delete.Wallet.Plural</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
 		<string>Are you sure you want to delete %#@wallet@?</string>

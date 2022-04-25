@@ -19,7 +19,7 @@ class IntentHandler: INExtension, SelectNFTIntentHandling {
                 
                 let nft = UserNFT(
                     identifier: String(asset.id),
-                    display: "\(asset.nft_name ?? "Unknown") - \(asset.collection_name ?? "Unknown")"
+					display: "\(asset.nft_name ?? "Label.Unknown".localized) - \(asset.collection_name ?? "Label.Unknown".localized)"
                 )
                 
                 nft.nft_name = asset.nft_name

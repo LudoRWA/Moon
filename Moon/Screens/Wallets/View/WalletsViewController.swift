@@ -30,7 +30,7 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
         
         self.isModalInPresentation = true
         self.mainTableView.register(WalletCell.nib, forCellReuseIdentifier: WalletCell.identifier)
-        self.titleLabel.text = String(format: NSLocalizedString("my_wallet", comment:  "My Wallet"), viewModel.wallets.count)
+        self.titleLabel.text = String(format: NSLocalizedString("Label.Title.My.Wallet.Plural", comment:  "My Wallet"), viewModel.wallets.count)
     }
     
     func initViewModel() {
@@ -42,7 +42,7 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
                     self?.dismissAction()
                 } else {
                     
-                    self?.titleLabel.text = String(format: NSLocalizedString("my_wallet", comment:  "My Wallet"), self?.viewModel.wallets.count ?? 0)
+                    self?.titleLabel.text = String(format: NSLocalizedString("Label.Title.My.Wallet.Plural", comment:  "My Wallet"), self?.viewModel.wallets.count ?? 0)
                     
                     if (self?.mainTableView.window != nil) {
                         self?.updateRows(insertedRows: movedRows.0, deletedRows: movedRows.1)
@@ -80,9 +80,9 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
     
     @IBAction func logoutAction(_ sender: Any) {
         
-        let alert = UIAlertController(title: "", message: String(format: NSLocalizedString("logout", comment:  "Are you sure you want to delete all your wallets?"), viewModel.wallets.count), preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { UIAlertAction in
+        let alert = UIAlertController(title: "", message: String(format: NSLocalizedString("Alert.Question.Delete.Wallet.Plural", comment:  "Are you sure you want to delete all your wallets?"), viewModel.wallets.count), preferredStyle: UIAlertController.Style.alert)
+		alert.addAction(UIAlertAction(title: "Button.Cancel".localized, style: .cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "Button.Delete".localized, style: .destructive) { UIAlertAction in
             
             self.viewModel.removeAll()
         })
@@ -106,9 +106,9 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alert = UIAlertController(title: "", message: "Are you sure you want to delete this wallet?", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { UIAlertAction in
+		let alert = UIAlertController(title: "", message: "Alert.Question.Delete.Wallet".localized, preferredStyle: UIAlertController.Style.alert)
+		alert.addAction(UIAlertAction(title: "Button.Cancel".localized, style: .cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "Button.Delete".localized, style: .destructive) { UIAlertAction in
             
             let currentWallet = self.viewModel.getCellViewModel(at: indexPath).wallet
             self.viewModel.remove(wallet: currentWallet)

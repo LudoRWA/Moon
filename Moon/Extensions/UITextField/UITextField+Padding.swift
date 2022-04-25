@@ -7,7 +7,7 @@
 
 import UIKit
 
-class textFieldWithPadding: UITextField {
+class textFieldWithPadding: LocalisableTextField {
     
     let padding = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
     

@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="height" constant="380" id="JFJ-La-sg4"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6E-wI-csn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6E-wI-csn" customClass="LocalisableButton" customModule="Moon" customModuleProvider="target">
                                 <rect key="frame" x="136" y="743" width="118" height="45"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.2156862745" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -39,6 +39,9 @@
                                 <state key="normal" title="Add Wallet">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Button.Add.Wallet"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="rLK-bh-C8c" kind="presentation" identifier="addWallet" id="V9z-Zn-ttm"/>
                                 </connections>
@@ -128,11 +131,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZq-C1-Kg3">
                                 <rect key="frame" x="0.0" y="44" width="390" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29h-FF-dwu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29h-FF-dwu" customClass="LocalisableLabel" customModule="Moon" customModuleProvider="target">
                                         <rect key="frame" x="15.999999999999993" y="14" width="104.33333333333331" height="22"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Label.Title.My.Portfolio"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3N-fh-Ogp">
                                         <rect key="frame" x="339" y="7.6666666666666643" width="35" height="35"/>
@@ -195,11 +201,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0c1-nM-Vi2">
                                 <rect key="frame" x="0.0" y="44" width="390" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAv-de-urR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAv-de-urR" customClass="LocalisableLabel" customModule="Moon" customModuleProvider="target">
                                         <rect key="frame" x="154.33333333333334" y="14.666666666666664" width="81.666666666666657" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Label.Unknown"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBT-gT-J4l">
                                         <rect key="frame" x="16" y="7.6666666666666643" width="35" height="35"/>
@@ -280,11 +289,14 @@
                                                                     <constraint firstAttribute="height" constant="25" id="FtY-9B-wc3"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmC-eR-ZtS">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmC-eR-ZtS" customClass="LocalisableLabel" customModule="Moon" customModuleProvider="target">
                                                                 <rect key="frame" x="37" y="2.6666666666666288" width="289" height="20"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" name="colorSubtitleText"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Label.Unknown"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" name="colorSecondary"/>
@@ -297,13 +309,16 @@
                                                             <constraint firstItem="WmC-eR-ZtS" firstAttribute="centerY" secondItem="WSK-0d-5qk" secondAttribute="centerY" id="avj-tU-YPZ"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Unknown" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bN-ms-MZJ">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Unknown" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bN-ms-MZJ" customClass="LocalisableTextView" customModule="Moon" customModuleProvider="target">
                                                         <rect key="frame" x="12" y="47" width="334" height="33"/>
                                                         <color key="backgroundColor" name="colorSecondary"/>
                                                         <color key="textColor" name="colorSubtitleText"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Label.Unknown"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="colorSecondary"/>
@@ -369,7 +384,7 @@
                                     <constraint firstAttribute="bottom" secondItem="YYP-MA-wGb" secondAttribute="bottom" id="efh-Gy-8VI"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8w-PO-j4f">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8w-PO-j4f" customClass="LocalisableButton" customModule="Moon" customModuleProvider="target">
                                 <rect key="frame" x="142" y="723" width="106" height="45"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.2156862745" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -382,6 +397,9 @@
                                 <state key="normal" title="Copy link">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Button.Copy.Link"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="copyItemLink:" destination="FwN-H8-WOL" eventType="touchUpInside" id="QtN-Ho-tab"/>
                                 </connections>
@@ -430,7 +448,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjR-rU-kPA">
-                                <rect key="frame" x="22" y="66" width="35" height="35"/>
+                                <rect key="frame" x="22" y="22" width="35" height="35"/>
                                 <color key="backgroundColor" name="colorSecondary"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="6hu-0E-lxs"/>
@@ -444,24 +462,30 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Ypx-9T-7Ra">
-                                <rect key="frame" x="0.0" y="109" width="390" height="681"/>
+                                <rect key="frame" x="0.0" y="65" width="390" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6D-u7-TH2">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="254.66666666666666"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My wallet." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkj-1O-nu1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My wallet." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkj-1O-nu1" customClass="LocalisableLabel" customModule="Moon" customModuleProvider="target">
                                                 <rect key="frame" x="22" y="8" width="346" height="38.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Label.Title.My.Wallet.Long"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCw-eS-dgK">
-                                                <rect key="frame" x="22" y="50.333333333333343" width="346" height="37.333333333333343"/>
-                                                <string key="text">Enter the wallet address related to your
-OpenSea account.</string>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCw-eS-dgK" customClass="LocalisableLabel" customModule="Moon" customModuleProvider="target">
+                                                <rect key="frame" x="22" y="50.333333333333329" width="346" height="37.333333333333329"/>
+                                                <string key="text">Enter the wallet address related to 
+your OpenSea account.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" name="colorSubtitleText"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Label.Subtitle.My.Wallet.Address"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0xab1b584fc90d73B529av4346jk830ee3D2061681" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ejY-ri-3db" customClass="textFieldWithPadding" customModule="Moon" customModuleProvider="target">
                                                 <rect key="frame" x="22" y="109.66666666666666" width="346" height="45"/>
@@ -471,6 +495,9 @@ OpenSea account.</string>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="TextField.Placeholder.Wallet.Address"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <outlet property="delegate" destination="rLK-bh-C8c" id="uq4-m4-hUA"/>
                                                 </connections>
@@ -503,7 +530,7 @@ OpenSea account.</string>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="L40-Qd-dD2">
                                 <rect key="frame" x="65" y="723" width="260" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUi-mf-Lza">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUi-mf-Lza" customClass="LocalisableButton" customModule="Moon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="145" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="u12-t9-Xdu"/>
@@ -513,11 +540,14 @@ OpenSea account.</string>
                                         <state key="normal" title="Paste from clipboard">
                                             <color key="titleColor" name="colorSubtitleText"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Button.Past.Clipboard"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="pastAction:" destination="rLK-bh-C8c" eventType="touchUpInside" id="uUa-Qb-pOY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9m-WU-9eB">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9m-WU-9eB" customClass="LocalisableButton" customModule="Moon" customModuleProvider="target">
                                         <rect key="frame" x="157" y="0.0" width="103" height="45"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.2156862745" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -530,6 +560,9 @@ OpenSea account.</string>
                                         <state key="normal" title="Continue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Button.Continue"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="continueAction:" destination="rLK-bh-C8c" eventType="touchUpInside" id="BWA-Yt-mgV"/>
                                         </connections>
@@ -590,11 +623,14 @@ OpenSea account.</string>
                                             <action selector="backAction:" destination="qfy-F5-w3k" eventType="touchUpInside" id="jry-2a-gCj"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wallets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-gM-GSa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Wallets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-gM-GSa" customClass="LocalisableLabel" customModule="Moon" customModuleProvider="target">
                                         <rect key="frame" x="67" y="23.333333333333329" width="93" height="21.666666666666671"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Label.Title.My.Wallet.Short"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" name="colorMain"/>
@@ -618,7 +654,7 @@ OpenSea account.</string>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="LgP-93-Pz0">
                                 <rect key="frame" x="82.666666666666686" y="723" width="225" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPh-J0-JXC">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPh-J0-JXC" customClass="LocalisableButton" customModule="Moon" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="118" height="45"/>
                                         <color key="backgroundColor" red="0.28897967930000001" green="0.3333546221" blue="0.96476632360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -630,11 +666,14 @@ OpenSea account.</string>
                                         <state key="normal" title="Add Wallet">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Button.Add.Wallet"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="rLK-bh-C8c" kind="show" identifier="addWallet" id="mmA-DE-Zvc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoS-J1-tBR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoS-J1-tBR" customClass="LocalisableButton" customModule="Moon" customModuleProvider="target">
                                         <rect key="frame" x="130" y="0.0" width="95" height="45"/>
                                         <color key="backgroundColor" red="0.87740765200000004" green="0.35877073399999998" blue="0.34447698770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -646,6 +685,9 @@ OpenSea account.</string>
                                         <state key="normal" title="Log Out">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Button.Log.Out"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="logoutAction:" destination="qfy-F5-w3k" eventType="touchUpInside" id="BFi-LP-EvM"/>
                                         </connections>
@@ -682,7 +724,7 @@ OpenSea account.</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V9z-Zn-ttm"/>
+        <segue reference="mmA-DE-Zvc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowBottom" width="75" height="75"/>

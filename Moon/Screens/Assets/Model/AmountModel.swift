@@ -12,5 +12,5 @@ struct AmountModel {
 
 struct CurrenciesAmountModel {
     var eth: String? = "Ξ ---"
-    var fiat: String? = "Loading..."
+	var fiat: String? = "Label.Loading".localized
 }

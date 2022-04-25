@@ -24,9 +24,9 @@ class CoreDataService: CoreDataServiceProtocol {
         } catch {
             
             Crashlytics.crashlytics().record(error: error)
-            completion(false, [], "Error: Trying to get wallets from CoreData")
+			completion(false, [], "Alert.Failure.Retrieving.Items.Core.Data".localized)
             
-            debugPrint("error get wallets database : \(error)")
+            debugPrint("Error retrieving items from Core Data : \(error)")
         }
     }
     
@@ -41,9 +41,9 @@ class CoreDataService: CoreDataServiceProtocol {
         } catch {
             
             Crashlytics.crashlytics().record(error: error)
-            completion(false, [], "Error: Trying to get assets from CoreData")
+            completion(false, [], "Alert.Failure.Retrieving.Items.Core.Data".localized)
             
-            debugPrint("error get assets database : \(error)")
+            debugPrint("Error retrieving items from Core Data : \(error)")
         }
     }
     
@@ -57,9 +57,9 @@ class CoreDataService: CoreDataServiceProtocol {
         } catch {
             
             Crashlytics.crashlytics().record(error: error)
-            completion(false, [], "Error: Trying to get assets from CoreData")
+            completion(false, [], "Alert.Failure.Retrieving.Items.Core.Data".localized)
             
-            debugPrint("error get assets database : \(error)")
+            debugPrint("Error retrieving items from Core Data : \(error)")
         }
     }
 }

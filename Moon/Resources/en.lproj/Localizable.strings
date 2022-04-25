@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  Moon
+
+  Created by Ludovic Roullier on 22/04/2022.
+  
+*/
+
+//MARK: - UIButton
+"Button.Add.Wallet" = "Add Wallet";
+"Button.Past.Clipboard" = "Past from clipboard";
+"Button.Copy.Link" = "Copy Link";
+"Button.Continue" = "Continue";
+"Button.Cancel" = "Cancel";
+"Button.Delete" = "Delete";
+"Button.Log.Out" = "Log Out";
+
+//MARK: - UILabel
+"Label.Title.My.Wallet.Long" = "My Wallet.";
+"Label.Title.My.Wallet.Short" = "My Wallet";
+"Label.Subtitle.My.Wallet.Address" = "Enter the wallet address related to\nyour OpenSea account.";
+"Label.Title.My.Portfolio" = "My Portfolio";
+"Label.Title.Total.Floor.Value" = "TOTAL FLOOR VALUE";
+"Label.Title.Total.Average.Value" = "TOTAL AVERAGE VALUE";
+"Label.Address" = "Address";
+"Label.Loading" = "Loading…";
+"Label.Unknown" = "Unknown";
+
+//MARK: - UITextField
+"TextField.Placeholder.Wallet.Address" = "0xab1b584fc90d73B529av4346jk830ee3D2061681";
+
+//MARK: - Alerts
+"Alert.Success.Link.Copied" = "Item link copied!";
+"Alert.Question.Delete.Wallet" = "Are you sure you want to delete this wallet?";
+"Alert.Failure.Error.Try" = "An error has occurred. Please try again.";
+"Alert.Failure.Duplicate.Wallet" = "You have already added this wallet.";
+"Alert.Failure.OpenSea.Unknown.Try" = "OpenSea doesn't know this wallet. Please verify your wallet address and try again.";
+"Alert.Failure.OpenSea.Error.Try" = "OpenSea is not accessible at the moment. Please try again later or check @apiopensea on Twitter.";
+"Alert.Failure.Retrieving.Items.Core.Data" = "Error retrieving items from Core Data.";
+
+//MARK: - Widgets
+"Widgets.Display.Name" = "Your NFTs";
+"Widgets.Description" = "This widget displays your favorite NFT with its current floor price.";
+"Widgets.Empty" = "No assets.";
+"Widgets.Empty.Add" = "Add assets in the app to activate the widget.";
