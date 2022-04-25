@@ -24,6 +24,8 @@
 		2214ECCC2816903400AC564C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 439B348A278F195F007AE1DC /* Localizable.stringsdict */; };
 		2214ECCD2816904400AC564C /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243F128129D5F000701A5 /* String+Localized.swift */; };
 		2214ECCE2816904500AC564C /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243F128129D5F000701A5 /* String+Localized.swift */; };
+		2214ECD62816C5D900AC564C /* OpenSeaServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214ECD52816C5D900AC564C /* OpenSeaServiceTests.swift */; };
+		2214ECDD2816CEF900AC564C /* CoinbaseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214ECDC2816CEF900AC564C /* CoinbaseServiceTests.swift */; };
 		224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */; };
 		224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27D280D675700C2CC61 /* AssetModel.swift */; };
 		224FF280280D676100C2CC61 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27F280D676100C2CC61 /* NFTModel.swift */; };
@@ -100,6 +102,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2214ECD72816C5D900AC564C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43CDB5E42783520F00FC3AB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43CDB5EB2783520F00FC3AB9;
+			remoteInfo = Moon;
+		};
 		43CDB61527835F8D00FC3AB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 43CDB5E42783520F00FC3AB9 /* Project object */;
@@ -134,6 +143,9 @@
 /* Begin PBXFileReference section */
 		0E4BF81BE798B5F536F191CC /* Pods-ConfigurableNFTWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableNFTWidget.debug.xcconfig"; path = "Target Support Files/Pods-ConfigurableNFTWidget/Pods-ConfigurableNFTWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StoreURL.swift"; sourceTree = "<group>"; };
+		2214ECD32816C5D900AC564C /* MoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2214ECD52816C5D900AC564C /* OpenSeaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaServiceTests.swift; sourceTree = "<group>"; };
+		2214ECDC2816CEF900AC564C /* CoinbaseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseServiceTests.swift; sourceTree = "<group>"; };
 		224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		224FF27D280D675700C2CC61 /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		224FF27F280D676100C2CC61 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
@@ -218,6 +230,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2214ECD02816C5D900AC564C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43CDB5E92783520F00FC3AB9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +271,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2214ECD42816C5D900AC564C /* MoonTests */ = {
+			isa = PBXGroup;
+			children = (
+				2214ECDE2816D28300AC564C /* Services */,
+			);
+			path = MoonTests;
+			sourceTree = "<group>";
+		};
+		2214ECDE2816D28300AC564C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2214ECD52816C5D900AC564C /* OpenSeaServiceTests.swift */,
+				2214ECDC2816CEF900AC564C /* CoinbaseServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2214ECDF2816D4B600AC564C /* AddWallet */ = {
+			isa = PBXGroup;
+			children = (
+				2214ECE02816D4DA00AC564C /* View */,
+				2214ECE12816D4E300AC564C /* ViewModel */,
+			);
+			path = AddWallet;
+			sourceTree = "<group>";
+		};
+		2214ECE02816D4DA00AC564C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43A6A2AA278DBF2C00330C47 /* AddWalletViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2214ECE12816D4E300AC564C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				224FF289280DA0FE00C2CC61 /* AddWalletViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		224763D62816863A0051DBE9 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +353,7 @@
 				22A38F4928099C5A00E368E7 /* Assets */,
 				22A38F5628099E0B00E368E7 /* Details */,
 				22A38F4F28099D6900E368E7 /* Wallets */,
+				2214ECDF2816D4B600AC564C /* AddWallet */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -370,7 +432,6 @@
 			children = (
 				22A38F5128099D8000E368E7 /* Cell */,
 				439B3480278EECAE007AE1DC /* WalletsViewController.swift */,
-				43A6A2AA278DBF2C00330C47 /* AddWalletViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -389,7 +450,6 @@
 			children = (
 				224FF281280D88C000C2CC61 /* Cell */,
 				224FF284280D891900C2CC61 /* WalletsViewModel.swift */,
-				224FF289280DA0FE00C2CC61 /* AddWalletViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -510,6 +570,7 @@
 				43CDB5EE2783520F00FC3AB9 /* Moon */,
 				43CDB60C27835F8B00FC3AB9 /* Moon Widget */,
 				43FA47482791A22B0039F936 /* ConfigurableMoonWidget */,
+				2214ECD42816C5D900AC564C /* MoonTests */,
 				43CDB5ED2783520F00FC3AB9 /* Products */,
 				4F177DE0DDC9D9C3AAFC1D83 /* Pods */,
 				5150B21DA69F37917DD0132C /* Frameworks */,
@@ -522,6 +583,7 @@
 				43CDB5EC2783520F00FC3AB9 /* Moon.app */,
 				43CDB60727835F8B00FC3AB9 /* Moon WidgetExtension.appex */,
 				43FA47462791A22B0039F936 /* ConfigurableMoonWidget.appex */,
+				2214ECD32816C5D900AC564C /* MoonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -600,6 +662,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2214ECD22816C5D900AC564C /* MoonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2214ECD92816C5D900AC564C /* Build configuration list for PBXNativeTarget "MoonTests" */;
+			buildPhases = (
+				2214ECCF2816C5D900AC564C /* Sources */,
+				2214ECD02816C5D900AC564C /* Frameworks */,
+				2214ECD12816C5D900AC564C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2214ECD82816C5D900AC564C /* PBXTargetDependency */,
+			);
+			name = MoonTests;
+			productName = MoonTests;
+			productReference = 2214ECD32816C5D900AC564C /* MoonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		43CDB5EB2783520F00FC3AB9 /* Moon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43CDB6002783521000FC3AB9 /* Build configuration list for PBXNativeTarget "Moon" */;
@@ -676,9 +756,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					2214ECD22816C5D900AC564C = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 43CDB5EB2783520F00FC3AB9;
+					};
 					43CDB5EB2783520F00FC3AB9 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -711,11 +795,19 @@
 				43CDB5EB2783520F00FC3AB9 /* Moon */,
 				43CDB60627835F8B00FC3AB9 /* Moon WidgetExtension */,
 				43FA47452791A22B0039F936 /* ConfigurableMoonWidget */,
+				2214ECD22816C5D900AC564C /* MoonTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2214ECD12816C5D900AC564C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43CDB5EA2783520F00FC3AB9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -860,6 +952,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2214ECCF2816C5D900AC564C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2214ECD62816C5D900AC564C /* OpenSeaServiceTests.swift in Sources */,
+				2214ECDD2816CEF900AC564C /* CoinbaseServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43CDB5E82783520F00FC3AB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -947,6 +1048,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2214ECD82816C5D900AC564C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43CDB5EB2783520F00FC3AB9 /* Moon */;
+			targetProxy = 2214ECD72816C5D900AC564C /* PBXContainerItemProxy */;
+		};
 		43CDB61627835F8D00FC3AB9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 43CDB60627835F8B00FC3AB9 /* Moon WidgetExtension */;
@@ -995,6 +1101,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2214ECDA2816C5D900AC564C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ABMNPNS6D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon.MoonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Moon.app/Moon";
+			};
+			name = Debug;
+		};
+		2214ECDB2816C5D900AC564C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ABMNPNS6D;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon.MoonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Moon.app/Moon";
+			};
+			name = Release;
+		};
 		43CDB5FE2783521000FC3AB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1299,6 +1443,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2214ECD92816C5D900AC564C /* Build configuration list for PBXNativeTarget "MoonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2214ECDA2816C5D900AC564C /* Debug */,
+				2214ECDB2816C5D900AC564C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		43CDB5E72783520F00FC3AB9 /* Build configuration list for PBXProject "Moon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
