@@ -6,7 +6,9 @@
 # Moon
 Moon is an NFTs tracker for [OpenSea](https://opensea.io). It is often defined as the simplest and most effective app to track the value of your OpenSea portfolio.
 
-The application communicates directly with OpenSea API. Synchronization of large wallets may take a few minutes. Moon does not collect any personal data.
+The application communicates directly with OpenSea API.  
+Synchronization of large wallets may take a few minutes.  
+Moon does not collect any personal data.
 
 Moon is **available on the App Store**: https://apps.apple.com/app/moon-opensea-portfolio/id1604840998
 
