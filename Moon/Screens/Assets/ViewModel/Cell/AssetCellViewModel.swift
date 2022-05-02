@@ -15,10 +15,10 @@ struct AssetCellViewModel: Equatable {
         && lhs.count == rhs.count)
     }
     
-    var collection_name: String
-    var collection_image_url: URL?
-    var price: String
-    var count: String
-    var asset: Asset
+    let collection_name: String
+    let collection_image_url: URL?
+    let price: String
+    let count: String
+    let asset: Asset
 }
 

@@ -5,11 +5,10 @@
 //  Created by Ludovic Roullier on 18/04/2022.
 //
 
-import CoreData
-import FirebaseCrashlytics
+import Foundation
 
 class WalletsViewModel: NSObject {
-    
+	var coreDataService: CoreDataServiceProtocol
     var updateCellsTableView: ((([IndexPath], [IndexPath]), Bool) -> Void)?
     
     var wallets = [WalletStorage]() {
@@ -25,35 +24,27 @@ class WalletsViewModel: NSObject {
     
     var shouldUpdateViewController = false
     
+	init(coreDataService: CoreDataServiceProtocol = CoreDataService()) {
+		
+		self.coreDataService = coreDataService
+	}
+	
     public func addWallet(wallet: WalletStorage) {
         shouldUpdateViewController = true
         wallets.append(wallet)
     }
     
     func remove(wallet: WalletStorage) {
-        do {
-            CoreDataStack.sharedInstance.viewContext.delete(wallet)
-            try CoreDataStack.sharedInstance.viewContext.save()
-            wallets.removeAll{$0 == wallet}
-            shouldUpdateViewController = true
-        } catch {
-            Crashlytics.crashlytics().record(error: error)
-            print("error logout database : \(error)")
-        }
+		
+		coreDataService.remove(wallet: wallet)
+		wallets.removeAll{$0 == wallet}
+		shouldUpdateViewController = true
     }
     
     func removeAll() {
-        do {
-            for wallet in wallets {
-                CoreDataStack.sharedInstance.viewContext.delete(wallet)
-            }
-            try CoreDataStack.sharedInstance.viewContext.save()
-            wallets.removeAll()
-            shouldUpdateViewController = true
-        } catch {
-            Crashlytics.crashlytics().record(error: error)
-            print("error logout database : \(error)")
-        }
+		coreDataService.removeAll(wallets: wallets)
+		wallets.removeAll()
+		shouldUpdateViewController = true
     }
     
     func getCellsReady(wallets: [WalletStorage]) -> [WalletCellViewModel] {

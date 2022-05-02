@@ -5,8 +5,7 @@
 //  Created by Ludovic Roullier on 15/04/2022.
 //
 
-import FirebaseCrashlytics
-import CoreData
+import Foundation
 
 class AssetsViewModel: NSObject {
     var coredataService: CoreDataServiceProtocol
@@ -113,13 +112,7 @@ class AssetsViewModel: NSObject {
         
         if (isOnline) {
             removeFromCoreData(oldArray: self.assets, newArray: assets)
-            do {
-                try CoreDataStack.sharedInstance.viewContext.save()
-            } catch {
-                
-                Crashlytics.crashlytics().record(error: error)
-                print("error updating or inserting databse \(error)")
-            }
+			coredataService.save()
         }
         
         self.assets = assets
@@ -128,6 +121,15 @@ class AssetsViewModel: NSObject {
         getCellsReady()
     }
     
+	func removeFromCoreData(oldArray: [AssetStorage], newArray: [AssetStorage]) {
+		for oldAsset in oldArray {
+			if newArray.filter({ $0.collection_slug == oldAsset.collection_slug }).first == nil {
+				
+				coredataService.remove(asset: oldAsset)
+			}
+		}
+	}
+	
     func updateHeader() {
         if (UserDefaults.standard.bool(forKey: "isAverage")) {
 			assetHeaderViewModel.totalAmountText = "Label.Title.Total.Average.Value".localized
@@ -177,11 +179,10 @@ class AssetsViewModel: NSObject {
         
         for asset in assets {
             
-            let newNFT = NFT()
-            newNFT.id = asset.id
-            newNFT.nft_name = asset.nft_name
-            newNFT.nft_image = asset.nft_image
-            newNFT.nft_permalink = asset.nft_permalink
+			let newNFT = NFT(id: asset.id,
+							 nft_image: asset.nft_image,
+							 nft_name: asset.nft_name,
+							 nft_permalink: asset.nft_permalink)
             
             if let foundAsset = friendlyAssets.filter({ $0.collection_slug == asset.collection_slug }).first {
                 
@@ -189,16 +190,14 @@ class AssetsViewModel: NSObject {
                 foundAsset.nfts.insert(newNFT, at: index)
             } else {
                 
-                let newAsset = Asset()
-                
-                newAsset.collection_slug = asset.collection_slug
-                newAsset.collection_name = asset.collection_name
-                newAsset.collection_description = asset.collection_description
-                newAsset.collection_image_url = asset.collection_image_url
-                newAsset.floor_price = asset.floor_price
-                newAsset.average_price = asset.average_price
-                newAsset.nfts.append(newNFT)
-                
+				let newAsset = Asset(collection_slug: asset.collection_slug,
+									 collection_name: asset.collection_name,
+									 collection_image_url: asset.collection_image_url,
+									 collection_description: asset.collection_description,
+									 floor_price: asset.floor_price,
+									 average_price: asset.average_price,
+									 nfts: [newNFT])
+				
                 friendlyAssets.append(newAsset)
             }
         }

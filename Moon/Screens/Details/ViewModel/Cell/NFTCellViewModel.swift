@@ -8,7 +8,7 @@
 import Foundation
 
 struct NFTCellViewModel: Equatable {
-	var name: String? = "Label.Unknown".localized
-    var image_url: URL?
-    var pager: String?
+	let name: String
+    let image_url: URL?
+    let pager: String
 }

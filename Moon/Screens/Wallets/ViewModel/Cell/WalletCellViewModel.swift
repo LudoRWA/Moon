@@ -6,6 +6,6 @@
 //
 
 struct WalletCellViewModel: Equatable {
-    var address: String?
-    var wallet: WalletStorage
+    let address: String?
+    let wallet: WalletStorage
 }

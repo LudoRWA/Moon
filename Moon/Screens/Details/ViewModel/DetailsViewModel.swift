@@ -26,7 +26,7 @@ class DetailsViewModel: NSObject {
         
         for (i, nft) in nfts.enumerated() {
             
-            let name = nft.nft_name
+            let name = nft.nft_name ?? "Unknown"
             let image_url = URL(string: nft.nft_image ?? "")
             let pager = "\(i+1) / \(nfts.count)"
             

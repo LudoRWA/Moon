@@ -5,10 +5,10 @@
 //  Created by Ludovic Roullier on 18/04/2022.
 //
 
-class NFT {
+struct NFT {
     
-    var id: Int32!
-    var nft_image: String?
-    var nft_name: String?
-    var nft_permalink: String?
+    let id: Int32
+    let nft_image: String?
+    let nft_name: String?
+    let nft_permalink: String?
 }

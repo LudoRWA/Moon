@@ -5,16 +5,18 @@
 //  Created by Ludovic Roullier on 18/04/2022.
 //
 
-import CoreData
-import FirebaseCrashlytics
+import Foundation
 
 class AddWalletViewModel: NSObject {
     var openseaService: OpenSeaServiceProtocol
+	var coreDataService: CoreDataServiceProtocol
+	
     var wallets = [WalletStorage]()
     
-    init(openseaService: OpenSeaServiceProtocol = OpenSeaService()) {
+    init(openseaService: OpenSeaServiceProtocol = OpenSeaService(), coreDataService: CoreDataServiceProtocol = CoreDataService()) {
         
         self.openseaService = openseaService
+		self.coreDataService = coreDataService
     }
     
     func addWallet(address: String?, completion: @escaping (Bool, WalletStorage?, String?) -> ()) {
@@ -29,15 +31,11 @@ class AddWalletViewModel: NSObject {
                         
                         let newWallet = WalletStorage(context: CoreDataStack.sharedInstance.viewContext)
                         newWallet.address = address
-                        
-                        do {
-                            try CoreDataStack.sharedInstance.viewContext.save()
-                            completion(true, newWallet, nil)
-                        } catch {
-                            Crashlytics.crashlytics().record(error: error)
-							completion(false, nil, "Alert.Failure.Error.Try".localized)
-                        }
+						self.coreDataService.save()
+						
+						completion(true, newWallet, nil)
                     } else {
+						
 						completion(false, nil, "Alert.Failure.Duplicate.Wallet".localized)
                     }
                     

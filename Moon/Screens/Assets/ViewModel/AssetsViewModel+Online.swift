@@ -5,7 +5,7 @@
 //  Created by Ludovic Roullier on 16/04/2022.
 //
 
-import FirebaseCrashlytics
+import Foundation
 
 extension AssetsViewModel {
     
@@ -65,7 +65,7 @@ extension AssetsViewModel {
                     let collectionDescription = $0.collection.description
                     let collectionImage = $0.collection.image_url
                     
-                    if (nftName == nil) { nftName = "#\(token_id ?? "")" }
+                    if (nftName == nil) { nftName = "#\(token_id ?? "Unknown")" }
                     
                     let foundAsset = oldAssets.filter({ $0.id == id }).first
                     
@@ -159,10 +159,9 @@ extension AssetsViewModel {
                             currentUserAssets[i].floor_price = roundedFloorPrice
                             currentUserAssets[i].average_price = roundedAveragePrice
                             
-                            let newCollection = Asset()
-                            newCollection.collection_slug = originalCollection_slug
-                            newCollection.floor_price = roundedFloorPrice
-                            newCollection.average_price = roundedAveragePrice
+							let newCollection = Asset(collection_slug: originalCollection_slug,
+													  floor_price: roundedFloorPrice,
+													  average_price: roundedAveragePrice)
                             usedSlugs.append(newCollection)
                             
                             semaphore.signal()
@@ -175,19 +174,4 @@ extension AssetsViewModel {
             completionHandler(currentUserAssets)
         }
     }
-    
-    func removeFromCoreData(oldArray: [AssetStorage], newArray: [AssetStorage]) {
-        for oldAsset in oldArray {
-            if newArray.filter({ $0.collection_slug == oldAsset.collection_slug }).first == nil {
-                do {
-                    CoreDataStack.sharedInstance.viewContext.delete(oldAsset)
-                    try CoreDataStack.sharedInstance.viewContext.save()
-                } catch {
-                    Crashlytics.crashlytics().record(error: error)
-                    print("error delete item database : \(error)")
-                }
-            }
-        }
-    }
-    
 }
