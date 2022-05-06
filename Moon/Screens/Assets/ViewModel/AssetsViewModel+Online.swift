@@ -22,14 +22,17 @@ extension AssetsViewModel {
                 
                 if (self.shouldStopSync) { break }
                 
-                self.getAssets(oldAssets, currentAssets, nil, wallet) { success, updatedUserAssets, error in
-                    
-                    if let error = error, !success {
+                self.getAssets(oldAssets, currentAssets, nil, wallet) { result in
+					switch result {
+					case .success(let updatedUserAssets):
+						
+						currentAssets = updatedUserAssets
+					case .failure(let error):
+						
                         self.shouldStopSync = true
-                        self.showErrorMessage?(error)
-                    }
-                    
-                    currentAssets = updatedUserAssets
+						self.showErrorMessage?(error.rawValue)
+					}
+			
                     semaphore.signal()
                 }
                 
@@ -45,11 +48,11 @@ extension AssetsViewModel {
         }
     }
     
-    func getAssets(_ oldAssets: [AssetStorage], _ currentAssets: [AssetStorage], _ cursor: String?, _ wallet: WalletStorage, completion: @escaping (Bool, [AssetStorage], String?) -> ()) {
+    func getAssets(_ oldAssets: [AssetStorage], _ currentAssets: [AssetStorage], _ cursor: String?, _ wallet: WalletStorage, completion: @escaping (Result<[AssetStorage], OpenSeaError>) -> ()) {
         
         var currentUserAssets = currentAssets
         
-        self.openseaService.getAssets(50, wallet.address ?? "", cursor) { value, _ in
+        self.openSeaService.getAssets(50, wallet.address ?? "", cursor) { value, _ in
             
             if let value = value {
                 
@@ -103,18 +106,24 @@ extension AssetsViewModel {
                 let maxReached = nextCursor == nil
                 
                 if (maxReached) {
-                    completion(true, currentUserAssets, nil)
+					completion(.success(currentUserAssets))
                 } else {
                     
-                    self.getAssets(oldAssets, currentUserAssets, nextCursor, wallet) { success, updatedUserAssets, error  in
-                        
-                        completion(true, updatedUserAssets, nil)
+                    self.getAssets(oldAssets, currentUserAssets, nextCursor, wallet) { result  in
+						switch result {
+						case .success(let updatedUserAssets):
+							
+							completion(.success(updatedUserAssets))
+						case .failure(_):
+							
+							completion(.failure(.error))
+						}
                     }
                 }
                 
             } else {
                 
-				completion(false, [], "Alert.Failure.OpenSea.Error.Try".localized)
+				completion(.failure(.error))
             }
         }
     }
@@ -144,7 +153,7 @@ extension AssetsViewModel {
                         
                         semaphore.signal()
                     } else {
-                        self.openseaService.getCollection(originalCollection_slug) { value in
+                        self.openSeaService.getCollection(originalCollection_slug) { value in
                             
                             var roundedFloorPrice = 0.0
                             var roundedAveragePrice = 0.0

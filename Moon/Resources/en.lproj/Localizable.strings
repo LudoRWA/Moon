@@ -36,7 +36,6 @@
 "Alert.Failure.Duplicate.Wallet" = "You have already added this wallet.";
 "Alert.Failure.OpenSea.Unknown.Try" = "OpenSea doesn't know this wallet. Please verify your wallet address and try again.";
 "Alert.Failure.OpenSea.Error.Try" = "OpenSea is not accessible at the moment. Please try again later or check @apiopensea on Twitter.";
-"Alert.Failure.Retrieving.Items.Core.Data" = "Error retrieving items from Core Data.";
 
 //MARK: - Widgets
 "Widgets.Display.Name" = "Your NFTs";

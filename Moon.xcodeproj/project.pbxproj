@@ -26,6 +26,7 @@
 		2214ECCE2816904500AC564C /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243F128129D5F000701A5 /* String+Localized.swift */; };
 		2214ECD62816C5D900AC564C /* OpenSeaServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214ECD52816C5D900AC564C /* OpenSeaServiceTests.swift */; };
 		2214ECDD2816CEF900AC564C /* CoinbaseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214ECDC2816CEF900AC564C /* CoinbaseServiceTests.swift */; };
+		22183ABA2825147000BD76E2 /* OpenSeaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22183AB92825147000BD76E2 /* OpenSeaError.swift */; };
 		224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */; };
 		224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27D280D675700C2CC61 /* AssetModel.swift */; };
 		224FF280280D676100C2CC61 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27F280D676100C2CC61 /* NFTModel.swift */; };
@@ -146,6 +147,7 @@
 		2214ECD32816C5D900AC564C /* MoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2214ECD52816C5D900AC564C /* OpenSeaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaServiceTests.swift; sourceTree = "<group>"; };
 		2214ECDC2816CEF900AC564C /* CoinbaseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseServiceTests.swift; sourceTree = "<group>"; };
+		22183AB92825147000BD76E2 /* OpenSeaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaError.swift; sourceTree = "<group>"; };
 		224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		224FF27D280D675700C2CC61 /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		224FF27F280D676100C2CC61 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 			children = (
 				22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */,
 				22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */,
+				22183AB92825147000BD76E2 /* OpenSeaError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1003,6 +1006,7 @@
 				224FF280280D676100C2CC61 /* NFTModel.swift in Sources */,
 				224FF288280D9AB800C2CC61 /* NFTCellViewModel.swift in Sources */,
 				22BD88EA280AD57E00CCD372 /* OpenSeaServiceModel.swift in Sources */,
+				22183ABA2825147000BD76E2 /* OpenSeaError.swift in Sources */,
 				224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */,
 				224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */,
 				22BD88E5280AD45500CCD372 /* UITextField+Padding.swift in Sources */,

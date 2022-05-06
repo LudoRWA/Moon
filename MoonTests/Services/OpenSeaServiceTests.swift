@@ -10,14 +10,14 @@ import XCTest
 
 class OpenSeeaServiceTests: XCTestCase {
 
-	var openseaService: OpenSeaServiceProtocol?
+	var openSeaService: OpenSeaServiceProtocol?
 	
 	override func setUpWithError() throws {
-		self.openseaService = OpenSeaService()
+		self.openSeaService = OpenSeaService()
     }
 
     override func tearDownWithError() throws {
-        openseaService = nil
+		openSeaService = nil
     }
 
 	func test_fetch_assets() {
@@ -25,7 +25,7 @@ class OpenSeeaServiceTests: XCTestCase {
 		let wallet = "0x1b584fc86390d7D83B529a4346330ee3D2061681" //Wallet with four assets
 		let expect = XCTestExpectation(description: "callback")
 		
-		openseaService?.getAssets(50, wallet, nil, completion: { (value, statusCode) in
+		openSeaService?.getAssets(50, wallet, nil, completion: { (value, statusCode) in
 			expect.fulfill()
 			
 			XCTAssertNotNil(value)
@@ -45,7 +45,7 @@ class OpenSeeaServiceTests: XCTestCase {
 		let collection_slug = "the-doge-pound" //valid collection_slug, floor_price always > 0.00
 		let expect = XCTestExpectation(description: "callback")
 		
-		openseaService?.getCollection(collection_slug, completion: { (value) in
+		openSeaService?.getCollection(collection_slug, completion: { (value) in
 			expect.fulfill()
 			
 			XCTAssertNotNil(value)

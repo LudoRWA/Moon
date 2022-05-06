@@ -9,13 +9,13 @@ import FirebaseAnalytics
 import Nuke
 
 class WelcomeViewModel: NSObject {
-    var coredataService: CoreDataServiceProtocol
+    var coreDataService: CoreDataServiceProtocol
     var login: ((Bool, [WalletStorage]) -> Void)?
     
     var wallets = [WalletStorage]()
     
-    init(coredataService: CoreDataServiceProtocol = CoreDataService()) {
-        self.coredataService = coredataService
+    init(coreDataService: CoreDataServiceProtocol = CoreDataService()) {
+        self.coreDataService = coreDataService
         
         ImageCache.shared.countLimit = 200
         DataLoader.sharedUrlCache.diskCapacity = 100 * 1024 * 1024
@@ -33,7 +33,7 @@ class WelcomeViewModel: NSObject {
     
     //MARK: - Get Local Data
     func getWallets(_ animated: Bool = false) {
-        coredataService.getWallets { _, wallets,_ in
+		coreDataService.getWallets { wallets in
             self.wallets = wallets
             if (!self.wallets.isEmpty) {
                 self.login?(animated, self.wallets)

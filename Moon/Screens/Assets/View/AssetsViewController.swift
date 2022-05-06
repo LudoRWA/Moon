@@ -133,7 +133,7 @@ class AssetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if (segue.identifier == "showWallets") {
             if let nav = segue.destination as? UINavigationController, let walletsVC = nav.topViewController as? WalletsViewController {
                 walletsVC.viewModel.wallets = viewModel.wallets
-                walletsVC.AssetsViewController = self
+                walletsVC.assetsViewController = self
             }
         }
     }

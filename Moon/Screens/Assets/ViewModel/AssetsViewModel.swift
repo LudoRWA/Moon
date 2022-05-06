@@ -8,8 +8,8 @@
 import Foundation
 
 class AssetsViewModel: NSObject {
-    var coredataService: CoreDataServiceProtocol
-    var openseaService: OpenSeaServiceProtocol
+    var coreDataService: CoreDataServiceProtocol
+    var openSeaService: OpenSeaServiceProtocol
     var coinbaseService: CoinbaseServiceProtocol
     
     var updateCellsTableView: ((([IndexPath], [IndexPath])) -> Void)?
@@ -42,12 +42,12 @@ class AssetsViewModel: NSObject {
         }
     }
     
-    init(coredataService: CoreDataServiceProtocol = CoreDataService(),
-         openseaService: OpenSeaServiceProtocol = OpenSeaService(),
+    init(coreDataService: CoreDataServiceProtocol = CoreDataService(),
+		 openSeaService: OpenSeaServiceProtocol = OpenSeaService(),
          coinbaseService: CoinbaseServiceProtocol = CoinbaseService()) {
         
-        self.coredataService = coredataService
-        self.openseaService = openseaService
+        self.coreDataService = coreDataService
+        self.openSeaService = openSeaService
         self.coinbaseService = coinbaseService
     }
     
@@ -56,12 +56,11 @@ class AssetsViewModel: NSObject {
         
         if (!self.wallets.isEmpty) {
             
-            self.coredataService.getAssetsFrom(wallets: wallets) { success, assets, error in
-                self.processFetchedData(assets: assets)
-                if (assets.isEmpty || forceSync) {
-                    
-                    self.startSync()
-                }
+            self.coreDataService.getAssetsFrom(wallets: wallets) { assets in
+			self.processFetchedData(assets: assets)
+				if (assets.isEmpty || forceSync) {
+					self.startSync()
+				}
             }
         } else {
             
@@ -112,7 +111,7 @@ class AssetsViewModel: NSObject {
         
         if (isOnline) {
             removeFromCoreData(oldArray: self.assets, newArray: assets)
-			coredataService.save()
+			coreDataService.save()
         }
         
         self.assets = assets
@@ -125,7 +124,7 @@ class AssetsViewModel: NSObject {
 		for oldAsset in oldArray {
 			if newArray.filter({ $0.collection_slug == oldAsset.collection_slug }).first == nil {
 				
-				coredataService.remove(asset: oldAsset)
+				coreDataService.remove(asset: oldAsset)
 			}
 		}
 	}

@@ -20,8 +20,8 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     lazy var viewModel = { AddWalletViewModel() }()
     
     var JGProgress: JGProgressHUD?
-    var WelcomeViewController:WelcomeViewController?
-    var WalletsViewController:WalletsViewController?
+    var welcomeViewController: WelcomeViewController?
+    var walletsViewController: WalletsViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
         
         self.isModalInPresentation = true
         
-        if (WalletsViewController != nil) {
+        if (walletsViewController != nil) {
             
             self.backButton.imageView?.image = UIImage(named: "arrowLeft")
             
@@ -76,7 +76,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - UIButton Action
     @IBAction func backAction(_ sender: Any) {
-        if (WalletsViewController != nil) {
+        if (walletsViewController != nil) {
             navigationController?.popToRootViewController(animated: true)
         } else {
             dismiss(animated: true, completion: nil)
@@ -106,33 +106,40 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
         self.JGProgress?.interactionType = .blockNoTouches
         self.JGProgress?.show(in: self.view)
         
-        viewModel.addWallet(address: self.walletAddressTextView.text) { success, newWallet, error in
-            
-            DispatchQueue.main.async {
-                
-                if let wallet = newWallet, success {
-                    if (self.WalletsViewController != nil) {
-                        
-                        self.WalletsViewController?.viewModel.addWallet(wallet: wallet)
-                        self.navigationController?.popToRootViewController(animated: true)
-                    } else {
-                        
-                        self.dismiss(animated: true) {
-                            self.WelcomeViewController?.viewModel.getWallets(true)
-                        }
-                    }
-                } else if let error = error {
-                    
-                    let view = MessageView.viewFromNib(layout: .cardView)
-                    view.configureTheme(.error)
-                    view.configureDropShadow()
-                    view.configureContent(title: "", body: error)
-                    view.button?.isHidden = true
-                    SwiftMessages.show(view: view)
-                }
-                
-                self.JGProgress?.dismiss(animated: true)
-            }
+        viewModel.addWallet(address: self.walletAddressTextView.text) { result in
+			switch result {
+			case .success(let wallet):
+				
+				DispatchQueue.main.async {
+					
+					if (self.walletsViewController != nil) {
+							
+						self.walletsViewController?.viewModel.addWallet(wallet: wallet)
+						self.navigationController?.popToRootViewController(animated: true)
+					} else {
+							
+						self.dismiss(animated: true) {
+							self.welcomeViewController?.viewModel.getWallets(true)
+						}
+					}
+					
+					self.JGProgress?.dismiss(animated: true)
+				}
+					
+			case .failure(let error):
+				
+				DispatchQueue.main.async {
+							
+					let view = MessageView.viewFromNib(layout: .cardView)
+					view.configureTheme(.error)
+					view.configureDropShadow()
+					view.configureContent(title: "", body: error.rawValue)
+					view.button?.isHidden = true
+					SwiftMessages.show(view: view)
+						
+					self.JGProgress?.dismiss(animated: true)
+				}
+			}
         }
     }
     

@@ -8,22 +8,22 @@
 import Foundation
 
 class AddWalletViewModel: NSObject {
-    var openseaService: OpenSeaServiceProtocol
+    var openSeaService: OpenSeaServiceProtocol
 	var coreDataService: CoreDataServiceProtocol
 	
     var wallets = [WalletStorage]()
     
-    init(openseaService: OpenSeaServiceProtocol = OpenSeaService(), coreDataService: CoreDataServiceProtocol = CoreDataService()) {
+    init(openSeaService: OpenSeaServiceProtocol = OpenSeaService(), coreDataService: CoreDataServiceProtocol = CoreDataService()) {
         
-        self.openseaService = openseaService
+        self.openSeaService = openSeaService
 		self.coreDataService = coreDataService
     }
     
-    func addWallet(address: String?, completion: @escaping (Bool, WalletStorage?, String?) -> ()) {
+    func addWallet(address: String?, completion: @escaping (Result<WalletStorage, OpenSeaError>) -> ()) {
         
         if let address = address?.trimmingCharacters(in: .whitespacesAndNewlines), !address.isEmpty {
             
-            self.openseaService.getAssets(1, address, nil) { value, statusCode in
+            self.openSeaService.getAssets(1, address, nil) { value, statusCode in
                 
                 if (value?.assets != nil) {
                     
@@ -33,24 +33,22 @@ class AddWalletViewModel: NSObject {
                         newWallet.address = address
 						self.coreDataService.save()
 						
-						completion(true, newWallet, nil)
+						completion(.success(newWallet))
                     } else {
 						
-						completion(false, nil, "Alert.Failure.Duplicate.Wallet".localized)
+						completion(.failure(.duplicateWallet))
                     }
                     
                 } else {
                     if (statusCode == 400) {
                         
-						completion(false, nil, "Alert.Failure.OpenSea.Unknown.Try".localized)
+						completion(.failure(.unknownWallet))
                     } else {
                         
-						completion(false, nil, "Alert.Failure.OpenSea.Error.Try".localized)
+						completion(.failure(.error))
                     }
                 }
             }
-        } else {
-            completion(false, nil, nil)
         }
     }
 }

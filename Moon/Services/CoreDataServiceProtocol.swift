@@ -11,11 +11,11 @@ import CoreData
 protocol CoreDataServiceProtocol {
 	func save()
 	
-    func getAssetsFrom(wallets: [WalletStorage], completion: @escaping (_ success: Bool, _ results: [AssetStorage], _ error: String?) -> ())
-    func getAllAssets(completion: @escaping (_ success: Bool, _ results: [AssetStorage], _ error: String?) -> ())
+	func getAssetsFrom(wallets: [WalletStorage], completion: @escaping (_ results: [AssetStorage]) -> ())
+    func getAllAssets(completion: @escaping (_ results: [AssetStorage]) -> ())
 	func remove(asset: AssetStorage)
 	
-	func getWallets(completion: @escaping (_ success: Bool, _ results: [WalletStorage], _ error: String?) -> ())
+	func getWallets(completion: @escaping (_ results: [WalletStorage]) -> ())
 	func remove(wallet: WalletStorage)
 	func removeAll(wallets: [WalletStorage])
 }
@@ -32,37 +32,37 @@ class CoreDataService: CoreDataServiceProtocol {
 	}
 	
 	//MARK: - Assets
-    func getAssetsFrom(wallets: [WalletStorage], completion: @escaping (Bool, [AssetStorage], String?) -> ()) {
+    func getAssetsFrom(wallets: [WalletStorage], completion: @escaping ([AssetStorage]) -> ()) {
         
+		var assets = [AssetStorage]()
         do {
             
             let fetchRequest: NSFetchRequest<AssetStorage> = AssetStorage.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "ANY wallet IN %@", wallets)
-            let assets = try CoreDataStack.sharedInstance.viewContext.fetch(fetchRequest) as [AssetStorage]
-            completion(true, assets, nil)
+			assets = try CoreDataStack.sharedInstance.viewContext.fetch(fetchRequest) as [AssetStorage]
         } catch {
             
             Crashlytics.crashlytics().record(error: error)
-            completion(false, [], "Alert.Failure.Retrieving.Items.Core.Data".localized)
-            
             debugPrint("Error retrieving assets from Core Data : \(error)")
         }
+		
+		completion(assets)
     }
     
-    func getAllAssets(completion: @escaping (Bool, [AssetStorage], String?) -> ()) {
+    func getAllAssets(completion: @escaping ([AssetStorage]) -> ()) {
         
+		var assets = [AssetStorage]()
         do {
             
             let fetchRequest: NSFetchRequest<AssetStorage> = AssetStorage.fetchRequest()
-            let assets = try CoreDataStack.sharedInstance.viewContext.fetch(fetchRequest) as [AssetStorage]
-            completion(true, assets, nil)
+            assets = try CoreDataStack.sharedInstance.viewContext.fetch(fetchRequest) as [AssetStorage]
         } catch {
             
             Crashlytics.crashlytics().record(error: error)
-            completion(false, [], "Alert.Failure.Retrieving.Items.Core.Data".localized)
-            
             debugPrint("Error retrieving assets from Core Data : \(error)")
         }
+		
+		completion(assets)
     }
 	
 	func remove(asset: AssetStorage) {
@@ -71,20 +71,20 @@ class CoreDataService: CoreDataServiceProtocol {
 	}
 	
 	//MARK: - Wallets
-	func getWallets(completion: @escaping (Bool, [WalletStorage], String?) -> ()) {
+	func getWallets(completion: @escaping ([WalletStorage]) -> ()) {
 		
+		var wallets = [WalletStorage]()
 		do {
 			
 			let request: NSFetchRequest<WalletStorage> = WalletStorage.fetchRequest()
-			let wallets = try CoreDataStack.sharedInstance.viewContext.fetch(request)
-			completion(true, wallets, nil)
+			wallets = try CoreDataStack.sharedInstance.viewContext.fetch(request)
 		} catch {
 			
 			Crashlytics.crashlytics().record(error: error)
-			completion(false, [], "Alert.Failure.Retrieving.Items.Core.Data".localized)
-			
 			debugPrint("Error retrieving wallets from Core Data : \(error)")
 		}
+		
+		completion(wallets)
 	}
 	
 	func remove(wallet: WalletStorage) {

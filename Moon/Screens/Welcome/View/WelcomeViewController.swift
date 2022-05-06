@@ -42,7 +42,7 @@ class WelcomeViewController: UIViewController {
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "addWallet") {
             if let walletVC = segue.destination as? AddWalletViewController {
-                walletVC.WelcomeViewController = self
+                walletVC.welcomeViewController = self
             }
         }
     }

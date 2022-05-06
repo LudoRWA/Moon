@@ -17,7 +17,7 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
     
     lazy var viewModel = { WalletsViewModel() }()
     
-    var AssetsViewController:AssetsViewController?
+    var assetsViewController: AssetsViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,7 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "addWallet") {
             if let addWalletVC = segue.destination as? AddWalletViewController {
-                addWalletVC.WalletsViewController = self
+                addWalletVC.walletsViewController = self
                 addWalletVC.viewModel.wallets = viewModel.wallets
             }
         }
@@ -93,7 +93,7 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
     func dismissAction() {
         dismiss(animated: true) {
             if (self.viewModel.shouldUpdateViewController) {
-                self.AssetsViewController?.viewModel.setWallets(self.viewModel.wallets, forceSync: true)
+                self.assetsViewController?.viewModel.setWallets(self.viewModel.wallets, forceSync: true)
             }
         }
     }

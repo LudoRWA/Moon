@@ -12,14 +12,14 @@ import Alamofire
 import CoreData
 
 struct Provider: IntentTimelineProvider {
-    var coredataService: CoreDataServiceProtocol
-    var openseaService: OpenSeaServiceProtocol
+    var coreDataService: CoreDataServiceProtocol
+    var openSeaService: OpenSeaServiceProtocol
     
-    init(coredataService: CoreDataServiceProtocol = CoreDataService(),
-         openseaService: OpenSeaServiceProtocol = OpenSeaService()) {
+    init(coreDataService: CoreDataServiceProtocol = CoreDataService(),
+		 openSeaService: OpenSeaServiceProtocol = OpenSeaService()) {
         
-        self.coredataService = coredataService
-        self.openseaService = openseaService
+        self.coreDataService = coreDataService
+        self.openSeaService = openSeaService
     }
     
     func placeholder(in context: Context) -> NFTEntry {
@@ -28,31 +28,31 @@ struct Provider: IntentTimelineProvider {
     
     func getSnapshot(for configuration: SelectNFTIntent, in context: Context, completion: @escaping (NFTEntry) -> ()) {
         
-        coredataService.getAllAssets() { success, assets, error in
-            
-            if !assets.isEmpty, let randomNFT = assets.randomElement() {
-                
-                let nft_name = randomNFT.nft_name ?? ""
-                let nft_image = randomNFT.nft_image ?? ""
-                let collection_slug = randomNFT.collection_slug
-                
+		coreDataService.getAllAssets() { assets in
+			
+			if !assets.isEmpty, let randomNFT = assets.randomElement() {
+					
+				let nft_name = randomNFT.nft_name ?? ""
+				let nft_image = randomNFT.nft_image ?? ""
+				let collection_slug = randomNFT.collection_slug
+					
 				guard let collectionSlug = collection_slug else { return }
-				
-                self.openseaService.getCollection(collectionSlug) { value in
-                    
-                    var floorText = "---"
-                    if let floorPrice = value?.collection.stats.floor_price {
-                        floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
-                    }
-                    
-                    let entry = NFTEntry(date: Date(), nft_image: nft_image, nft_name: nft_name, floor_price: floorText, isEmpty: false, configuration: configuration)
-                    completion(entry)
-                }
-            } else {
-                
-                let entry = NFTEntry(date: Date(), nft_image: "https://lh3.googleusercontent.com/8wZj0mVMGq2poWacZhflWaEXu1B3_czpBL6snzSlFL1l8XAnN0fyfULx6jRIu-Hz_4o2Ba2aYJQo3Gx0Yvz0bjuHvZIsf54Is-vZyg=w600", nft_name: "Doggy #1344", floor_price: "2.4", isEmpty: false, configuration: configuration)
-                completion(entry)
-            }
+					
+				self.openSeaService.getCollection(collectionSlug) { value in
+						
+					var floorText = "---"
+					if let floorPrice = value?.collection.stats.floor_price {
+							floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
+					}
+						
+					let entry = NFTEntry(date: Date(), nft_image: nft_image, nft_name: nft_name, floor_price: floorText, isEmpty: false, configuration: configuration)
+					completion(entry)
+				}
+			} else {
+					
+				let entry = NFTEntry(date: Date(), nft_image: "https://lh3.googleusercontent.com/8wZj0mVMGq2poWacZhflWaEXu1B3_czpBL6snzSlFL1l8XAnN0fyfULx6jRIu-Hz_4o2Ba2aYJQo3Gx0Yvz0bjuHvZIsf54Is-vZyg=w600", nft_name: "Doggy #1344", floor_price: "2.4", isEmpty: false, configuration: configuration)
+					completion(entry)
+			}
         }
     }
     
@@ -72,20 +72,20 @@ struct Provider: IntentTimelineProvider {
             collection_slug = selectedNFT.collection_slug
         } else {
             
-            coredataService.getAllAssets() { success, assets, error in
-                
-                if !assets.isEmpty, let randomNFT = assets.randomElement() {
-
-                    nft_name = randomNFT.nft_name ?? ""
-                    nft_image = randomNFT.nft_image ?? ""
-                    collection_slug = randomNFT.collection_slug
-                }
+			coreDataService.getAllAssets() { assets in
+		
+				if !assets.isEmpty, let randomNFT = assets.randomElement() {
+						
+					nft_name = randomNFT.nft_name ?? ""
+					nft_image = randomNFT.nft_image ?? ""
+					collection_slug = randomNFT.collection_slug
+				}
             }
         }
         
 		guard let collectionSlug = collection_slug else { return }
 		
-        self.openseaService.getCollection(collectionSlug) { value in
+        self.openSeaService.getCollection(collectionSlug) { value in
             
             if let floorPrice = value?.collection.stats.floor_price {
 				
