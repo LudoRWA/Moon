@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "43CDB60627835F8B00FC3AB9"
-               BuildableName = "Moon WidgetExtension.appex"
-               BlueprintName = "Moon WidgetExtension"
+               BuildableName = "MoonWidgetExtension.appex"
+               BlueprintName = "MoonWidgetExtension"
                ReferencedContainer = "container:Moon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -73,8 +73,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "43CDB60627835F8B00FC3AB9"
-            BuildableName = "Moon WidgetExtension.appex"
-            BlueprintName = "Moon WidgetExtension"
+            BuildableName = "MoonWidgetExtension.appex"
+            BlueprintName = "MoonWidgetExtension"
             ReferencedContainer = "container:Moon.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>

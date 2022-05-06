@@ -122,7 +122,7 @@ class AssetsViewModel: NSObject {
     
 	func removeFromCoreData(oldArray: [AssetStorage], newArray: [AssetStorage]) {
 		for oldAsset in oldArray {
-			if newArray.filter({ $0.collection_slug == oldAsset.collection_slug }).first == nil {
+			if newArray.filter({ $0.collectionSlug == oldAsset.collectionSlug }).first == nil {
 				
 				coreDataService.remove(asset: oldAsset)
 			}
@@ -145,9 +145,9 @@ class AssetsViewModel: NSObject {
     func getCellsReady() {
         var assets = friendlyData(self.assets)
         if (UserDefaults.standard.bool(forKey: "isAverage")) {
-            assets = assets.sorted{ $0.average_price > $1.average_price }
+            assets = assets.sorted{ $0.averagePrice > $1.averagePrice }
         } else {
-            assets = assets.sorted{ $0.floor_price > $1.floor_price }
+            assets = assets.sorted{ $0.floorPrice > $1.floorPrice }
         }
         
         var vms = [AssetCellViewModel]()
@@ -160,16 +160,16 @@ class AssetsViewModel: NSObject {
     
     func createCellModel(asset: Asset) -> AssetCellViewModel {
         
-        let collection_image_url = URL(string: (asset.collection_image_url ?? ""))
-		let collection_name = asset.collection_name ?? "Label.Unknown".localized
+        let collectionImageURL = URL(string: (asset.collectionImageURL ?? ""))
+		let collectionName = asset.collectionName ?? "Label.Unknown".localized
         let count = String(asset.nfts.count)
-        var price = "Ξ \(String(asset.floor_price))"
+        var price = "Ξ \(String(asset.floorPrice))"
         
         if (UserDefaults.standard.bool(forKey: "isAverage")) {
-            price = "Ξ \(String(asset.average_price))"
+            price = "Ξ \(String(asset.averagePrice))"
         }
         
-        return AssetCellViewModel(collection_name: collection_name, collection_image_url: collection_image_url, price: price, count: count, asset: asset)
+        return AssetCellViewModel(collectionName: collectionName, collectionImageURL: collectionImageURL, price: price, count: count, asset: asset)
     }
     
     func friendlyData(_ assets: [AssetStorage]) -> [Asset] {
@@ -179,22 +179,22 @@ class AssetsViewModel: NSObject {
         for asset in assets {
             
 			let newNFT = NFT(id: asset.id,
-							 nft_image: asset.nft_image,
-							 nft_name: asset.nft_name,
-							 nft_permalink: asset.nft_permalink)
+							 nftImageURL: asset.nftImageURL,
+							 nftName: asset.nftName,
+							 nftPermalink: asset.nftPermalink)
             
-            if let foundAsset = friendlyAssets.filter({ $0.collection_slug == asset.collection_slug }).first {
+            if let foundAsset = friendlyAssets.filter({ $0.collectionSlug == asset.collectionSlug }).first {
                 
                 let index = foundAsset.nfts.insertionIndexOf(newNFT) { $0.id < $1.id }
                 foundAsset.nfts.insert(newNFT, at: index)
             } else {
                 
-				let newAsset = Asset(collection_slug: asset.collection_slug,
-									 collection_name: asset.collection_name,
-									 collection_image_url: asset.collection_image_url,
-									 collection_description: asset.collection_description,
-									 floor_price: asset.floor_price,
-									 average_price: asset.average_price,
+				let newAsset = Asset(collectionSlug: asset.collectionSlug,
+									 collectionName: asset.collectionName,
+									 collectionImageURL: asset.collectionImageURL,
+									 collectionDescription: asset.collectionDescription,
+									 floorPrice: asset.floorPrice,
+									 averagePrice: asset.averagePrice,
 									 nfts: [newNFT])
 				
                 friendlyAssets.append(newAsset)

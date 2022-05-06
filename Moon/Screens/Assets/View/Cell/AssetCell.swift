@@ -27,12 +27,12 @@ class AssetCell: UITableViewCell {
     
     var cellViewModel: AssetCellViewModel? {
         didSet {
-            collectionTitleLabel.text = cellViewModel?.collection_name
+            collectionTitleLabel.text = cellViewModel?.collectionName
             priceCollectionLabel.text = cellViewModel?.price
             numbersInCollectionLabel.text = cellViewModel?.count
             
-            if let image_url = cellViewModel?.collection_image_url {
-                setImage(with: image_url)
+            if let collectionImageURL = cellViewModel?.collectionImageURL {
+                setImage(with: collectionImageURL)
             }
         }
     }

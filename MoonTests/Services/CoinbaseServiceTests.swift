@@ -20,7 +20,7 @@ class CoinbaseServiceTests: XCTestCase {
 		coinbaseService = nil
 	}
 	
-	func test_fetch_fiat_price() {
+	func testFetchFiatPrice() {
 		
 		let currencyCode = "USD"
 		let expect = XCTestExpectation(description: "callback")

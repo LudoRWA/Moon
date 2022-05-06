@@ -22,7 +22,7 @@ class OpenSeaService: OpenSeaServiceProtocol {
         ]
         
         AF.request("https://api.opensea.io/api/v1/assets?owner=\(wallet)&limit=\(limit)&cursor=\(cursor ?? "")", headers: headers).responseDecodable(of: OpenseaAssets.self, queue: .global(qos: .userInitiated)) { response in
-        
+			
             completion(response.value, response.response?.statusCode)
         }
     }

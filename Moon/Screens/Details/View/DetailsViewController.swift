@@ -46,11 +46,11 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     func setCollectionInformations() {
         //asset is passed in the segue
         if let asset = viewModel.asset {
-            collectionNameLabel.text = asset.collection_name
-            collectionDescriptionTextView.text = asset.collection_description
+            collectionNameLabel.text = asset.collectionName
+            collectionDescriptionTextView.text = asset.collectionDescription
             
             let pipeline = ImagePipeline.shared
-            let request = ImageRequest(url: URL(string: asset.collection_image_url ?? ""))
+            let request = ImageRequest(url: URL(string: asset.collectionImageURL ?? ""))
             
             if let image = pipeline.cache[request] {
                 return display(image)
@@ -137,7 +137,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
     //MARK: - UIButton Action
     @IBAction func copyItemLink(_ sender: Any) {
         
-        UIPasteboard.general.string = viewModel.asset?.nfts[viewModel.currentCollectionViewIndex].nft_permalink
+        UIPasteboard.general.string = viewModel.asset?.nfts[viewModel.currentCollectionViewIndex].nftPermalink
         
         let view = MessageView.viewFromNib(layout: .cardView)
         view.configureTheme(.success)

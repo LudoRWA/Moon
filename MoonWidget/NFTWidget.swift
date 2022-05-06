@@ -1,5 +1,5 @@
 //
-//  NFT_Widget.swift
+//  NFTWidget.swift
 //  Moon Widget
 //
 //  Created by Ludovic ROULLIER on 03/01/2022.
@@ -8,8 +8,6 @@
 import WidgetKit
 import SwiftUI
 import Intents
-import Alamofire
-import CoreData
 
 struct Provider: IntentTimelineProvider {
     var coreDataService: CoreDataServiceProtocol
@@ -23,7 +21,7 @@ struct Provider: IntentTimelineProvider {
     }
     
     func placeholder(in context: Context) -> NFTEntry {
-        NFTEntry(date: Date(), nft_image: "", nft_name: "", floor_price: "", isEmpty: false, configuration: SelectNFTIntent())
+        NFTEntry(date: Date(), nftImageURL: "", nftName: "", floorPrice: "", isEmpty: false, configuration: SelectNFTIntent())
     }
     
     func getSnapshot(for configuration: SelectNFTIntent, in context: Context, completion: @escaping (NFTEntry) -> ()) {
@@ -32,11 +30,11 @@ struct Provider: IntentTimelineProvider {
 			
 			if !assets.isEmpty, let randomNFT = assets.randomElement() {
 					
-				let nft_name = randomNFT.nft_name ?? ""
-				let nft_image = randomNFT.nft_image ?? ""
-				let collection_slug = randomNFT.collection_slug
+				let nftName = randomNFT.nftName ?? ""
+				let nftImageURL = randomNFT.nftImageURL ?? ""
+				let collectionSlug = randomNFT.collectionSlug
 					
-				guard let collectionSlug = collection_slug else { return }
+				guard let collectionSlug = collectionSlug else { return }
 					
 				self.openSeaService.getCollection(collectionSlug) { value in
 						
@@ -45,12 +43,12 @@ struct Provider: IntentTimelineProvider {
 							floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
 					}
 						
-					let entry = NFTEntry(date: Date(), nft_image: nft_image, nft_name: nft_name, floor_price: floorText, isEmpty: false, configuration: configuration)
+					let entry = NFTEntry(date: Date(), nftImageURL: nftImageURL, nftName: nftName, floorPrice: floorText, isEmpty: false, configuration: configuration)
 					completion(entry)
 				}
 			} else {
 					
-				let entry = NFTEntry(date: Date(), nft_image: "https://lh3.googleusercontent.com/8wZj0mVMGq2poWacZhflWaEXu1B3_czpBL6snzSlFL1l8XAnN0fyfULx6jRIu-Hz_4o2Ba2aYJQo3Gx0Yvz0bjuHvZIsf54Is-vZyg=w600", nft_name: "Doggy #1344", floor_price: "2.4", isEmpty: false, configuration: configuration)
+				let entry = NFTEntry(date: Date(), nftImageURL: "https://lh3.googleusercontent.com/8wZj0mVMGq2poWacZhflWaEXu1B3_czpBL6snzSlFL1l8XAnN0fyfULx6jRIu-Hz_4o2Ba2aYJQo3Gx0Yvz0bjuHvZIsf54Is-vZyg=w600", nftName: "Doggy #1344", floorPrice: "2.4", isEmpty: false, configuration: configuration)
 					completion(entry)
 			}
         }
@@ -61,29 +59,29 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         let refreshDate = Calendar.current.date(byAdding: .minute, value: 45, to: currentDate)!
         
-		var nft_name = ""
-		var nft_image = ""
-		var collection_slug: String?
+		var nftName = ""
+		var nftImageURL = ""
+		var collectionSlug: String?
         
         if let selectedNFT = configuration.nft {
             
-            nft_name = selectedNFT.nft_name ?? ""
-            nft_image = selectedNFT.nft_image ?? ""
-            collection_slug = selectedNFT.collection_slug
+			nftName = selectedNFT.nftName ?? ""
+			nftImageURL = selectedNFT.nftImageURL ?? ""
+			collectionSlug = selectedNFT.collectionSlug
         } else {
             
 			coreDataService.getAllAssets() { assets in
 		
 				if !assets.isEmpty, let randomNFT = assets.randomElement() {
 						
-					nft_name = randomNFT.nft_name ?? ""
-					nft_image = randomNFT.nft_image ?? ""
-					collection_slug = randomNFT.collection_slug
+					nftName = randomNFT.nftName ?? ""
+					nftImageURL = randomNFT.nftImageURL ?? ""
+					collectionSlug = randomNFT.collectionSlug
 				}
             }
         }
         
-		guard let collectionSlug = collection_slug else { return }
+		guard let collectionSlug = collectionSlug else { return }
 		
         self.openSeaService.getCollection(collectionSlug) { value in
             
@@ -91,7 +89,7 @@ struct Provider: IntentTimelineProvider {
 				
                 let floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
 				
-				let entry = NFTEntry(date: currentDate, nft_image: nft_image, nft_name: nft_name, floor_price: floorText, isEmpty: false, configuration: configuration)
+				let entry = NFTEntry(date: currentDate, nftImageURL: nftImageURL, nftName: nftName, floorPrice: floorText, isEmpty: false, configuration: configuration)
 				let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
 				completion(timeline)
             }

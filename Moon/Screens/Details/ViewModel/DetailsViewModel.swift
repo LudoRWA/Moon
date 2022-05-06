@@ -26,11 +26,11 @@ class DetailsViewModel: NSObject {
         
         for (i, nft) in nfts.enumerated() {
             
-            let name = nft.nft_name ?? "Unknown"
-            let image_url = URL(string: nft.nft_image ?? "")
+            let name = nft.nftName ?? "Unknown"
+            let imageURL = URL(string: nft.nftImageURL ?? "")
             let pager = "\(i+1) / \(nfts.count)"
             
-            let newCell = NFTCellViewModel(name: name, image_url: image_url, pager: pager)
+            let newCell = NFTCellViewModel(name: name, imageURL: imageURL, pager: pager)
             newNFTCellViewModels.append(newCell)
         }
         

@@ -20,7 +20,7 @@ class OpenSeeaServiceTests: XCTestCase {
 		openSeaService = nil
     }
 
-	func test_fetch_assets() {
+	func testFetchAssets() {
 		
 		let wallet = "0x1b584fc86390d7D83B529a4346330ee3D2061681" //Wallet with four assets
 		let expect = XCTestExpectation(description: "callback")
@@ -40,12 +40,12 @@ class OpenSeeaServiceTests: XCTestCase {
 		wait(for: [expect], timeout: 5.0)
 	}
 	
-	func test_fetch_collections() {
+	func testFetchCollections() {
 		
-		let collection_slug = "the-doge-pound" //valid collection_slug, floor_price always > 0.00
+		let collectionSlug = "the-doge-pound" //valid collectionSlug, floorPrice always > 0.00
 		let expect = XCTestExpectation(description: "callback")
 		
-		openSeaService?.getCollection(collection_slug, completion: { (value) in
+		openSeaService?.getCollection(collectionSlug, completion: { (value) in
 			expect.fulfill()
 			
 			XCTAssertNotNil(value)

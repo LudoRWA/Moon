@@ -9,11 +9,11 @@
 	<key>INIntentDefinitionNamespace</key>
 	<string>88xZPY</string>
 	<key>INIntentDefinitionSystemVersion</key>
-	<string>21C52</string>
+	<string>21E258</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>13C100</string>
+	<string>13E500a</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>13.2.1</string>
+	<string>13.3.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -162,13 +162,13 @@
 				</dict>
 				<dict>
 					<key>INTypePropertyDisplayName</key>
-					<string>Name</string>
+					<string>Nft Name</string>
 					<key>INTypePropertyDisplayNameID</key>
 					<string>kfUfSK</string>
 					<key>INTypePropertyDisplayPriority</key>
 					<integer>5</integer>
 					<key>INTypePropertyName</key>
-					<string>nft_name</string>
+					<string>nftName</string>
 					<key>INTypePropertyTag</key>
 					<integer>101</integer>
 					<key>INTypePropertyType</key>
@@ -176,13 +176,13 @@
 				</dict>
 				<dict>
 					<key>INTypePropertyDisplayName</key>
-					<string>Image</string>
+					<string>Nft Image URL</string>
 					<key>INTypePropertyDisplayNameID</key>
 					<string>NVnAtE</string>
 					<key>INTypePropertyDisplayPriority</key>
 					<integer>6</integer>
 					<key>INTypePropertyName</key>
-					<string>nft_image</string>
+					<string>nftImageURL</string>
 					<key>INTypePropertyTag</key>
 					<integer>102</integer>
 					<key>INTypePropertyType</key>
@@ -190,13 +190,13 @@
 				</dict>
 				<dict>
 					<key>INTypePropertyDisplayName</key>
-					<string>Slug</string>
+					<string>Collection Slug</string>
 					<key>INTypePropertyDisplayNameID</key>
 					<string>3wQHQN</string>
 					<key>INTypePropertyDisplayPriority</key>
 					<integer>7</integer>
 					<key>INTypePropertyName</key>
-					<string>collection_slug</string>
+					<string>collectionSlug</string>
 					<key>INTypePropertyTag</key>
 					<integer>103</integer>
 					<key>INTypePropertyType</key>

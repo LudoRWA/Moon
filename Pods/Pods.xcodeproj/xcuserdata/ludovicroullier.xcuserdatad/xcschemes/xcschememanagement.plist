@@ -34,12 +34,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Moon WidgetExtension.xcscheme</key>
+		<key>Pods-Moon.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Moon.xcscheme</key>
+		<key>Pods-MoonWidgetExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

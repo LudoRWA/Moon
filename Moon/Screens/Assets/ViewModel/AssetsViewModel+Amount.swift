@@ -15,8 +15,8 @@ extension AssetsViewModel {
         var totalAmountAverage = 0.0
         
         currentAssets.forEach {
-            totalAmountFloor += ($0.floor_price)
-            totalAmountAverage += ($0.average_price)
+            totalAmountFloor += ($0.floorPrice)
+            totalAmountAverage += ($0.averagePrice)
         }
         
         totalAmountFloor = Double(round(100 * totalAmountFloor) / 100)

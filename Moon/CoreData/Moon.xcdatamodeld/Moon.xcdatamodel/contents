@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="AssetStorage" representedClassName=".AssetStorage" syncable="YES" codeGenerationType="class">
-        <attribute name="average_price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="collection_description" optional="YES" attributeType="String"/>
-        <attribute name="collection_image_url" optional="YES" attributeType="String"/>
-        <attribute name="collection_name" optional="YES" attributeType="String"/>
-        <attribute name="collection_slug" attributeType="String"/>
-        <attribute name="floor_price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="averagePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="collectionDescription" optional="YES" attributeType="String"/>
+        <attribute name="collectionImageURL" optional="YES" attributeType="String"/>
+        <attribute name="collectionName" optional="YES" attributeType="String"/>
+        <attribute name="collectionSlug" attributeType="String"/>
+        <attribute name="floorPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="nft_image" optional="YES" attributeType="String"/>
-        <attribute name="nft_name" optional="YES" attributeType="String"/>
-        <attribute name="nft_permalink" optional="YES" attributeType="String"/>
+        <attribute name="nftImageURL" optional="YES" attributeType="String"/>
+        <attribute name="nftName" optional="YES" attributeType="String"/>
+        <attribute name="nftPermalink" optional="YES" attributeType="String"/>
         <relationship name="wallet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WalletStorage" inverseName="wallet" inverseEntity="WalletStorage"/>
         <uniquenessConstraints>
             <uniquenessConstraint>

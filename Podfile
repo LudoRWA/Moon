@@ -10,7 +10,7 @@ target 'Moon' do
   pod 'SwiftMessages'
 end
 
-target 'Moon WidgetExtension' do
+target 'MoonWidgetExtension' do
   pod 'Alamofire', '~>5.5.0'
 end
 

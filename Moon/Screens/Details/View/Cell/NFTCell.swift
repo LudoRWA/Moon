@@ -21,8 +21,8 @@ class NFTCell: UICollectionViewCell {
     
     var cellViewModel: NFTCellViewModel? {
         didSet {
-            if let image_url = cellViewModel?.image_url {
-                setImage(with: image_url)
+            if let imageURL = cellViewModel?.imageURL {
+                setImage(with: imageURL)
             }
         }
     }

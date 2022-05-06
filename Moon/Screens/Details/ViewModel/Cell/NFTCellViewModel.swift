@@ -9,6 +9,6 @@ import Foundation
 
 struct NFTCellViewModel: Equatable {
 	let name: String
-    let image_url: URL?
+    let imageURL: URL?
     let pager: String
 }

@@ -10,7 +10,6 @@
 	<false/>
 	<key>NSUserActivityTypes</key>
 	<array>
-		<string>NFTIntentIntent</string>
 		<string>SelectNFTIntent</string>
 	</array>
 </dict>

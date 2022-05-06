@@ -8,7 +8,7 @@
 struct NFT {
     
     let id: Int32
-    let nft_image: String?
-    let nft_name: String?
-    let nft_permalink: String?
+    let nftImageURL: String?
+    let nftName: String?
+    let nftPermalink: String?
 }

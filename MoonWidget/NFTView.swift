@@ -1,5 +1,5 @@
 //
-//  NFT_View.swift
+//  NFTView.swift
 //  Moon Widget
 //
 //  Created by Ludovic ROULLIER on 14/01/2022.
@@ -11,23 +11,23 @@ import Intents
 
 struct NFTEntry: TimelineEntry {
     let date: Date
-    let nft_image: String
-    let nft_name: String
-    let floor_price: String
+    let nftImageURL: String
+    let nftName: String
+    let floorPrice: String
     let isEmpty: Bool
     let configuration: SelectNFTIntent
 }
 
 @main
-struct NFT_Widget: Widget {
-    let kind: String = "NFT_Widget"
+struct NFTWidget: Widget {
+    let kind: String = "NFTWidget"
     
     var body: some WidgetConfiguration {
         IntentConfiguration(
             kind: kind,
             intent: SelectNFTIntent.self,
             provider: Provider()) { entry in
-                NFT_WidgetEntryView(entry: entry)
+                NFTWidgetEntryView(entry: entry)
             }
             .supportedFamilies([.systemSmall, .systemLarge])
 			.configurationDisplayName("Widgets.Display.Name".localized)
@@ -35,7 +35,7 @@ struct NFT_Widget: Widget {
     }
 }
 
-struct NFT_WidgetEntryView : View {
+struct NFTWidgetEntryView : View {
     var entry: Provider.Entry
     
     var body: some View {
@@ -43,12 +43,12 @@ struct NFT_WidgetEntryView : View {
         if (!entry.isEmpty) {
             ZStack(alignment: .bottomLeading) {
                 
-                NetworkImage(url: URL(string: entry.nft_image))
+                NetworkImage(url: URL(string: entry.nftImageURL))
                 
                 LinearGradient(gradient: Gradient(colors: [Color(.sRGB, red: 0/255, green: 0/255, blue: 0/255, opacity: 0.35), .clear]), startPoint: .bottom, endPoint: .center)
                 
                 VStack(alignment: .leading) {
-                    Text(entry.floor_price)
+                    Text(entry.floorPrice)
                         .font(.title)
                         .fontWeight(.black)
                         .foregroundColor(.white)
@@ -56,7 +56,7 @@ struct NFT_WidgetEntryView : View {
                         .lineLimit(1)
                         .shadow(color: Color(.sRGB, red: 0/255, green: 0/255, blue: 0/255, opacity: 0.25), radius: 6, x: 0, y: 0)
                     
-                    Text(entry.nft_name)
+                    Text(entry.nftName)
                         .font(.caption2)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -119,10 +119,10 @@ struct NetworkImage: View {
     }
 }
 
-struct NFT_Widget_Previews: PreviewProvider {
+struct NFTWidgetPreviews: PreviewProvider {
     static var previews: some View {
         
-        NFT_WidgetEntryView(entry: NFTEntry(date: Date(), nft_image: "https://lh3.googleusercontent.com/8wZj0mVMGq2poWacZhflWaEXu1B3_czpBL6snzSlFL1l8XAnN0fyfULx6jRIu-Hz_4o2Ba2aYJQo3Gx0Yvz0bjuHvZIsf54Is-vZyg=w600", nft_name: "Doggy #1344", floor_price: "1.9", isEmpty: true, configuration: SelectNFTIntent()))
+        NFTWidgetEntryView(entry: NFTEntry(date: Date(), nftImageURL: "https://lh3.googleusercontent.com/8wZj0mVMGq2poWacZhflWaEXu1B3_czpBL6snzSlFL1l8XAnN0fyfULx6jRIu-Hz_4o2Ba2aYJQo3Gx0Yvz0bjuHvZIsf54Is-vZyg=w600", nftName: "Doggy #1344", floorPrice: "1.9", isEmpty: true, configuration: SelectNFTIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

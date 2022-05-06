@@ -7,29 +7,29 @@
 
 class Asset {
     
-	let collection_slug: String?
-    let collection_name: String?
-    let collection_image_url: String?
-    let collection_description: String?
-	let floor_price: Double
-    let average_price: Double
+	let collectionSlug: String?
+    let collectionName: String?
+    let collectionImageURL: String?
+    let collectionDescription: String?
+	let floorPrice: Double
+    let averagePrice: Double
 	
 	var nfts = [NFT]()
 	
-	init(collection_slug: String?,
-		 collection_name: String? = nil,
-		 collection_image_url: String? = nil,
-		 collection_description: String? = nil,
-		 floor_price: Double,
-		 average_price: Double,
+	init(collectionSlug: String?,
+		 collectionName: String? = nil,
+		 collectionImageURL: String? = nil,
+		 collectionDescription: String? = nil,
+		 floorPrice: Double,
+		 averagePrice: Double,
 		 nfts: [NFT] = []) {
 		
-		self.collection_slug = collection_slug
-		self.collection_name = collection_name
-		self.collection_image_url = collection_image_url
-		self.collection_description = collection_description
-		self.floor_price = floor_price
-		self.average_price = average_price
+		self.collectionSlug = collectionSlug
+		self.collectionName = collectionName
+		self.collectionImageURL = collectionImageURL
+		self.collectionDescription = collectionDescription
+		self.floorPrice = floorPrice
+		self.averagePrice = averagePrice
 		self.nfts = nfts
 	}
 }

@@ -30,7 +30,7 @@ extension AssetsViewModel {
 					case .failure(let error):
 						
                         self.shouldStopSync = true
-						self.showErrorMessage?(error.rawValue)
+						self.showErrorMessage?(error.rawValue.localized)
 					}
 			
                     semaphore.signal()
@@ -59,27 +59,27 @@ extension AssetsViewModel {
                 value.assets.forEach {
                     
                     let id = $0.id
-                    let token_id = $0.token_id
-                    let nftImage = $0.image_url
+                    let tokenId = $0.token_id
+                    let nftImageURL = $0.image_url
                     var nftName = $0.name
                     let nftPermalink = $0.permalink
                     let collectionSlug = $0.collection.slug
                     let collectionName = $0.collection.name
                     let collectionDescription = $0.collection.description
-                    let collectionImage = $0.collection.image_url
+                    let collectionImageURL = $0.collection.image_url
                     
-                    if (nftName == nil) { nftName = "#\(token_id ?? "Unknown")" }
+                    if (nftName == nil) { nftName = "#\(tokenId ?? "Unknown")" }
                     
                     let foundAsset = oldAssets.filter({ $0.id == id }).first
                     
                     if let foundAsset = foundAsset {
                         
-                        foundAsset.collection_name = collectionName
-                        foundAsset.collection_description = collectionDescription
-                        foundAsset.collection_image_url = collectionImage
-                        foundAsset.nft_name = nftName
-                        foundAsset.nft_permalink = nftPermalink
-                        foundAsset.nft_image = nftImage
+                        foundAsset.collectionName = collectionName
+                        foundAsset.collectionDescription = collectionDescription
+                        foundAsset.collectionImageURL = collectionImageURL
+                        foundAsset.nftName = nftName
+                        foundAsset.nftPermalink = nftPermalink
+                        foundAsset.nftImageURL = nftImageURL
                         foundAsset.wallet = wallet
                         
                         currentUserAssets.append(foundAsset)
@@ -87,15 +87,15 @@ extension AssetsViewModel {
                         
                         let newAsset = AssetStorage(context: CoreDataStack.sharedInstance.viewContext)
                         
-                        newAsset.collection_slug = collectionSlug
-                        newAsset.collection_name = collectionName
-                        newAsset.collection_description = collectionDescription
-                        newAsset.collection_image_url = collectionImage
+                        newAsset.collectionSlug = collectionSlug
+                        newAsset.collectionName = collectionName
+                        newAsset.collectionDescription = collectionDescription
+                        newAsset.collectionImageURL = collectionImageURL
                         
                         newAsset.id = id
-                        newAsset.nft_name = nftName
-                        newAsset.nft_permalink = nftPermalink
-                        newAsset.nft_image = nftImage
+                        newAsset.nftName = nftName
+                        newAsset.nftPermalink = nftPermalink
+                        newAsset.nftImageURL = nftImageURL
                         newAsset.wallet = wallet
                         
                         currentUserAssets.append(newAsset)
@@ -109,7 +109,7 @@ extension AssetsViewModel {
 					completion(.success(currentUserAssets))
                 } else {
                     
-                    self.getAssets(oldAssets, currentUserAssets, nextCursor, wallet) { result  in
+					self.getAssets(oldAssets, currentUserAssets, nextCursor, wallet) { result  in
 						switch result {
 						case .success(let updatedUserAssets):
 							
@@ -144,16 +144,16 @@ extension AssetsViewModel {
                 
                 var usedSlugs = [Asset]()
                 
-                if let originalCollection_slug = dict.collection_slug {
+                if let originalCollectionSlug = dict.collectionSlug {
                     
-                    if let currentCollection = usedSlugs.filter({$0.collection_slug == originalCollection_slug}).first {
+                    if let currentCollection = usedSlugs.filter({$0.collectionSlug == originalCollectionSlug}).first {
                         
-                        currentUserAssets[i].floor_price = currentCollection.floor_price
-                        currentUserAssets[i].average_price = currentCollection.average_price
+                        currentUserAssets[i].floorPrice = currentCollection.floorPrice
+                        currentUserAssets[i].averagePrice = currentCollection.floorPrice
                         
                         semaphore.signal()
                     } else {
-                        self.openSeaService.getCollection(originalCollection_slug) { value in
+                        self.openSeaService.getCollection(originalCollectionSlug) { value in
                             
                             var roundedFloorPrice = 0.0
                             var roundedAveragePrice = 0.0
@@ -165,12 +165,12 @@ extension AssetsViewModel {
                                 sleep(5)
                             }
                             
-                            currentUserAssets[i].floor_price = roundedFloorPrice
-                            currentUserAssets[i].average_price = roundedAveragePrice
+                            currentUserAssets[i].floorPrice = roundedFloorPrice
+                            currentUserAssets[i].averagePrice = roundedAveragePrice
                             
-							let newCollection = Asset(collection_slug: originalCollection_slug,
-													  floor_price: roundedFloorPrice,
-													  average_price: roundedAveragePrice)
+							let newCollection = Asset(collectionSlug: originalCollectionSlug,
+													  floorPrice: roundedFloorPrice,
+													  averagePrice: roundedAveragePrice)
                             usedSlugs.append(newCollection)
                             
                             semaphore.signal()

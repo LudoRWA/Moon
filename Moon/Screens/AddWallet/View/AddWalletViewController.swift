@@ -133,7 +133,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
 					let view = MessageView.viewFromNib(layout: .cardView)
 					view.configureTheme(.error)
 					view.configureDropShadow()
-					view.configureContent(title: "", body: error.rawValue)
+					view.configureContent(title: "", body: error.rawValue.localized)
 					view.button?.isHidden = true
 					SwiftMessages.show(view: view)
 						

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0387347D1A626CB24744FD0C /* Pods_MoonWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462857ABE637FC803833A491 /* Pods_MoonWidgetExtension.framework */; };
 		2213583E280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F5E2809A01900E368E7 /* CoreDataServiceProtocol.swift */; };
 		2213583F280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A38F5E2809A01900E368E7 /* CoreDataServiceProtocol.swift */; };
 		22135842280E9C0D00FDBEC6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 22135841280E9C0D00FDBEC6 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -84,22 +85,21 @@
 		43CDB5FC2783521000FC3AB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CDB5FA2783521000FC3AB9 /* LaunchScreen.storyboard */; };
 		43CDB60927835F8B00FC3AB9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CDB60827835F8B00FC3AB9 /* WidgetKit.framework */; };
 		43CDB60B27835F8B00FC3AB9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CDB60A27835F8B00FC3AB9 /* SwiftUI.framework */; };
-		43CDB60E27835F8B00FC3AB9 /* NFT_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDB60D27835F8B00FC3AB9 /* NFT_Widget.swift */; };
+		43CDB60E27835F8B00FC3AB9 /* NFTWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CDB60D27835F8B00FC3AB9 /* NFTWidget.swift */; };
 		43CDB61127835F8D00FC3AB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CDB61027835F8D00FC3AB9 /* Assets.xcassets */; };
-		43CDB61727835F8D00FC3AB9 /* Moon WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 43CDB60727835F8B00FC3AB9 /* Moon WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		43D2FC5827919F4800B19A2C /* NFT_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */; };
-		43D2FC5927919F4800B19A2C /* NFT_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */; };
+		43CDB61727835F8D00FC3AB9 /* MoonWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 43CDB60727835F8B00FC3AB9 /* MoonWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		43D2FC5827919F4800B19A2C /* NFTWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 43D2FC5727919F4800B19A2C /* NFTWidget.intentdefinition */; };
+		43D2FC5927919F4800B19A2C /* NFTWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 43D2FC5727919F4800B19A2C /* NFTWidget.intentdefinition */; };
 		43FA47472791A22B0039F936 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D2FC3527919D8200B19A2C /* Intents.framework */; };
 		43FA474A2791A22B0039F936 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47492791A22B0039F936 /* IntentHandler.swift */; };
 		43FA475E2791A22B0039F936 /* ConfigurableMoonWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 43FA47462791A22B0039F936 /* ConfigurableMoonWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		43FA47652791A24A0039F936 /* NFT_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */; };
+		43FA47652791A24A0039F936 /* NFTWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 43D2FC5727919F4800B19A2C /* NFTWidget.intentdefinition */; };
 		43FA476A2791C0D90039F936 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47692791C0D90039F936 /* AppGroup.swift */; };
 		43FA476B2791C0E20039F936 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47692791C0D90039F936 /* AppGroup.swift */; };
 		43FA476C2791C0E20039F936 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47692791C0D90039F936 /* AppGroup.swift */; };
-		43FA47712791D1790039F936 /* NFT_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA476F2791D1390039F936 /* NFT_View.swift */; };
+		43FA47712791D1790039F936 /* NFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA476F2791D1390039F936 /* NFTView.swift */; };
 		43FA47722791D3C50039F936 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FA47492791A22B0039F936 /* IntentHandler.swift */; };
 		44ED1C568CE821189238D650 /* Pods_Moon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8D2891157985FC391AF2B0 /* Pods_Moon.framework */; };
-		8279E7E0D15C4C061716349A /* Pods_Moon_WidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9779BD02FF03B7715C15EF99 /* Pods_Moon_WidgetExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,7 +134,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				43FA475E2791A22B0039F936 /* ConfigurableMoonWidget.appex in Embed App Extensions */,
-				43CDB61727835F8D00FC3AB9 /* Moon WidgetExtension.appex in Embed App Extensions */,
+				43CDB61727835F8D00FC3AB9 /* MoonWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +142,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0E4BF81BE798B5F536F191CC /* Pods-ConfigurableNFTWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableNFTWidget.debug.xcconfig"; path = "Target Support Files/Pods-ConfigurableNFTWidget/Pods-ConfigurableNFTWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		15AA6C1F5CF650A72EBE1522 /* Pods-MoonWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-MoonWidgetExtension/Pods-MoonWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		2213584D280EBEFA00FDBEC6 /* URL+StoreURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+StoreURL.swift"; sourceTree = "<group>"; };
 		2214ECD32816C5D900AC564C /* MoonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2214ECD52816C5D900AC564C /* OpenSeaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaServiceTests.swift; sourceTree = "<group>"; };
@@ -200,34 +200,28 @@
 		43CDB5F62783520F00FC3AB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43CDB5F82783521000FC3AB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CDB5FB2783521000FC3AB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		43CDB60727835F8B00FC3AB9 /* Moon WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Moon WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43CDB60727835F8B00FC3AB9 /* MoonWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MoonWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CDB60827835F8B00FC3AB9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		43CDB60A27835F8B00FC3AB9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		43CDB60D27835F8B00FC3AB9 /* NFT_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFT_Widget.swift; sourceTree = "<group>"; };
+		43CDB60D27835F8B00FC3AB9 /* NFTWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTWidget.swift; sourceTree = "<group>"; };
 		43CDB61027835F8D00FC3AB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43CDB61227835F8D00FC3AB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D2FC3527919D8200B19A2C /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		43D2FC4027919D8200B19A2C /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
-		43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = NFT_Widget.intentdefinition; sourceTree = "<group>"; };
+		43D2FC5727919F4800B19A2C /* NFTWidget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = NFTWidget.intentdefinition; sourceTree = "<group>"; };
 		43FA47462791A22B0039F936 /* ConfigurableMoonWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ConfigurableMoonWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		43FA47492791A22B0039F936 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		43FA474B2791A22B0039F936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43FA47662791BF480039F936 /* Moon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moon.entitlements; sourceTree = "<group>"; };
-		43FA47672791BFFB0039F936 /* Moon WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Moon WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		43FA47672791BFFB0039F936 /* MoonWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoonWidgetExtension.entitlements; sourceTree = "<group>"; };
 		43FA47682791C0220039F936 /* ConfigurableMoonWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConfigurableMoonWidget.entitlements; sourceTree = "<group>"; };
 		43FA47692791C0D90039F936 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
-		43FA476F2791D1390039F936 /* NFT_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFT_View.swift; sourceTree = "<group>"; };
-		4FE1EF1CD998A3D70D3D4DF1 /* Pods-Moon WidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moon WidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-Moon WidgetExtension/Pods-Moon WidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		43FA476F2791D1390039F936 /* NFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTView.swift; sourceTree = "<group>"; };
+		462857ABE637FC803833A491 /* Pods_MoonWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoonWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4BDD167D344B719810B0C7 /* Pods-ConfigurableMoonWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableMoonWidget.debug.xcconfig"; path = "Target Support Files/Pods-ConfigurableMoonWidget/Pods-ConfigurableMoonWidget.debug.xcconfig"; sourceTree = "<group>"; };
-		5FEAF5D0615B613C3B7069AA /* Pods-NFT Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFT Tracker.debug.xcconfig"; path = "Target Support Files/Pods-NFT Tracker/Pods-NFT Tracker.debug.xcconfig"; sourceTree = "<group>"; };
-		66502B0B76E219C5605BC7DE /* Pods-NFT WidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFT WidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-NFT WidgetExtension/Pods-NFT WidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		76ED85674B909DF1CB879F10 /* Pods-Moon WidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moon WidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-Moon WidgetExtension/Pods-Moon WidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		7D3FF555C8065EDE9478B898 /* Pods-ConfigurableMoonWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableMoonWidget.release.xcconfig"; path = "Target Support Files/Pods-ConfigurableMoonWidget/Pods-ConfigurableMoonWidget.release.xcconfig"; sourceTree = "<group>"; };
 		7E0BBD0906BB72202E54AAF6 /* Pods-Moon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moon.debug.xcconfig"; path = "Target Support Files/Pods-Moon/Pods-Moon.debug.xcconfig"; sourceTree = "<group>"; };
-		937A7881D7E2383E6A3F2B92 /* Pods-NFT Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFT Tracker.release.xcconfig"; path = "Target Support Files/Pods-NFT Tracker/Pods-NFT Tracker.release.xcconfig"; sourceTree = "<group>"; };
-		9779BD02FF03B7715C15EF99 /* Pods_Moon_WidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moon_WidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0D5A32A47C057127F6ADF03 /* Pods-ConfigurableNFTWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfigurableNFTWidget.release.xcconfig"; path = "Target Support Files/Pods-ConfigurableNFTWidget/Pods-ConfigurableNFTWidget.release.xcconfig"; sourceTree = "<group>"; };
-		F1336D87783FE2F21F08DBA7 /* Pods-NFT WidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NFT WidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-NFT WidgetExtension/Pods-NFT WidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		D94DCB1CC87474141B04B24D /* Pods-MoonWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoonWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-MoonWidgetExtension/Pods-MoonWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		FA8D2891157985FC391AF2B0 /* Pods_Moon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -256,7 +250,7 @@
 				43CDB60B27835F8B00FC3AB9 /* SwiftUI.framework in Frameworks */,
 				22135847280E9C4300FDBEC6 /* FirebaseCrashlytics in Frameworks */,
 				43CDB60927835F8B00FC3AB9 /* WidgetKit.framework in Frameworks */,
-				8279E7E0D15C4C061716349A /* Pods_Moon_WidgetExtension.framework in Frameworks */,
+				0387347D1A626CB24744FD0C /* Pods_MoonWidgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,9 +563,8 @@
 		43CDB5E32783520F00FC3AB9 = {
 			isa = PBXGroup;
 			children = (
-				43FA47672791BFFB0039F936 /* Moon WidgetExtension.entitlements */,
 				43CDB5EE2783520F00FC3AB9 /* Moon */,
-				43CDB60C27835F8B00FC3AB9 /* Moon Widget */,
+				43CDB60C27835F8B00FC3AB9 /* MoonWidget */,
 				43FA47482791A22B0039F936 /* ConfigurableMoonWidget */,
 				2214ECD42816C5D900AC564C /* MoonTests */,
 				43CDB5ED2783520F00FC3AB9 /* Products */,
@@ -584,7 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				43CDB5EC2783520F00FC3AB9 /* Moon.app */,
-				43CDB60727835F8B00FC3AB9 /* Moon WidgetExtension.appex */,
+				43CDB60727835F8B00FC3AB9 /* MoonWidgetExtension.appex */,
 				43FA47462791A22B0039F936 /* ConfigurableMoonWidget.appex */,
 				2214ECD32816C5D900AC564C /* MoonTests.xctest */,
 			);
@@ -607,16 +600,17 @@
 			path = Moon;
 			sourceTree = "<group>";
 		};
-		43CDB60C27835F8B00FC3AB9 /* Moon Widget */ = {
+		43CDB60C27835F8B00FC3AB9 /* MoonWidget */ = {
 			isa = PBXGroup;
 			children = (
-				43CDB60D27835F8B00FC3AB9 /* NFT_Widget.swift */,
-				43FA476F2791D1390039F936 /* NFT_View.swift */,
-				43D2FC5727919F4800B19A2C /* NFT_Widget.intentdefinition */,
+				43FA47672791BFFB0039F936 /* MoonWidgetExtension.entitlements */,
+				43CDB60D27835F8B00FC3AB9 /* NFTWidget.swift */,
+				43FA476F2791D1390039F936 /* NFTView.swift */,
+				43D2FC5727919F4800B19A2C /* NFTWidget.intentdefinition */,
 				43CDB61027835F8D00FC3AB9 /* Assets.xcassets */,
 				43CDB61227835F8D00FC3AB9 /* Info.plist */,
 			);
-			path = "Moon Widget";
+			path = MoonWidget;
 			sourceTree = "<group>";
 		};
 		43FA47482791A22B0039F936 /* ConfigurableMoonWidget */ = {
@@ -632,18 +626,12 @@
 		4F177DE0DDC9D9C3AAFC1D83 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5FEAF5D0615B613C3B7069AA /* Pods-NFT Tracker.debug.xcconfig */,
-				937A7881D7E2383E6A3F2B92 /* Pods-NFT Tracker.release.xcconfig */,
-				66502B0B76E219C5605BC7DE /* Pods-NFT WidgetExtension.debug.xcconfig */,
-				F1336D87783FE2F21F08DBA7 /* Pods-NFT WidgetExtension.release.xcconfig */,
-				0E4BF81BE798B5F536F191CC /* Pods-ConfigurableNFTWidget.debug.xcconfig */,
-				A0D5A32A47C057127F6ADF03 /* Pods-ConfigurableNFTWidget.release.xcconfig */,
 				7E0BBD0906BB72202E54AAF6 /* Pods-Moon.debug.xcconfig */,
 				2AE874ABD5AD206E0D935F03 /* Pods-Moon.release.xcconfig */,
 				5B4BDD167D344B719810B0C7 /* Pods-ConfigurableMoonWidget.debug.xcconfig */,
 				7D3FF555C8065EDE9478B898 /* Pods-ConfigurableMoonWidget.release.xcconfig */,
-				76ED85674B909DF1CB879F10 /* Pods-Moon WidgetExtension.debug.xcconfig */,
-				4FE1EF1CD998A3D70D3D4DF1 /* Pods-Moon WidgetExtension.release.xcconfig */,
+				D94DCB1CC87474141B04B24D /* Pods-MoonWidgetExtension.debug.xcconfig */,
+				15AA6C1F5CF650A72EBE1522 /* Pods-MoonWidgetExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -657,7 +645,7 @@
 				43D2FC4027919D8200B19A2C /* IntentsUI.framework */,
 				FA8D2891157985FC391AF2B0 /* Pods_Moon.framework */,
 				3271C55FFA86BC9FAC133CE3 /* Pods_ConfigurableMoonWidget.framework */,
-				9779BD02FF03B7715C15EF99 /* Pods_Moon_WidgetExtension.framework */,
+				462857ABE637FC803833A491 /* Pods_MoonWidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -710,9 +698,9 @@
 			productReference = 43CDB5EC2783520F00FC3AB9 /* Moon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		43CDB60627835F8B00FC3AB9 /* Moon WidgetExtension */ = {
+		43CDB60627835F8B00FC3AB9 /* MoonWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43CDB61B27835F8D00FC3AB9 /* Build configuration list for PBXNativeTarget "Moon WidgetExtension" */;
+			buildConfigurationList = 43CDB61B27835F8D00FC3AB9 /* Build configuration list for PBXNativeTarget "MoonWidgetExtension" */;
 			buildPhases = (
 				252CAF2F1A1F5F0A411B3B74 /* [CP] Check Pods Manifest.lock */,
 				43CDB60327835F8B00FC3AB9 /* Sources */,
@@ -723,12 +711,12 @@
 			);
 			dependencies = (
 			);
-			name = "Moon WidgetExtension";
+			name = MoonWidgetExtension;
 			packageProductDependencies = (
 				22135846280E9C4300FDBEC6 /* FirebaseCrashlytics */,
 			);
 			productName = "NFT WidgetExtension";
-			productReference = 43CDB60727835F8B00FC3AB9 /* Moon WidgetExtension.appex */;
+			productReference = 43CDB60727835F8B00FC3AB9 /* MoonWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		43FA47452791A22B0039F936 /* ConfigurableMoonWidget */ = {
@@ -796,7 +784,7 @@
 			projectRoot = "";
 			targets = (
 				43CDB5EB2783520F00FC3AB9 /* Moon */,
-				43CDB60627835F8B00FC3AB9 /* Moon WidgetExtension */,
+				43CDB60627835F8B00FC3AB9 /* MoonWidgetExtension */,
 				43FA47452791A22B0039F936 /* ConfigurableMoonWidget */,
 				2214ECD22816C5D900AC564C /* MoonTests */,
 			);
@@ -865,7 +853,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Moon WidgetExtension-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MoonWidgetExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1002,7 +990,7 @@
 				43CDB5F02783520F00FC3AB9 /* AppDelegate.swift in Sources */,
 				433E402E27848614004AB117 /* AssetCell.swift in Sources */,
 				22A9194C28084AF5009C23FD /* CoreDataStack.swift in Sources */,
-				43D2FC5827919F4800B19A2C /* NFT_Widget.intentdefinition in Sources */,
+				43D2FC5827919F4800B19A2C /* NFTWidget.intentdefinition in Sources */,
 				224FF280280D676100C2CC61 /* NFTModel.swift in Sources */,
 				224FF288280D9AB800C2CC61 /* NFTCellViewModel.swift in Sources */,
 				22BD88EA280AD57E00CCD372 /* OpenSeaServiceModel.swift in Sources */,
@@ -1020,7 +1008,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22A91951280858C0009C23FD /* CoreDataStack.swift in Sources */,
-				43D2FC5927919F4800B19A2C /* NFT_Widget.intentdefinition in Sources */,
+				43D2FC5927919F4800B19A2C /* NFTWidget.intentdefinition in Sources */,
 				43FA47722791D3C50039F936 /* IntentHandler.swift in Sources */,
 				2213584F280EBF3700FDBEC6 /* URL+StoreURL.swift in Sources */,
 				22A9194F28085790009C23FD /* Moon.xcdatamodeld in Sources */,
@@ -1028,8 +1016,8 @@
 				2214ECCD2816904400AC564C /* String+Localized.swift in Sources */,
 				43FA476B2791C0E20039F936 /* AppGroup.swift in Sources */,
 				2213584B280EA1F500FDBEC6 /* OpenSeaServiceProtocol.swift in Sources */,
-				43CDB60E27835F8B00FC3AB9 /* NFT_Widget.swift in Sources */,
-				43FA47712791D1790039F936 /* NFT_View.swift in Sources */,
+				43CDB60E27835F8B00FC3AB9 /* NFTWidget.swift in Sources */,
+				43FA47712791D1790039F936 /* NFTView.swift in Sources */,
 				2213584C280EA33300FDBEC6 /* OpenSeaServiceModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1044,7 +1032,7 @@
 				22135850280EBF3800FDBEC6 /* URL+StoreURL.swift in Sources */,
 				43FA476C2791C0E20039F936 /* AppGroup.swift in Sources */,
 				22A9195028085790009C23FD /* Moon.xcdatamodeld in Sources */,
-				43FA47652791A24A0039F936 /* NFT_Widget.intentdefinition in Sources */,
+				43FA47652791A24A0039F936 /* NFTWidget.intentdefinition in Sources */,
 				2213583F280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1059,7 +1047,7 @@
 		};
 		43CDB61627835F8D00FC3AB9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 43CDB60627835F8B00FC3AB9 /* Moon WidgetExtension */;
+			target = 43CDB60627835F8B00FC3AB9 /* MoonWidgetExtension */;
 			targetProxy = 43CDB61527835F8D00FC3AB9 /* PBXContainerItemProxy */;
 		};
 		43FA475D2791A22B0039F936 /* PBXTargetDependency */ = {
@@ -1328,18 +1316,18 @@
 		};
 		43CDB61927835F8D00FC3AB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76ED85674B909DF1CB879F10 /* Pods-Moon WidgetExtension.debug.xcconfig */;
+			baseConfigurationReference = D94DCB1CC87474141B04B24D /* Pods-MoonWidgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "Moon WidgetExtension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = MoonWidget/MoonWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4ABMNPNS6D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Moon Widget/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Moon Widget";
+				INFOPLIST_FILE = MoonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MoonWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1348,7 +1336,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.luggy.moon.NFT-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon.NFTWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1359,17 +1347,17 @@
 		};
 		43CDB61A27835F8D00FC3AB9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FE1EF1CD998A3D70D3D4DF1 /* Pods-Moon WidgetExtension.release.xcconfig */;
+			baseConfigurationReference = 15AA6C1F5CF650A72EBE1522 /* Pods-MoonWidgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = "Moon WidgetExtension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = MoonWidget/MoonWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4ABMNPNS6D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Moon Widget/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Moon Widget";
+				INFOPLIST_FILE = MoonWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MoonWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1378,7 +1366,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "co.luggy.moon.NFT-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon.NFTWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1474,7 +1462,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43CDB61B27835F8D00FC3AB9 /* Build configuration list for PBXNativeTarget "Moon WidgetExtension" */ = {
+		43CDB61B27835F8D00FC3AB9 /* Build configuration list for PBXNativeTarget "MoonWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43CDB61927835F8D00FC3AB9 /* Debug */,

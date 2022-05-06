@@ -6,7 +6,6 @@
 //
 
 import Intents
-import CoreData
 
 class IntentHandler: INExtension, SelectNFTIntentHandling {
     
@@ -19,12 +18,12 @@ class IntentHandler: INExtension, SelectNFTIntentHandling {
 					
 				let nft = UserNFT(
 					identifier: String(asset.id),
-					display: "\(asset.nft_name ?? "Label.Unknown".localized) - \(asset.collection_name ?? "Label.Unknown".localized)"
+					display: "\(asset.nftName ?? "Label.Unknown".localized) - \(asset.collectionName ?? "Label.Unknown".localized)"
 				)
 					
-				nft.nft_name = asset.nft_name
-				nft.nft_image = asset.nft_image
-				nft.collection_slug = asset.collection_slug
+				nft.nftName = asset.nftName
+				nft.nftImageURL = asset.nftImageURL
+				nft.collectionSlug = asset.collectionSlug
 				return nft
 			}
 				
