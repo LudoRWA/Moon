@@ -27,16 +27,17 @@ extension AssetsViewModel {
         
         let currentCurrency = availableCurrencies.first(where: {$0 == Locale.current.currencyCode}) ?? "USD"
         
-        coinbaseService.getFiatPrice(currentCurrency) { value in
-            
-            if let value = value {
-                let fiatPrice = Double(value.data.amount ?? "0.0") ?? 0.0
-                let totalFloorPrice = totalAmountFloor * fiatPrice
-                let totalAveragePrice = totalAmountAverage * fiatPrice
-                
-                self.totalAmount.floor.fiat = self.convertToFiat(totalFloorPrice, currentCurrency)
-                self.totalAmount.average.fiat = self.convertToFiat(totalAveragePrice, currentCurrency)
-            }
+        coinbaseService.getFiatPrice(currentCurrency) { [weak self] result in
+			guard let self = self else { return } 
+			if case .success(let value) = result {
+				
+				let fiatPrice = Double(value.data.amount ?? "0.0") ?? 0.0
+				let totalFloorPrice = totalAmountFloor * fiatPrice
+				let totalAveragePrice = totalAmountAverage * fiatPrice
+				
+				self.totalAmount.floor.fiat = self.convertToFiat(totalFloorPrice, currentCurrency)
+				self.totalAmount.average.fiat = self.convertToFiat(totalAveragePrice, currentCurrency)
+			}
         }
     }
     

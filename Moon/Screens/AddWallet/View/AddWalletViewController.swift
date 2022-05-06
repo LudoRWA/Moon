@@ -30,27 +30,27 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     
     func initView() {
         
-        self.isModalInPresentation = true
+        isModalInPresentation = true
         
         if (walletsViewController != nil) {
             
-            self.backButton.imageView?.image = UIImage(named: "arrowLeft")
+            backButton.imageView?.image = UIImage(named: "arrowLeft")
             
-            let popGestureRecognizer = self.navigationController?.interactivePopGestureRecognizer
+            let popGestureRecognizer = navigationController?.interactivePopGestureRecognizer
             if let targets = popGestureRecognizer?.value(forKey: "targets") as? NSMutableArray {
                 let gestureRecognizer = UIPanGestureRecognizer()
                 gestureRecognizer.setValue(targets, forKey: "targets")
-                self.view.addGestureRecognizer(gestureRecognizer)
+                view.addGestureRecognizer(gestureRecognizer)
             }
         } else {
             
-            self.backButton.imageView?.image = UIImage(named: "arrowBottom")
+            backButton.imageView?.image = UIImage(named: "arrowBottom")
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        self.walletAddressTextView.becomeFirstResponder()
+        walletAddressTextView.becomeFirstResponder()
     }
     
     //MARK: - Keyboard
@@ -60,7 +60,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
             let height = keyboardSize.height
             let window = UIApplication.shared.connectedScenes.flatMap { ($0 as? UIWindowScene)?.windows ?? [] }.first { $0.isKeyWindow }
             let bottomPadding = window?.safeAreaInsets.bottom
-            self.buttonViewConstraint.constant = height + 12 - (bottomPadding ?? 0.0)
+            buttonViewConstraint.constant = height + 12 - (bottomPadding ?? 0.0)
             UIView.animate(withDuration: 0.2) {
                 self.view.layoutIfNeeded()
             }
@@ -68,7 +68,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.buttonViewConstraint.constant = 22
+        buttonViewConstraint.constant = 22
         UIView.animate(withDuration: 0.2) {
             self.view.layoutIfNeeded()
         }
@@ -85,45 +85,45 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Actions that leads to addWallet()
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if (textField == self.walletAddressTextView) {
-            self.addWallet()
+        if (textField == walletAddressTextView) {
+            addWallet()
         }
         return true
     }
     
     @IBAction func pastAction(_ sender: Any) {
-        self.walletAddressTextView.text = UIPasteboard.general.string
-        self.addWallet()
+        walletAddressTextView.text = UIPasteboard.general.string
+        addWallet()
     }
     
     @IBAction func continueAction(_ sender: Any) {
-        self.addWallet()
+        addWallet()
     }
     
     func addWallet() {
         
-        self.JGProgress = JGProgressHUD(style: .dark)
-        self.JGProgress?.interactionType = .blockNoTouches
-        self.JGProgress?.show(in: self.view)
+        JGProgress = JGProgressHUD(style: .dark)
+        JGProgress?.interactionType = .blockNoTouches
+        JGProgress?.show(in: view)
         
-        viewModel.addWallet(address: self.walletAddressTextView.text) { result in
+        viewModel.addWallet(address: self.walletAddressTextView.text) { [weak self] result in
 			switch result {
 			case .success(let wallet):
 				
 				DispatchQueue.main.async {
 					
-					if (self.walletsViewController != nil) {
+					if (self?.walletsViewController != nil) {
 							
-						self.walletsViewController?.viewModel.addWallet(wallet: wallet)
-						self.navigationController?.popToRootViewController(animated: true)
+						self?.walletsViewController?.viewModel.addWallet(wallet: wallet)
+						self?.navigationController?.popToRootViewController(animated: true)
 					} else {
 							
-						self.dismiss(animated: true) {
-							self.welcomeViewController?.viewModel.getWallets(true)
+						self?.dismiss(animated: true) {
+							self?.welcomeViewController?.viewModel.getWallets(true)
 						}
 					}
 					
-					self.JGProgress?.dismiss(animated: true)
+					self?.JGProgress?.dismiss(animated: true)
 				}
 					
 			case .failure(let error):
@@ -137,7 +137,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
 					view.button?.isHidden = true
 					SwiftMessages.show(view: view)
 						
-					self.JGProgress?.dismiss(animated: true)
+					self?.JGProgress?.dismiss(animated: true)
 				}
 			}
         }
@@ -147,8 +147,8 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.backButton.layer.cornerRadius = self.backButton.frame.height/2
-        self.continueButton.layer.cornerRadius = 16
-        self.walletAddressTextView.layer.cornerRadius = 12
+		backButton.layer.cornerRadius = backButton.frame.height/2
+        continueButton.layer.cornerRadius = 16
+        walletAddressTextView.layer.cornerRadius = 12
     }
 }

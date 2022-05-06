@@ -25,15 +25,22 @@ class OpenSeeaServiceTests: XCTestCase {
 		let wallet = "0x1b584fc86390d7D83B529a4346330ee3D2061681" //Wallet with four assets
 		let expect = XCTestExpectation(description: "callback")
 		
-		openSeaService?.getAssets(50, wallet, nil, completion: { (value, statusCode) in
+		openSeaService?.getAssets(50, wallet, nil, completion: { (result) in
 			expect.fulfill()
 			
-			XCTAssertNotNil(value)
-			XCTAssertEqual(value?.assets.count, 4)
-			XCTAssertEqual(statusCode, 200)
-			
-			for asset in value!.assets {
-				XCTAssertNotNil(asset.collection.slug)
+			switch result {
+			case .success(let value):
+				
+				XCTAssertNotNil(value)
+				XCTAssertEqual(value.assets.count, 4)
+				
+				for asset in value.assets {
+					XCTAssertNotNil(asset.collection.slug)
+				}
+				
+			case .failure(let error):
+				
+				XCTFail("Error getAssets : \(error)")
 			}
 		})
 		
@@ -45,11 +52,19 @@ class OpenSeeaServiceTests: XCTestCase {
 		let collectionSlug = "the-doge-pound" //valid collectionSlug, floorPrice always > 0.00
 		let expect = XCTestExpectation(description: "callback")
 		
-		openSeaService?.getCollection(collectionSlug, completion: { (value) in
+		openSeaService?.getCollection(collectionSlug, completion: { (result) in
 			expect.fulfill()
 			
-			XCTAssertNotNil(value)
-			XCTAssertNotEqual(value?.collection.stats.floor_price, 0)
+			switch result {
+			case .success(let value):
+				
+				XCTAssertNotNil(value)
+				XCTAssertNotEqual(value.collection.stats.floor_price, 0)
+				
+			case .failure(let error):
+				
+				XCTFail("Error getCollection : \(error)")
+			}
 		})
 		
 		wait(for: [expect], timeout: 5.0)

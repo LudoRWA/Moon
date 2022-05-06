@@ -11,11 +11,11 @@ import CoreData
 protocol CoreDataServiceProtocol {
 	func save()
 	
-	func getAssetsFrom(wallets: [WalletStorage], completion: @escaping (_ results: [AssetStorage]) -> ())
-    func getAllAssets(completion: @escaping (_ results: [AssetStorage]) -> ())
+	func getAssetsFrom(wallets: [WalletStorage], completion: @escaping (_ result: [AssetStorage]) -> ())
+    func getAllAssets(completion: @escaping (_ result: [AssetStorage]) -> ())
 	func remove(asset: AssetStorage)
 	
-	func getWallets(completion: @escaping (_ results: [WalletStorage]) -> ())
+	func getWallets(completion: @escaping (_ result: [WalletStorage]) -> ())
 	func remove(wallet: WalletStorage)
 	func removeAll(wallets: [WalletStorage])
 }

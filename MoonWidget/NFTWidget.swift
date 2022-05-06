@@ -36,11 +36,12 @@ struct Provider: IntentTimelineProvider {
 					
 				guard let collectionSlug = collectionSlug else { return }
 					
-				self.openSeaService.getCollection(collectionSlug) { value in
-						
+				self.openSeaService.getCollection(collectionSlug) { result in
+					
 					var floorText = "---"
-					if let floorPrice = value?.collection.stats.floor_price {
-							floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
+					
+					if case .success(let value) = result, let floorPrice = value.collection.stats.floor_price {
+						floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
 					}
 						
 					let entry = NFTEntry(date: Date(), nftImageURL: nftImageURL, nftName: nftName, floorPrice: floorText, isEmpty: false, configuration: configuration)
@@ -83,16 +84,16 @@ struct Provider: IntentTimelineProvider {
         
 		guard let collectionSlug = collectionSlug else { return }
 		
-        self.openSeaService.getCollection(collectionSlug) { value in
+        self.openSeaService.getCollection(collectionSlug) { result in
             
-            if let floorPrice = value?.collection.stats.floor_price {
+			if case .success(let value) = result, let floorPrice = value.collection.stats.floor_price {
 				
-                let floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
+				let floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
 				
 				let entry = NFTEntry(date: currentDate, nftImageURL: nftImageURL, nftName: nftName, floorPrice: floorText, isEmpty: false, configuration: configuration)
 				let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
 				completion(timeline)
-            }
+			}
         }
     }
 }

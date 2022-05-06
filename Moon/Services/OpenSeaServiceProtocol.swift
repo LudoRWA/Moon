@@ -8,13 +8,13 @@
 import Alamofire
 
 protocol OpenSeaServiceProtocol {
-    func getAssets(_ limit: Int, _ wallet: String, _ cursor: String?, completion: @escaping (_ value: OpenseaAssets?, Int?) -> ())
-    func getCollection(_ collectionSlug: String, completion: @escaping (_ value: OpenseaCollection?) -> ())
+    func getAssets(_ limit: Int, _ wallet: String, _ cursor: String?, completion: @escaping (_ result: Result<OpenseaAssets, OpenSeaError>) -> ())
+    func getCollection(_ collectionSlug: String, completion: @escaping (_ result: Result<OpenseaCollection, OpenSeaError>) -> ())
 }
 
 class OpenSeaService: OpenSeaServiceProtocol {
     
-    func getAssets(_ limit: Int, _ wallet: String, _ cursor: String?, completion: @escaping (OpenseaAssets?, Int?) -> ()) {
+    func getAssets(_ limit: Int, _ wallet: String, _ cursor: String?, completion: @escaping (Result<OpenseaAssets, OpenSeaError>) -> ()) {
         
         let headers: HTTPHeaders = [
             "Accept": "application/json",
@@ -23,11 +23,23 @@ class OpenSeaService: OpenSeaServiceProtocol {
         
         AF.request("https://api.opensea.io/api/v1/assets?owner=\(wallet)&limit=\(limit)&cursor=\(cursor ?? "")", headers: headers).responseDecodable(of: OpenseaAssets.self, queue: .global(qos: .userInitiated)) { response in
 			
-            completion(response.value, response.response?.statusCode)
+			if let result = response.value {
+				
+				completion(.success(result))
+			} else {
+				
+				if (response.response?.statusCode == 400) {
+					
+					completion(.failure(.unknownWallet))
+				} else {
+					
+					completion(.failure(.error))
+				}
+			}
         }
     }
     
-    func getCollection(_ collectionSlug: String, completion: @escaping (OpenseaCollection?) -> ()) {
+    func getCollection(_ collectionSlug: String, completion: @escaping (Result<OpenseaCollection, OpenSeaError>) -> ()) {
         
         let headers: HTTPHeaders = [
             "Accept": "application/json",
@@ -36,7 +48,13 @@ class OpenSeaService: OpenSeaServiceProtocol {
         
         AF.request("https://api.opensea.io/api/v1/collection/\(collectionSlug)", headers: headers).responseDecodable(of: OpenseaCollection.self, queue: .global(qos: .userInitiated)) { response in
 
-            completion(response.value)
+			if let result = response.value {
+				
+				completion(.success(result))
+			} else {
+				
+				completion(.failure(.error))
+			}
         }
     }
 }

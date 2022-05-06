@@ -23,31 +23,26 @@ class AddWalletViewModel: NSObject {
         
         if let address = address?.trimmingCharacters(in: .whitespacesAndNewlines), !address.isEmpty {
             
-            self.openSeaService.getAssets(1, address, nil) { value, statusCode in
-                
-                if (value?.assets != nil) {
-                    
-                    if (self.wallets.firstIndex(where: {$0.address == address}) == nil) {
-                        
-                        let newWallet = WalletStorage(context: CoreDataStack.sharedInstance.viewContext)
-                        newWallet.address = address
-						self.coreDataService.save()
+            openSeaService.getAssets(1, address, nil) { [weak self] result in
+					
+				switch result {
+				case .success(_):
+					
+					if (self?.wallets.firstIndex(where: {$0.address == address}) == nil) {
+						
+						let newWallet = WalletStorage(context: CoreDataStack.sharedInstance.viewContext)
+						newWallet.address = address
+						self?.coreDataService.save()
 						
 						completion(.success(newWallet))
-                    } else {
+					} else {
 						
 						completion(.failure(.duplicateWallet))
-                    }
-                    
-                } else {
-                    if (statusCode == 400) {
-                        
-						completion(.failure(.unknownWallet))
-                    } else {
-                        
-						completion(.failure(.error))
-                    }
-                }
+					}
+				case .failure(let error):
+					
+					completion(.failure(error))
+				}
             }
         }
     }

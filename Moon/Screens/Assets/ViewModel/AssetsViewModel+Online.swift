@@ -11,7 +11,7 @@ extension AssetsViewModel {
     
     func getOnlineData(completion: @escaping ([AssetStorage]) -> ()) {
         
-        let oldAssets = self.assets
+        let oldAssets = assets
         var currentAssets = [AssetStorage]()
         
         DispatchQueue.global(qos: .userInitiated).async {
@@ -22,15 +22,15 @@ extension AssetsViewModel {
                 
                 if (self.shouldStopSync) { break }
                 
-                self.getAssets(oldAssets, currentAssets, nil, wallet) { result in
+                self.getAssets(oldAssets, currentAssets, nil, wallet) {  [weak self] result in
 					switch result {
 					case .success(let updatedUserAssets):
 						
 						currentAssets = updatedUserAssets
 					case .failure(let error):
 						
-                        self.shouldStopSync = true
-						self.showErrorMessage?(error.rawValue.localized)
+						self?.shouldStopSync = true
+						self?.showErrorMessage?(error.rawValue.localized)
 					}
 			
                     semaphore.signal()
@@ -52,64 +52,66 @@ extension AssetsViewModel {
         
         var currentUserAssets = currentAssets
         
-        self.openSeaService.getAssets(50, wallet.address ?? "", cursor) { value, _ in
+        openSeaService.getAssets(50, wallet.address ?? "", cursor) { [weak self] result in
             
-            if let value = value {
-                
-                value.assets.forEach {
-                    
-                    let id = $0.id
-                    let tokenId = $0.token_id
-                    let nftImageURL = $0.image_url
-                    var nftName = $0.name
-                    let nftPermalink = $0.permalink
-                    let collectionSlug = $0.collection.slug
-                    let collectionName = $0.collection.name
-                    let collectionDescription = $0.collection.description
-                    let collectionImageURL = $0.collection.image_url
-                    
-                    if (nftName == nil) { nftName = "#\(tokenId ?? "Unknown")" }
-                    
-                    let foundAsset = oldAssets.filter({ $0.id == id }).first
-                    
-                    if let foundAsset = foundAsset {
-                        
-                        foundAsset.collectionName = collectionName
-                        foundAsset.collectionDescription = collectionDescription
-                        foundAsset.collectionImageURL = collectionImageURL
-                        foundAsset.nftName = nftName
-                        foundAsset.nftPermalink = nftPermalink
-                        foundAsset.nftImageURL = nftImageURL
-                        foundAsset.wallet = wallet
-                        
-                        currentUserAssets.append(foundAsset)
-                    } else {
-                        
-                        let newAsset = AssetStorage(context: CoreDataStack.sharedInstance.viewContext)
-                        
-                        newAsset.collectionSlug = collectionSlug
-                        newAsset.collectionName = collectionName
-                        newAsset.collectionDescription = collectionDescription
-                        newAsset.collectionImageURL = collectionImageURL
-                        
-                        newAsset.id = id
-                        newAsset.nftName = nftName
-                        newAsset.nftPermalink = nftPermalink
-                        newAsset.nftImageURL = nftImageURL
-                        newAsset.wallet = wallet
-                        
-                        currentUserAssets.append(newAsset)
-                    }
-                }
-                
-                let nextCursor = value.next
-                let maxReached = nextCursor == nil
-                
-                if (maxReached) {
+			switch result {
+			case .success(let value):
+				
+				value.assets.forEach {
+					
+					let id = $0.id
+					let tokenId = $0.token_id
+					let nftImageURL = $0.image_url
+					var nftName = $0.name
+					let nftPermalink = $0.permalink
+					let collectionSlug = $0.collection.slug
+					let collectionName = $0.collection.name
+					let collectionDescription = $0.collection.description
+					let collectionImageURL = $0.collection.image_url
+					
+					if (nftName == nil) { nftName = "#\(tokenId ?? "Unknown")" }
+					
+					let foundAsset = oldAssets.filter({ $0.id == id }).first
+					
+					if let foundAsset = foundAsset {
+						
+						foundAsset.collectionName = collectionName
+						foundAsset.collectionDescription = collectionDescription
+						foundAsset.collectionImageURL = collectionImageURL
+						foundAsset.nftName = nftName
+						foundAsset.nftPermalink = nftPermalink
+						foundAsset.nftImageURL = nftImageURL
+						foundAsset.wallet = wallet
+						
+						currentUserAssets.append(foundAsset)
+					} else {
+						
+						let newAsset = AssetStorage(context: CoreDataStack.sharedInstance.viewContext)
+						
+						newAsset.collectionSlug = collectionSlug
+						newAsset.collectionName = collectionName
+						newAsset.collectionDescription = collectionDescription
+						newAsset.collectionImageURL = collectionImageURL
+						
+						newAsset.id = id
+						newAsset.nftName = nftName
+						newAsset.nftPermalink = nftPermalink
+						newAsset.nftImageURL = nftImageURL
+						newAsset.wallet = wallet
+						
+						currentUserAssets.append(newAsset)
+					}
+				}
+				
+				let nextCursor = value.next
+				let maxReached = nextCursor == nil
+				
+				if (maxReached) {
+					
 					completion(.success(currentUserAssets))
-                } else {
-                    
-					self.getAssets(oldAssets, currentUserAssets, nextCursor, wallet) { result  in
+				} else {
+					
+					self?.getAssets(oldAssets, currentUserAssets, nextCursor, wallet) { result  in
 						switch result {
 						case .success(let updatedUserAssets):
 							
@@ -118,13 +120,13 @@ extension AssetsViewModel {
 							
 							completion(.failure(.error))
 						}
-                    }
-                }
-                
-            } else {
-                
-				completion(.failure(.error))
-            }
+					}
+				}
+				
+			case .failure(let error):
+				
+				completion(.failure(error))
+			}
         }
     }
     
@@ -153,17 +155,20 @@ extension AssetsViewModel {
                         
                         semaphore.signal()
                     } else {
-                        self.openSeaService.getCollection(originalCollectionSlug) { value in
-                            
-                            var roundedFloorPrice = 0.0
-                            var roundedAveragePrice = 0.0
-                            
-                            if let value = value {
-                                roundedFloorPrice = round(100 * (Double(value.collection.stats.floor_price ?? 0.0))) / 100
-                                roundedAveragePrice = round(100 * Double(value.collection.stats.average_price ?? 0.0)) / 100
-                            } else {
-                                sleep(5)
-                            }
+						self.openSeaService.getCollection(originalCollectionSlug) { result in
+							
+							var roundedFloorPrice = 0.0
+							var roundedAveragePrice = 0.0
+							
+							switch result {
+							case .success(let value):
+								
+								roundedFloorPrice = round(100 * (Double(value.collection.stats.floor_price ?? 0.0))) / 100
+								roundedAveragePrice = round(100 * Double(value.collection.stats.average_price ?? 0.0)) / 100
+							case .failure(_):
+								
+								sleep(5)
+							}
                             
                             currentUserAssets[i].floorPrice = roundedFloorPrice
                             currentUserAssets[i].averagePrice = roundedAveragePrice

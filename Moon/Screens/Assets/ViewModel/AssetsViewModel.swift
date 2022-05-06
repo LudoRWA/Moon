@@ -54,22 +54,22 @@ class AssetsViewModel: NSObject {
     //MARK: - Get Local Data
     func getLocalData(_ forceSync: Bool = false) {
         
-        if (!self.wallets.isEmpty) {
+        if (!wallets.isEmpty) {
             
-            self.coreDataService.getAssetsFrom(wallets: wallets) { assets in
-			self.processFetchedData(assets: assets)
+            coreDataService.getAssetsFrom(wallets: wallets) { [weak self] assets in
+				self?.processFetchedData(assets: assets)
 				if (assets.isEmpty || forceSync) {
-					self.startSync()
+					self?.startSync()
 				}
             }
         } else {
             
-            self.logout?()
+            logout?()
         }
     }
     
     func setWallets(_ wallets: [WalletStorage], forceSync: Bool = false) {
-        self.wallets = wallets
+		self.wallets = wallets
         getLocalData(forceSync)
     }
     
@@ -82,8 +82,8 @@ class AssetsViewModel: NSObject {
             isSyncActive = true
             assetHeaderViewModel.progress = 0.05
             
-            getOnlineData() { currentUserAssets in
-                
+            getOnlineData() { [weak self] currentUserAssets in
+				guard let self = self else { return }
                 if (!self.shouldStopSync) {
                     self.processFetchedData(assets: currentUserAssets, true)
                 }

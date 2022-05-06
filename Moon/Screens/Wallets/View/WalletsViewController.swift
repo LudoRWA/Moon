@@ -28,9 +28,9 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
     
     func initView() {
         
-        self.isModalInPresentation = true
-        self.mainTableView.register(WalletCell.nib, forCellReuseIdentifier: WalletCell.identifier)
-        self.titleLabel.text = String(format: NSLocalizedString("Label.Title.My.Wallet.Plural", comment:  "My Wallet"), viewModel.wallets.count)
+        isModalInPresentation = true
+        mainTableView.register(WalletCell.nib, forCellReuseIdentifier: WalletCell.identifier)
+        titleLabel.text = String(format: NSLocalizedString("Label.Title.My.Wallet.Plural", comment:  "My Wallet"), viewModel.wallets.count)
     }
     
     func initViewModel() {
@@ -68,14 +68,14 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.backButton.layer.cornerRadius = self.backButton.frame.height/2
-        self.addButton.layer.cornerRadius = 16
-        self.logoutButton.layer.cornerRadius = 16
+        backButton.layer.cornerRadius = backButton.frame.height/2
+        addButton.layer.cornerRadius = 16
+        logoutButton.layer.cornerRadius = 16
     }
     
     //MARK: - UIButton Action
     @IBAction func backAction(_ sender: Any) {
-        self.dismissAction()
+        dismissAction()
     }
     
     @IBAction func logoutAction(_ sender: Any) {
@@ -87,7 +87,7 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
             self.viewModel.removeAll()
         })
         
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func dismissAction() {
@@ -114,7 +114,7 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
             self.viewModel.remove(wallet: currentWallet)
         })
         
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

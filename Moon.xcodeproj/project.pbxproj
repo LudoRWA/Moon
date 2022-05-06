@@ -62,6 +62,8 @@
 		22BD88E7280AD48400CCD372 /* UIVIew+LongTouchEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88E6280AD48400CCD372 /* UIVIew+LongTouchEffect.swift */; };
 		22BD88EA280AD57E00CCD372 /* OpenSeaServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */; };
 		22BD88EC280AD59600CCD372 /* CoinbaseServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */; };
+		22C85B782825531400490311 /* OpenSeaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22183AB92825147000BD76E2 /* OpenSeaError.swift */; };
+		22C85B7A282557C800490311 /* CoinbaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C85B79282557C800490311 /* CoinbaseError.swift */; };
 		2CB5ADAEC48630AE7B32844D /* Pods_ConfigurableMoonWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3271C55FFA86BC9FAC133CE3 /* Pods_ConfigurableMoonWidget.framework */; };
 		433E402E27848614004AB117 /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433E402C27848614004AB117 /* AssetCell.swift */; };
 		433E402F27848614004AB117 /* AssetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433E402D27848614004AB117 /* AssetCell.xib */; };
@@ -178,6 +180,7 @@
 		22BD88E6280AD48400CCD372 /* UIVIew+LongTouchEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+LongTouchEffect.swift"; sourceTree = "<group>"; };
 		22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaServiceModel.swift; sourceTree = "<group>"; };
 		22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseServiceModel.swift; sourceTree = "<group>"; };
+		22C85B79282557C800490311 /* CoinbaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseError.swift; sourceTree = "<group>"; };
 		2AE874ABD5AD206E0D935F03 /* Pods-Moon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moon.release.xcconfig"; path = "Target Support Files/Pods-Moon/Pods-Moon.release.xcconfig"; sourceTree = "<group>"; };
 		3271C55FFA86BC9FAC133CE3 /* Pods_ConfigurableMoonWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfigurableMoonWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		433E402C27848614004AB117 /* AssetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCell.swift; sourceTree = "<group>"; };
@@ -543,6 +546,7 @@
 				22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */,
 				22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */,
 				22183AB92825147000BD76E2 /* OpenSeaError.swift */,
+				22C85B79282557C800490311 /* CoinbaseError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -987,6 +991,7 @@
 				228243EE28129C8E000701A5 /* UILabel+Localizable.swift in Sources */,
 				22BD88E0280AC02F00CCD372 /* AssetsViewModel+Amount.swift in Sources */,
 				22A38432280B06F400285290 /* WelcomeViewModel.swift in Sources */,
+				22C85B7A282557C800490311 /* CoinbaseError.swift in Sources */,
 				43CDB5F02783520F00FC3AB9 /* AppDelegate.swift in Sources */,
 				433E402E27848614004AB117 /* AssetCell.swift in Sources */,
 				22A9194C28084AF5009C23FD /* CoreDataStack.swift in Sources */,
@@ -1007,6 +1012,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C85B782825531400490311 /* OpenSeaError.swift in Sources */,
 				22A91951280858C0009C23FD /* CoreDataStack.swift in Sources */,
 				43D2FC5927919F4800B19A2C /* NFTWidget.intentdefinition in Sources */,
 				43FA47722791D3C50039F936 /* IntentHandler.swift in Sources */,

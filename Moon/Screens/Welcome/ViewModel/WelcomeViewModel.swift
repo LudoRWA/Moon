@@ -33,10 +33,11 @@ class WelcomeViewModel: NSObject {
     
     //MARK: - Get Local Data
     func getWallets(_ animated: Bool = false) {
-		coreDataService.getWallets { wallets in
-            self.wallets = wallets
-            if (!self.wallets.isEmpty) {
-                self.login?(animated, self.wallets)
+		coreDataService.getWallets { [weak self] wallets in
+			guard let self = self else { return }
+			self.wallets = wallets
+			if (!self.wallets.isEmpty) {
+				self.login?(animated, self.wallets)
             }
         }
     }

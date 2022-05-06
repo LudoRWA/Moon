@@ -25,13 +25,21 @@ class CoinbaseServiceTests: XCTestCase {
 		let currencyCode = "USD"
 		let expect = XCTestExpectation(description: "callback")
 		
-		coinbaseService?.getFiatPrice(currencyCode) { value in
+		coinbaseService?.getFiatPrice(currencyCode) { result in
 			expect.fulfill()
 		
-			XCTAssertNotNil(value)
-			
-			let currentValue = Double(value?.data.amount ?? "0.0") ?? 0.0
-			XCTAssertGreaterThan(currentValue, 2000.0)
+			switch result {
+			case .success(let value):
+				
+				XCTAssertNotNil(value)
+				
+				let currentValue = Double(value.data.amount ?? "0.0") ?? 0.0
+				XCTAssertGreaterThan(currentValue, 2000.0)
+				
+			case .failure(let error):
+				
+				XCTFail("Error getFiatPrice : \(error)")
+			}
 		}
 		
 		wait(for: [expect], timeout: 5.0)

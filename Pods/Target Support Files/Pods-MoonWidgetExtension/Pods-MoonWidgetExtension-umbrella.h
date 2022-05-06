@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Moon_WidgetExtensionVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Moon_WidgetExtensionVersionString[];
+FOUNDATION_EXPORT double Pods_MoonWidgetExtensionVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MoonWidgetExtensionVersionString[];
 

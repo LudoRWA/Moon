@@ -62,7 +62,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
                 }
             }
             
-            setNFTInformations(currentRow: self.viewModel.currentCollectionViewIndex)
+            setNFTInformations(currentRow: viewModel.currentCollectionViewIndex)
         }
     }
     
