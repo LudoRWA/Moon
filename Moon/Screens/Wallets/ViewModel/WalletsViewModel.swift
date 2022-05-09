@@ -11,14 +11,10 @@ class WalletsViewModel: NSObject {
 	var coreDataService: CoreDataServiceProtocol
     var updateCellsTableView: ((([IndexPath], [IndexPath]), Bool) -> Void)?
     
-    var wallets = [WalletStorage]() {
+    var wallets = [WalletRaw]() {
         didSet {
-            walletCellViewModels = getCellsReady(wallets: wallets)
-        }
-    }
-    var walletCellViewModels = [WalletCellViewModel]() {
-        didSet {
-            updateCellsTableView?(getTableViewReady(oldArray: oldValue, newArray: walletCellViewModels), walletCellViewModels.isEmpty)
+			
+			updateCellsTableView?(getTableViewReady(oldArray: oldValue, newArray: wallets), wallets.isEmpty)
         }
     }
     
@@ -29,37 +25,30 @@ class WalletsViewModel: NSObject {
 		self.coreDataService = coreDataService
 	}
 	
-    public func addWallet(wallet: WalletStorage) {
+    public func addWallet(wallet: WalletRaw) {
         shouldUpdateViewController = true
         wallets.append(wallet)
     }
     
-    func remove(wallet: WalletStorage) {
+    func remove(wallet: WalletRaw) {
 		
-		coreDataService.remove(wallet: wallet)
+		CoreDataStack.sharedInstance.viewContext.delete(wallet: wallet, completion: nil)
 		wallets.removeAll{$0 == wallet}
 		shouldUpdateViewController = true
     }
     
     func removeAll() {
-		coreDataService.removeAll(wallets: wallets)
+		
+		for wallet in wallets {
+			
+			CoreDataStack.sharedInstance.viewContext.delete(wallet: wallet, completion: nil)
+		}
+		
 		wallets.removeAll()
 		shouldUpdateViewController = true
     }
     
-    func getCellsReady(wallets: [WalletStorage]) -> [WalletCellViewModel] {
-        
-        var newWalletCellViewModels = [WalletCellViewModel]()
-        wallets.forEach {
-            let address = $0.address
-            let newCell = WalletCellViewModel(address: address, wallet: $0)
-            newWalletCellViewModels.append(newCell)
-        }
-
-        return newWalletCellViewModels
-    }
-    
-    func getTableViewReady(oldArray: [WalletCellViewModel], newArray: [WalletCellViewModel]) -> ([IndexPath], [IndexPath]) {
+    func getTableViewReady(oldArray: [WalletRaw], newArray: [WalletRaw]) -> ([IndexPath], [IndexPath]) {
         
         let changes = newArray.difference(from: oldArray)
         
@@ -80,7 +69,7 @@ class WalletsViewModel: NSObject {
         return (insertedIndexPaths, removedIndexPaths)
     }
     
-    func getCellViewModel(at indexPath: IndexPath) -> WalletCellViewModel {
-        return walletCellViewModels[indexPath.row]
+    func getCellViewModel(at indexPath: IndexPath) -> WalletRaw {
+        return wallets[indexPath.row]
     }
 }

@@ -9,10 +9,10 @@ import Foundation
 
 extension AssetsViewModel {
     
-    func getOnlineData(completion: @escaping ([AssetStorage]) -> ()) {
+    func getOnlineData(completion: @escaping ([AssetRaw]) -> ()) {
         
         let oldAssets = assets
-        var currentAssets = [AssetStorage]()
+        var currentAssets = [AssetRaw]()
         
         DispatchQueue.global(qos: .userInitiated).async {
             
@@ -48,12 +48,12 @@ extension AssetsViewModel {
         }
     }
     
-    func getAssets(_ oldAssets: [AssetStorage], _ currentAssets: [AssetStorage], _ cursor: String?, _ wallet: WalletStorage, completion: @escaping (Result<[AssetStorage], OpenSeaError>) -> ()) {
+    func getAssets(_ oldAssets: [AssetRaw], _ currentAssets: [AssetRaw], _ cursor: String?, _ wallet: WalletRaw, completion: @escaping (Result<[AssetRaw], OpenSeaError>) -> ()) {
         
         var currentUserAssets = currentAssets
         
         openSeaService.getAssets(50, wallet.address ?? "", cursor) { [weak self] result in
-            
+
 			switch result {
 			case .success(let value):
 				
@@ -70,37 +70,22 @@ extension AssetsViewModel {
 					let collectionImageURL = $0.collection.image_url
 					
 					if (nftName == nil) { nftName = "#\(tokenId ?? "Unknown")" }
+					let foundAsset = oldAssets.filter({ $0.id == id }).first?.reference
 					
-					let foundAsset = oldAssets.filter({ $0.id == id }).first
+					let newAsset = AssetRaw(reference: foundAsset,
+											id: id,
+											collectionSlug: collectionSlug,
+											collectionName: collectionName,
+											collectionDescription: collectionDescription,
+											collectionImageURL: collectionImageURL,
+											floorPrice: 0.0,
+											averagePrice: 0.0,
+											nftName: nftName,
+											nftPermalink: nftPermalink,
+											nftImageURL: nftImageURL,
+											wallet: wallet)
 					
-					if let foundAsset = foundAsset {
-						
-						foundAsset.collectionName = collectionName
-						foundAsset.collectionDescription = collectionDescription
-						foundAsset.collectionImageURL = collectionImageURL
-						foundAsset.nftName = nftName
-						foundAsset.nftPermalink = nftPermalink
-						foundAsset.nftImageURL = nftImageURL
-						foundAsset.wallet = wallet
-						
-						currentUserAssets.append(foundAsset)
-					} else {
-						
-						let newAsset = AssetStorage(context: CoreDataStack.sharedInstance.viewContext)
-						
-						newAsset.collectionSlug = collectionSlug
-						newAsset.collectionName = collectionName
-						newAsset.collectionDescription = collectionDescription
-						newAsset.collectionImageURL = collectionImageURL
-						
-						newAsset.id = id
-						newAsset.nftName = nftName
-						newAsset.nftPermalink = nftPermalink
-						newAsset.nftImageURL = nftImageURL
-						newAsset.wallet = wallet
-						
-						currentUserAssets.append(newAsset)
-					}
+					currentUserAssets.append(newAsset)
 				}
 				
 				let nextCursor = value.next
@@ -130,9 +115,9 @@ extension AssetsViewModel {
         }
     }
     
-    func getPrice(_ userAssets: [AssetStorage], completionHandler: @escaping ([AssetStorage]) -> ()) {
+    func getPrice(_ userAssets: [AssetRaw], completionHandler: @escaping ([AssetRaw]) -> ()) {
         
-        let currentUserAssets = userAssets
+		var currentUserAssets = userAssets
         
         DispatchQueue.global(qos: .userInitiated).async {
             
@@ -156,28 +141,26 @@ extension AssetsViewModel {
                         semaphore.signal()
                     } else {
 						self.openSeaService.getCollection(originalCollectionSlug) { result in
-							
-							var roundedFloorPrice = 0.0
-							var roundedAveragePrice = 0.0
-							
+						
 							switch result {
 							case .success(let value):
 								
-								roundedFloorPrice = round(100 * (Double(value.collection.stats.floor_price ?? 0.0))) / 100
-								roundedAveragePrice = round(100 * Double(value.collection.stats.average_price ?? 0.0)) / 100
+								let roundedFloorPrice = round(100 * (Double(value.collection.stats.floor_price ?? 0.0))) / 100
+								let roundedAveragePrice = round(100 * Double(value.collection.stats.average_price ?? 0.0)) / 100
+								
+								currentUserAssets[i].floorPrice = roundedFloorPrice
+								currentUserAssets[i].averagePrice = roundedAveragePrice
+								
+								let newCollection = Asset(collectionSlug: originalCollectionSlug,
+														  floorPrice: roundedFloorPrice,
+														  averagePrice: roundedAveragePrice)
+								usedSlugs.append(newCollection)
+								
 							case .failure(_):
 								
 								sleep(5)
 							}
-                            
-                            currentUserAssets[i].floorPrice = roundedFloorPrice
-                            currentUserAssets[i].averagePrice = roundedAveragePrice
-                            
-							let newCollection = Asset(collectionSlug: originalCollectionSlug,
-													  floorPrice: roundedFloorPrice,
-													  averagePrice: roundedAveragePrice)
-                            usedSlugs.append(newCollection)
-                            
+                           
                             semaphore.signal()
                         }
                     }

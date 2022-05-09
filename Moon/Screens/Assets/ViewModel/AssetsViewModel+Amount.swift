@@ -9,7 +9,7 @@ import Foundation
 
 extension AssetsViewModel {
     
-    func getTotalAmounts(_ currentAssets: [AssetStorage]) {
+    func getTotalAmounts(_ currentAssets: [AssetRaw]) {
         
         var totalAmountFloor = 0.0
         var totalAmountAverage = 0.0

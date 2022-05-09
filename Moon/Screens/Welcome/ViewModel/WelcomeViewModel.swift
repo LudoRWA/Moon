@@ -10,9 +10,9 @@ import Nuke
 
 class WelcomeViewModel: NSObject {
     var coreDataService: CoreDataServiceProtocol
-    var login: ((Bool, [WalletStorage]) -> Void)?
+    var login: ((Bool, [WalletRaw]) -> Void)?
     
-    var wallets = [WalletStorage]()
+    var wallets = [WalletRaw]()
     
     init(coreDataService: CoreDataServiceProtocol = CoreDataService()) {
         self.coreDataService = coreDataService

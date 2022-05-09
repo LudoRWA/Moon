@@ -9,37 +9,43 @@ import FirebaseCrashlytics
 import CoreData
 
 protocol CoreDataServiceProtocol {
-	func save()
+	func getAssetsFrom(wallets: [WalletRaw], completion: @escaping (_ result: [AssetRaw]) -> ())
+    func getAllAssets(completion: @escaping (_ result: [AssetRaw]) -> ())
 	
-	func getAssetsFrom(wallets: [WalletStorage], completion: @escaping (_ result: [AssetStorage]) -> ())
-    func getAllAssets(completion: @escaping (_ result: [AssetStorage]) -> ())
-	func remove(asset: AssetStorage)
-	
-	func getWallets(completion: @escaping (_ result: [WalletStorage]) -> ())
-	func remove(wallet: WalletStorage)
-	func removeAll(wallets: [WalletStorage])
+	func getWallets(completion: @escaping (_ result: [WalletRaw]) -> ())
 }
 
 class CoreDataService: CoreDataServiceProtocol {
-    
-	func save() {
-		do {
-			try CoreDataStack.sharedInstance.viewContext.save()
-		} catch {
-			Crashlytics.crashlytics().record(error: error)
-			debugPrint("Error saving Core Data : \(error)")
-		}
-	}
 	
 	//MARK: - Assets
-    func getAssetsFrom(wallets: [WalletStorage], completion: @escaping ([AssetStorage]) -> ()) {
-        
-		var assets = [AssetStorage]()
+    func getAssetsFrom(wallets: [WalletRaw], completion: @escaping ([AssetRaw]) -> ()) {
+		let walletsObjectID = wallets.map{ $0.reference }
+
+		var assets = [AssetRaw]()
         do {
             
-            let fetchRequest: NSFetchRequest<AssetStorage> = AssetStorage.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "ANY wallet IN %@", wallets)
-			assets = try CoreDataStack.sharedInstance.viewContext.fetch(fetchRequest) as [AssetStorage]
+            let fetchRequest: NSFetchRequest<AssetMO> = AssetMO.fetchRequest()
+			fetchRequest.predicate = NSPredicate(format: "ANY wallet IN %@", walletsObjectID)
+			let assetsMO = try CoreDataStack.sharedInstance.viewContext.fetch(fetchRequest) as [AssetMO]
+			
+			for asset in assetsMO {
+				
+				let newWallet = WalletRaw(reference: asset.wallet?.objectID, address: asset.wallet?.address)
+				let newAsset = AssetRaw(reference: asset.objectID,
+										id: asset.id,
+										collectionSlug: asset.collectionSlug,
+										collectionName: asset.collectionName,
+										collectionDescription: asset.collectionDescription,
+										collectionImageURL: asset.collectionImageURL,
+										floorPrice: asset.floorPrice,
+										averagePrice: asset.averagePrice,
+										nftName: asset.nftName,
+										nftPermalink: asset.nftPermalink,
+										nftImageURL: asset.nftImageURL,
+										wallet: newWallet)
+				
+				assets.append(newAsset)
+			}
         } catch {
             
             Crashlytics.crashlytics().record(error: error)
@@ -49,13 +55,32 @@ class CoreDataService: CoreDataServiceProtocol {
 		completion(assets)
     }
     
-    func getAllAssets(completion: @escaping ([AssetStorage]) -> ()) {
+    func getAllAssets(completion: @escaping ([AssetRaw]) -> ()) {
         
-		var assets = [AssetStorage]()
+		var assets = [AssetRaw]()
         do {
             
-            let fetchRequest: NSFetchRequest<AssetStorage> = AssetStorage.fetchRequest()
-            assets = try CoreDataStack.sharedInstance.viewContext.fetch(fetchRequest) as [AssetStorage]
+            let fetchRequest: NSFetchRequest<AssetMO> = AssetMO.fetchRequest()
+            let assetsMO = try CoreDataStack.sharedInstance.viewContext.fetch(fetchRequest) as [AssetMO]
+			
+			for asset in assetsMO {
+				
+				let newWallet = WalletRaw(reference: asset.wallet?.objectID, address: asset.wallet?.address)
+				let newAsset = AssetRaw(reference: asset.objectID,
+										id: asset.id,
+										collectionSlug: asset.collectionSlug,
+										collectionName: asset.collectionName,
+										collectionDescription: asset.collectionDescription,
+										collectionImageURL: asset.collectionImageURL,
+										floorPrice: asset.floorPrice,
+										averagePrice: asset.averagePrice,
+										nftName: asset.nftName,
+										nftPermalink: asset.nftPermalink,
+										nftImageURL: asset.nftImageURL,
+										wallet: newWallet)
+				
+				assets.append(newAsset)
+			}
         } catch {
             
             Crashlytics.crashlytics().record(error: error)
@@ -65,19 +90,22 @@ class CoreDataService: CoreDataServiceProtocol {
 		completion(assets)
     }
 	
-	func remove(asset: AssetStorage) {
-		CoreDataStack.sharedInstance.viewContext.delete(asset)
-		save()
-	}
-	
 	//MARK: - Wallets
-	func getWallets(completion: @escaping ([WalletStorage]) -> ()) {
+	func getWallets(completion: @escaping ([WalletRaw]) -> ()) {
 		
-		var wallets = [WalletStorage]()
+		var wallets = [WalletRaw]()
 		do {
 			
-			let request: NSFetchRequest<WalletStorage> = WalletStorage.fetchRequest()
-			wallets = try CoreDataStack.sharedInstance.viewContext.fetch(request)
+			let request: NSFetchRequest<WalletMO> = WalletMO.fetchRequest()
+			let walletsMO = try CoreDataStack.sharedInstance.viewContext.fetch(request)
+			
+			for wallet in walletsMO {
+				if let walletAddress = wallet.address {
+					
+					let newWallet = WalletRaw(reference: wallet.objectID, address: walletAddress)
+					wallets.append(newWallet)
+				}
+			}
 		} catch {
 			
 			Crashlytics.crashlytics().record(error: error)
@@ -85,15 +113,5 @@ class CoreDataService: CoreDataServiceProtocol {
 		}
 		
 		completion(wallets)
-	}
-	
-	func remove(wallet: WalletStorage) {
-		CoreDataStack.sharedInstance.viewContext.delete(wallet)
-		save()
-	}
-	
-	func removeAll(wallets: [WalletStorage]) {
-		wallets.forEach { CoreDataStack.sharedInstance.viewContext.delete($0) }
-		save()
 	}
 }

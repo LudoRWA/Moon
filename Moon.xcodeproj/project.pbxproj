@@ -31,11 +31,20 @@
 		224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */; };
 		224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27D280D675700C2CC61 /* AssetModel.swift */; };
 		224FF280280D676100C2CC61 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27F280D676100C2CC61 /* NFTModel.swift */; };
-		224FF283280D88DA00C2CC61 /* WalletCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF282280D88DA00C2CC61 /* WalletCellViewModel.swift */; };
 		224FF285280D891900C2CC61 /* WalletsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF284280D891900C2CC61 /* WalletsViewModel.swift */; };
 		224FF288280D9AB800C2CC61 /* NFTCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF287280D9AB800C2CC61 /* NFTCellViewModel.swift */; };
 		224FF28A280DA0FE00C2CC61 /* AddWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF289280DA0FE00C2CC61 /* AddWalletViewModel.swift */; };
 		224FF28C280DC52000C2CC61 /* Array+Insertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF28B280DC52000C2CC61 /* Array+Insertion.swift */; };
+		226719BF2829556A00732D84 /* NSManagedObjectContext+Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719BE2829556A00732D84 /* NSManagedObjectContext+Wallet.swift */; };
+		226719C42829562600732D84 /* WalletRawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719C32829562600732D84 /* WalletRawModel.swift */; };
+		226719C6282957C300732D84 /* VoidResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719C5282957C300732D84 /* VoidResult.swift */; };
+		226719C7282959DC00732D84 /* WalletRawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719C32829562600732D84 /* WalletRawModel.swift */; };
+		226719C8282959DC00732D84 /* WalletRawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719C32829562600732D84 /* WalletRawModel.swift */; };
+		226719CA2829603700732D84 /* AssetRawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719C92829603700732D84 /* AssetRawModel.swift */; };
+		226719CB2829618F00732D84 /* AssetRawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719C92829603700732D84 /* AssetRawModel.swift */; };
+		226719CC2829619000732D84 /* AssetRawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719C92829603700732D84 /* AssetRawModel.swift */; };
+		226719CE2829640900732D84 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719CD2829640900732D84 /* NSManagedObjectContext.swift */; };
+		226719D02829645200732D84 /* NSManagedObjectContext+Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226719CF2829645200732D84 /* NSManagedObjectContext+Asset.swift */; };
 		228243E928129C1C000701A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 228243EB28129C1C000701A5 /* Localizable.strings */; };
 		228243EE28129C8E000701A5 /* UILabel+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243ED28129C8E000701A5 /* UILabel+Localizable.swift */; };
 		228243F028129CAE000701A5 /* UIButton+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228243EF28129CAE000701A5 /* UIButton+Localizable.swift */; };
@@ -153,11 +162,16 @@
 		224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		224FF27D280D675700C2CC61 /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		224FF27F280D676100C2CC61 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
-		224FF282280D88DA00C2CC61 /* WalletCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCellViewModel.swift; sourceTree = "<group>"; };
 		224FF284280D891900C2CC61 /* WalletsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewModel.swift; sourceTree = "<group>"; };
 		224FF287280D9AB800C2CC61 /* NFTCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCellViewModel.swift; sourceTree = "<group>"; };
 		224FF289280DA0FE00C2CC61 /* AddWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWalletViewModel.swift; sourceTree = "<group>"; };
 		224FF28B280DC52000C2CC61 /* Array+Insertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Insertion.swift"; sourceTree = "<group>"; };
+		226719BE2829556A00732D84 /* NSManagedObjectContext+Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Wallet.swift"; sourceTree = "<group>"; };
+		226719C32829562600732D84 /* WalletRawModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRawModel.swift; sourceTree = "<group>"; };
+		226719C5282957C300732D84 /* VoidResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidResult.swift; sourceTree = "<group>"; };
+		226719C92829603700732D84 /* AssetRawModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRawModel.swift; sourceTree = "<group>"; };
+		226719CD2829640900732D84 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
+		226719CF2829645200732D84 /* NSManagedObjectContext+Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Asset.swift"; sourceTree = "<group>"; };
 		228243EA28129C1C000701A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		228243ED28129C8E000701A5 /* UILabel+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Localizable.swift"; sourceTree = "<group>"; };
 		228243EF28129CAE000701A5 /* UIButton+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Localizable.swift"; sourceTree = "<group>"; };
@@ -321,20 +335,20 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
-		224FF281280D88C000C2CC61 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				224FF282280D88DA00C2CC61 /* WalletCellViewModel.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		224FF286280D9AA300C2CC61 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				224FF287280D9AB800C2CC61 /* NFTCellViewModel.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		226719C22829561000732D84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				226719C32829562600732D84 /* WalletRawModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		22A38433280B06F700285290 /* ViewModel */ = {
@@ -371,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				22A38F682809B90A00E368E7 /* AmountModel.swift */,
+				226719C92829603700732D84 /* AssetRawModel.swift */,
 				224FF27D280D675700C2CC61 /* AssetModel.swift */,
 				224FF27F280D676100C2CC61 /* NFTModel.swift */,
 			);
@@ -413,6 +428,9 @@
 			children = (
 				22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */,
 				22A9194B28084AF5009C23FD /* CoreDataStack.swift */,
+				226719CD2829640900732D84 /* NSManagedObjectContext.swift */,
+				226719BE2829556A00732D84 /* NSManagedObjectContext+Wallet.swift */,
+				226719CF2829645200732D84 /* NSManagedObjectContext+Asset.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -420,6 +438,7 @@
 		22A38F4F28099D6900E368E7 /* Wallets */ = {
 			isa = PBXGroup;
 			children = (
+				226719C22829561000732D84 /* Model */,
 				22A38F5028099D7900E368E7 /* View */,
 				22A38F5328099D9400E368E7 /* ViewModel */,
 			);
@@ -447,7 +466,6 @@
 		22A38F5328099D9400E368E7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				224FF281280D88C000C2CC61 /* Cell */,
 				224FF284280D891900C2CC61 /* WalletsViewModel.swift */,
 			);
 			path = ViewModel;
@@ -560,6 +578,7 @@
 				434D7BB82788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift */,
 				228243EB28129C1C000701A5 /* Localizable.strings */,
 				439B348A278F195F007AE1DC /* Localizable.stringsdict */,
+				226719C5282957C300732D84 /* VoidResult.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -981,7 +1000,9 @@
 				224FF28A280DA0FE00C2CC61 /* AddWalletViewModel.swift in Sources */,
 				43FA476A2791C0D90039F936 /* AppGroup.swift in Sources */,
 				22BD88E7280AD48400CCD372 /* UIVIew+LongTouchEffect.swift in Sources */,
+				226719CA2829603700732D84 /* AssetRawModel.swift in Sources */,
 				43A6A2AB278DBF2C00330C47 /* AddWalletViewController.swift in Sources */,
+				226719C42829562600732D84 /* WalletRawModel.swift in Sources */,
 				22A38F6B2809C34300E368E7 /* AssetHeaderViewModel.swift in Sources */,
 				22A38F632809A56200E368E7 /* OpenSeaServiceProtocol.swift in Sources */,
 				22A38F5C28099F5700E368E7 /* AssetsViewModel.swift in Sources */,
@@ -992,19 +1013,22 @@
 				22BD88E0280AC02F00CCD372 /* AssetsViewModel+Amount.swift in Sources */,
 				22A38432280B06F400285290 /* WelcomeViewModel.swift in Sources */,
 				22C85B7A282557C800490311 /* CoinbaseError.swift in Sources */,
+				226719CE2829640900732D84 /* NSManagedObjectContext.swift in Sources */,
 				43CDB5F02783520F00FC3AB9 /* AppDelegate.swift in Sources */,
 				433E402E27848614004AB117 /* AssetCell.swift in Sources */,
+				226719BF2829556A00732D84 /* NSManagedObjectContext+Wallet.swift in Sources */,
 				22A9194C28084AF5009C23FD /* CoreDataStack.swift in Sources */,
 				43D2FC5827919F4800B19A2C /* NFTWidget.intentdefinition in Sources */,
 				224FF280280D676100C2CC61 /* NFTModel.swift in Sources */,
 				224FF288280D9AB800C2CC61 /* NFTCellViewModel.swift in Sources */,
+				226719D02829645200732D84 /* NSManagedObjectContext+Asset.swift in Sources */,
 				22BD88EA280AD57E00CCD372 /* OpenSeaServiceModel.swift in Sources */,
 				22183ABA2825147000BD76E2 /* OpenSeaError.swift in Sources */,
 				224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */,
 				224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */,
+				226719C6282957C300732D84 /* VoidResult.swift in Sources */,
 				22BD88E5280AD45500CCD372 /* UITextField+Padding.swift in Sources */,
 				434D7BB5278846F000A6D711 /* DetailsViewController.swift in Sources */,
-				224FF283280D88DA00C2CC61 /* WalletCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,6 +1044,8 @@
 				22A9194F28085790009C23FD /* Moon.xcdatamodeld in Sources */,
 				2213583E280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */,
 				2214ECCD2816904400AC564C /* String+Localized.swift in Sources */,
+				226719C7282959DC00732D84 /* WalletRawModel.swift in Sources */,
+				226719CB2829618F00732D84 /* AssetRawModel.swift in Sources */,
 				43FA476B2791C0E20039F936 /* AppGroup.swift in Sources */,
 				2213584B280EA1F500FDBEC6 /* OpenSeaServiceProtocol.swift in Sources */,
 				43CDB60E27835F8B00FC3AB9 /* NFTWidget.swift in Sources */,
@@ -1039,7 +1065,9 @@
 				43FA476C2791C0E20039F936 /* AppGroup.swift in Sources */,
 				22A9195028085790009C23FD /* Moon.xcdatamodeld in Sources */,
 				43FA47652791A24A0039F936 /* NFTWidget.intentdefinition in Sources */,
+				226719C8282959DC00732D84 /* WalletRawModel.swift in Sources */,
 				2213583F280E99DA00FDBEC6 /* CoreDataServiceProtocol.swift in Sources */,
+				226719CC2829619000732D84 /* AssetRawModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1263,7 +1291,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Moon/Moon.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4ABMNPNS6D;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1296,7 +1324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Moon/Moon.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 4ABMNPNS6D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Moon/Info.plist;
@@ -1328,12 +1356,12 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = MoonWidget/MoonWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4ABMNPNS6D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoonWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MoonWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = "Moon Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1359,11 +1387,11 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = MoonWidget/MoonWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 4ABMNPNS6D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoonWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MoonWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = "Moon Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1387,7 +1415,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ConfigurableMoonWidget/ConfigurableMoonWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 4ABMNPNS6D;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1416,7 +1444,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ConfigurableMoonWidget/ConfigurableMoonWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 4ABMNPNS6D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ConfigurableMoonWidget/Info.plist;

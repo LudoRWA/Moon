@@ -16,7 +16,7 @@ class WalletCell: UITableViewCell {
     class var identifier: String { return String(describing: self) }
     class var nib: UINib { return UINib(nibName: identifier, bundle: nil) }
     
-    var cellViewModel: WalletCellViewModel? {
+    var cellViewModel: WalletRaw? {
         didSet {
             addressLabel.text = cellViewModel?.address
         }

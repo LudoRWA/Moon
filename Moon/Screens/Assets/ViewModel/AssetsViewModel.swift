@@ -17,8 +17,8 @@ class AssetsViewModel: NSObject {
     var showErrorMessage: ((String?) -> Void)?
     var logout: (() -> Void)?
     
-    var wallets = [WalletStorage]() //wallets from and for coredata
-    var assets = [AssetStorage]() //assets from and for coredata
+    var wallets = [WalletRaw]()
+    var assets = [AssetRaw]()
     
     let availableCurrencies = ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF"]
     
@@ -68,7 +68,7 @@ class AssetsViewModel: NSObject {
         }
     }
     
-    func setWallets(_ wallets: [WalletStorage], forceSync: Bool = false) {
+    func setWallets(_ wallets: [WalletRaw], forceSync: Bool = false) {
 		self.wallets = wallets
         getLocalData(forceSync)
     }
@@ -105,26 +105,36 @@ class AssetsViewModel: NSObject {
     }
     
     //MARK: - Update Data
-    func processFetchedData(assets: [AssetStorage], _ isOnline: Bool = false) {
+    func processFetchedData(assets: [AssetRaw], _ isOnline: Bool = false) {
         
-        getTotalAmounts(assets)
+		var finalAssets = assets
+        getTotalAmounts(finalAssets)
         
         if (isOnline) {
-            removeFromCoreData(oldArray: self.assets, newArray: assets)
-			coreDataService.save()
+            removeFromCoreData(oldArray: self.assets, newArray: finalAssets)
+			
+			for (i, asset) in finalAssets.enumerated() {
+				if asset.reference == nil {
+					CoreDataStack.sharedInstance.viewContext.add(asset: asset) { objectID in
+						finalAssets[i].reference = objectID
+					}
+				} else {
+					CoreDataStack.sharedInstance.viewContext.edit(asset: asset, completion: nil)
+				}
+			}
         }
         
-        self.assets = assets
+        self.assets = finalAssets
         
         updateHeader()
         getCellsReady()
     }
     
-	func removeFromCoreData(oldArray: [AssetStorage], newArray: [AssetStorage]) {
+	func removeFromCoreData(oldArray: [AssetRaw], newArray: [AssetRaw]) {
 		for oldAsset in oldArray {
 			if newArray.filter({ $0.collectionSlug == oldAsset.collectionSlug }).first == nil {
 				
-				coreDataService.remove(asset: oldAsset)
+				CoreDataStack.sharedInstance.viewContext.delete(asset: oldAsset, completion: nil)
 			}
 		}
 	}
@@ -172,7 +182,7 @@ class AssetsViewModel: NSObject {
         return AssetCellViewModel(collectionName: collectionName, collectionImageURL: collectionImageURL, price: price, count: count, asset: asset)
     }
     
-    func friendlyData(_ assets: [AssetStorage]) -> [Asset] {
+    func friendlyData(_ assets: [AssetRaw]) -> [Asset] {
         
         var friendlyAssets = [Asset]()
         

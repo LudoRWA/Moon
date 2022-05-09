@@ -110,7 +110,7 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
 		alert.addAction(UIAlertAction(title: "Button.Cancel".localized, style: .cancel, handler: nil))
 		alert.addAction(UIAlertAction(title: "Button.Delete".localized, style: .destructive) { UIAlertAction in
             
-            let currentWallet = self.viewModel.getCellViewModel(at: indexPath).wallet
+            let currentWallet = self.viewModel.getCellViewModel(at: indexPath)
             self.viewModel.remove(wallet: currentWallet)
         })
         

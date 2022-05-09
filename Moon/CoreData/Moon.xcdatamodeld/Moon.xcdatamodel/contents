@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="AssetStorage" representedClassName=".AssetStorage" syncable="YES" codeGenerationType="class">
+    <entity name="AssetMO" representedClassName=".AssetMO" syncable="YES" codeGenerationType="class">
         <attribute name="averagePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="collectionDescription" optional="YES" attributeType="String"/>
         <attribute name="collectionImageURL" optional="YES" attributeType="String"/>
         <attribute name="collectionName" optional="YES" attributeType="String"/>
         <attribute name="collectionSlug" attributeType="String"/>
         <attribute name="floorPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="nftImageURL" optional="YES" attributeType="String"/>
         <attribute name="nftName" optional="YES" attributeType="String"/>
         <attribute name="nftPermalink" optional="YES" attributeType="String"/>
-        <relationship name="wallet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WalletStorage" inverseName="wallet" inverseEntity="WalletStorage"/>
+        <relationship name="wallet" maxCount="1" deletionRule="Nullify" destinationEntity="WalletMO" inverseName="wallet" inverseEntity="WalletMO"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
-    <entity name="WalletStorage" representedClassName=".WalletStorage" syncable="YES" codeGenerationType="class">
+    <entity name="WalletMO" representedClassName=".WalletMO" syncable="YES" codeGenerationType="class">
         <attribute name="address" attributeType="String"/>
-        <relationship name="wallet" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AssetStorage" inverseName="wallet" inverseEntity="AssetStorage"/>
+        <relationship name="wallet" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AssetMO" inverseName="wallet" inverseEntity="AssetMO"/>
     </entity>
     <elements>
-        <element name="AssetStorage" positionX="-45.70703125" positionY="155.640625" width="128" height="194"/>
-        <element name="WalletStorage" positionX="-175.03515625" positionY="73.57421875" width="128" height="59"/>
+        <element name="AssetMO" positionX="-45.70703125" positionY="155.640625" width="128" height="208"/>
+        <element name="WalletMO" positionX="-333.35546875" positionY="137.65625" width="128" height="73"/>
     </elements>
 </model>

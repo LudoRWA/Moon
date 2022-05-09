@@ -11,7 +11,7 @@ class AddWalletViewModel: NSObject {
     var openSeaService: OpenSeaServiceProtocol
 	var coreDataService: CoreDataServiceProtocol
 	
-    var wallets = [WalletStorage]()
+    var wallets = [WalletRaw]()
     
     init(openSeaService: OpenSeaServiceProtocol = OpenSeaService(), coreDataService: CoreDataServiceProtocol = CoreDataService()) {
         
@@ -19,7 +19,7 @@ class AddWalletViewModel: NSObject {
 		self.coreDataService = coreDataService
     }
     
-    func addWallet(address: String?, completion: @escaping (Result<WalletStorage, OpenSeaError>) -> ()) {
+    func addWallet(address: String?, completion: @escaping (Result<WalletRaw, OpenSeaError>) -> ()) {
         
         if let address = address?.trimmingCharacters(in: .whitespacesAndNewlines), !address.isEmpty {
             
@@ -30,11 +30,11 @@ class AddWalletViewModel: NSObject {
 					
 					if (self?.wallets.firstIndex(where: {$0.address == address}) == nil) {
 						
-						let newWallet = WalletStorage(context: CoreDataStack.sharedInstance.viewContext)
-						newWallet.address = address
-						self?.coreDataService.save()
-						
-						completion(.success(newWallet))
+						var newWallet = WalletRaw(reference: nil, address: address)
+						CoreDataStack.sharedInstance.viewContext.add(wallet: newWallet) { objectID in
+							newWallet.reference = objectID
+							completion(.success(newWallet))
+						}
 					} else {
 						
 						completion(.failure(.duplicateWallet))
