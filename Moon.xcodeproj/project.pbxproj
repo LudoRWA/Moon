@@ -343,9 +343,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		226719C22829561000732D84 /* Model */ = {
+		226719D12829814500732D84 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				226719C92829603700732D84 /* AssetRawModel.swift */,
 				226719C32829562600732D84 /* WalletRawModel.swift */,
 			);
 			path = Model;
@@ -385,7 +386,6 @@
 			isa = PBXGroup;
 			children = (
 				22A38F682809B90A00E368E7 /* AmountModel.swift */,
-				226719C92829603700732D84 /* AssetRawModel.swift */,
 				224FF27D280D675700C2CC61 /* AssetModel.swift */,
 				224FF27F280D676100C2CC61 /* NFTModel.swift */,
 			);
@@ -426,6 +426,7 @@
 		22A38F4E28099CEE00E368E7 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				226719D12829814500732D84 /* Model */,
 				22A5E1F12807097900A65EA1 /* Moon.xcdatamodeld */,
 				22A9194B28084AF5009C23FD /* CoreDataStack.swift */,
 				226719CD2829640900732D84 /* NSManagedObjectContext.swift */,
@@ -438,7 +439,6 @@
 		22A38F4F28099D6900E368E7 /* Wallets */ = {
 			isa = PBXGroup;
 			children = (
-				226719C22829561000732D84 /* Model */,
 				22A38F5028099D7900E368E7 /* View */,
 				22A38F5328099D9400E368E7 /* ViewModel */,
 			);
@@ -1370,7 +1370,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon.NFTWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.luggy.moon.NFT-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1400,7 +1400,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = co.luggy.moon.NFTWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.luggy.moon.NFT-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
