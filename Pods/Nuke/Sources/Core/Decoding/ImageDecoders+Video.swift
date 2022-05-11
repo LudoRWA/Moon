@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2021 Alexander Grebenyuk (github.com/kean).
+// Copyright (c) 2015-2022 Alexander Grebenyuk (github.com/kean).
 
 #if !os(watchOS)
 
@@ -33,7 +33,7 @@ extension ImageDecoders {
             guard !didProducePreview else {
                 return nil // We only need one preview
             }
-            guard let preview = makePreview(for: data) else {
+            guard let preview = makePreview(for: data, type: type) else {
                 return nil
             }
             didProducePreview = true
@@ -42,8 +42,8 @@ extension ImageDecoders {
     }
 }
 
-private func makePreview(for data: Data) -> PlatformImage? {
-    let asset = AVDataAsset(data: data)
+private func makePreview(for data: Data, type: AssetType) -> PlatformImage? {
+    let asset = AVDataAsset(data: data, type: type)
     let generator = AVAssetImageGenerator(asset: asset)
     guard let cgImage = try? generator.copyCGImage(at: CMTime(value: 0, timescale: 1), actualTime: nil) else {
         return nil

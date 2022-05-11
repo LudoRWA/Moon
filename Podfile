@@ -1,17 +1,20 @@
 platform :ios, '13.0'
 use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git'
+
 target 'Moon' do
-  pod 'Nuke', '~>10.5.2'
+  pod 'Nuke'
   pod 'Gifu'
-  pod 'Alamofire', '~>5.5.0'
+  pod 'Alamofire'
   pod 'NVActivityIndicatorView'
   pod 'JGProgressHUD'
   pod 'SwiftMessages'
+  pod 'SQLite.swift'
 end
 
 target 'MoonWidgetExtension' do
-  pod 'Alamofire', '~>5.5.0'
+  pod 'Alamofire'
 end
 
 target 'ConfigurableMoonWidget' do

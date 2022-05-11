@@ -20,7 +20,7 @@ struct NFTEntry: TimelineEntry {
 
 @main
 struct NFTWidget: Widget {
-    let kind: String = "NFTWidget"
+    let kind: String = "NFT_Widget"
     
     var body: some WidgetConfiguration {
         IntentConfiguration(

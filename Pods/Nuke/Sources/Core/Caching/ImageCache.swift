@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2021 Alexander Grebenyuk (github.com/kean).
+// Copyright (c) 2015-2022 Alexander Grebenyuk (github.com/kean).
 
 import Foundation
 #if !os(macOS)
@@ -173,7 +173,7 @@ final class Cache<Key: Hashable, Value> {
 
         #if os(iOS) || os(tvOS)
         let center = NotificationCenter.default
-        center.addObserver(self, selector: #selector(didEnterBackground),
+        center.addObserver(self, selector: #selector(clearCacheOnEnterBackground),
                            name: UIApplication.didEnterBackgroundNotification,
                            object: nil)
         #endif
@@ -260,7 +260,7 @@ final class Cache<Key: Hashable, Value> {
     }
 
     @objc
-    private dynamic func didEnterBackground() {
+    private dynamic func clearCacheOnEnterBackground() {
         // Remove most of the stored items when entering background.
         // This behavior is similar to `NSCache` (which removes all
         // items). This feature is not documented and may be subject

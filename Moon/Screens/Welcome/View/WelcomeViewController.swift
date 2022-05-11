@@ -21,7 +21,7 @@ class WelcomeViewController: UIViewController {
     
     func initViewModel() {
         viewModel.login = { [weak self] animated, wallets in
-            
+
             if let assetsViewController = self?.storyboard?.instantiateViewController(withIdentifier: "Assets") as? AssetsViewController {
                 
                 assetsViewController.viewModel.setWallets(wallets)

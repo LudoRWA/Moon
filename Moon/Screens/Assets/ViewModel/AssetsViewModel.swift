@@ -12,6 +12,7 @@ class AssetsViewModel: NSObject {
     var openSeaService: OpenSeaServiceProtocol
     var coinbaseService: CoinbaseServiceProtocol
     
+	var syncInProgress: ((Bool) -> Void)?
     var updateCellsTableView: ((([IndexPath], [IndexPath])) -> Void)?
     var updateHeaderTableView: ((AssetHeaderViewModel) -> Void)?
     var showErrorMessage: ((String?) -> Void)?
@@ -23,7 +24,11 @@ class AssetsViewModel: NSObject {
     let availableCurrencies = ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF"]
     
     var shouldStopSync = false
-    var isSyncActive = false
+	var isSyncActive = false {
+		didSet {
+			syncInProgress?(isSyncActive)
+		}
+	}
     
     var totalAmount = AmountModel() {
         didSet {
@@ -107,27 +112,34 @@ class AssetsViewModel: NSObject {
     //MARK: - Update Data
     func processFetchedData(assets: [AssetRaw], _ isOnline: Bool = false) {
         
+		let group = DispatchGroup()
 		var finalAssets = assets
         getTotalAmounts(finalAssets)
-        
+		
         if (isOnline) {
             removeFromCoreData(oldArray: self.assets, newArray: finalAssets)
 			
 			for (i, asset) in finalAssets.enumerated() {
+				group.enter()
 				if asset.reference == nil {
 					CoreDataStack.sharedInstance.viewContext.add(asset: asset) { objectID in
+
 						finalAssets[i].reference = objectID
+						group.leave()
 					}
 				} else {
 					CoreDataStack.sharedInstance.viewContext.edit(asset: asset, completion: nil)
+					group.leave()
 				}
 			}
         }
-        
-        self.assets = finalAssets
-        
-        updateHeader()
-        getCellsReady()
+		
+		group.notify(queue: .main) {
+			self.assets = finalAssets
+			
+			self.updateHeader()
+			self.getCellsReady()
+		}
     }
     
 	func removeFromCoreData(oldArray: [AssetRaw], newArray: [AssetRaw]) {

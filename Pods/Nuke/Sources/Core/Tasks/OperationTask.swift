@@ -1,11 +1,11 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2021 Alexander Grebenyuk (github.com/kean).
+// Copyright (c) 2015-2022 Alexander Grebenyuk (github.com/kean).
 
 import Foundation
 
 /// A one-shot task for performing a single () -> T function.
-final class OperationTask<T>: Task<T, Swift.Error> {
+final class OperationTask<T>: AsyncTask<T, Swift.Error> {
     private let pipeline: ImagePipeline
     private let queue: OperationQueue
     private let process: () -> T?

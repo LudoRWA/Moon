@@ -71,6 +71,11 @@ class AssetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
             }
         }
+		viewModel.syncInProgress = { (isDisable) in
+			DispatchQueue.main.async {
+				UIApplication.shared.isIdleTimerDisabled = isDisable
+			}
+		}
     }
     
     //MARK: - UIButton Action

@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2021 Alexander Grebenyuk (github.com/kean).
+// Copyright (c) 2015-2022 Alexander Grebenyuk (github.com/kean).
 
 import Foundation
 
@@ -16,7 +16,7 @@ public final class ImagePrefetcher {
     private var tasks = [ImageLoadKey: Task]()
     private let destination: Destination
     let queue = OperationQueue() // internal for testing
-    var didComplete: (() -> Void)?
+    public var didComplete: (() -> Void)? // called when # of in-flight tasks decrements to 0
 
     /// Pauses the prefetching.
     ///

@@ -30,6 +30,7 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
         
         isModalInPresentation = true
         mainTableView.register(WalletCell.nib, forCellReuseIdentifier: WalletCell.identifier)
+		mainTableView.contentInset = UIEdgeInsets(top: 00, left: 0, bottom: 90, right: 0)
         titleLabel.text = String(format: NSLocalizedString("Label.Title.My.Wallet.Plural", comment:  "My Wallet"), viewModel.wallets.count)
     }
     
