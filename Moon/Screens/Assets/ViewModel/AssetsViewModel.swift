@@ -12,6 +12,7 @@ class AssetsViewModel: NSObject {
     var openSeaService: OpenSeaServiceProtocol
     var coinbaseService: CoinbaseServiceProtocol
     
+	var askForReview: (() -> Void)?
 	var syncInProgress: ((Bool) -> Void)?
     var updateCellsTableView: ((([IndexPath], [IndexPath])) -> Void)?
     var updateHeaderTableView: ((AssetHeaderViewModel) -> Void)?
@@ -60,7 +61,7 @@ class AssetsViewModel: NSObject {
         self.openSeaService = openSeaService
         self.coinbaseService = coinbaseService
     }
-    
+	
     //MARK: - Get Local Data
     func getLocalData(_ forceSync: Bool = false) {
         
@@ -89,6 +90,12 @@ class AssetsViewModel: NSObject {
         
         if (!isSyncActive) {
             
+			let currentCount = UserDefaults.standard.integer(forKey: "syncCount")
+			UserDefaults.standard.set(currentCount-1, forKey:"syncCount")
+			if currentCount % 15 == 0 && currentCount != 0 {
+				askForReview?()
+			}
+			
             isSyncActive = true
             assetHeaderViewModel.progress = 0.05
             

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftMessages
+import StoreKit
 import WidgetKit
 
 class AssetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -74,6 +75,11 @@ class AssetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		viewModel.syncInProgress = { (isDisable) in
 			DispatchQueue.main.async {
 				UIApplication.shared.isIdleTimerDisabled = isDisable
+			}
+		}
+		viewModel.askForReview = {
+			DispatchQueue.main.async {
+				SKStoreReviewController.requestReview()
 			}
 		}
     }
