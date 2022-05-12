@@ -60,40 +60,48 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         let refreshDate = Calendar.current.date(byAdding: .minute, value: 45, to: currentDate)!
         
-		var nftName = ""
-		var nftImageURL = ""
-		var collectionSlug: String?
-        
-        if let selectedNFT = configuration.nft {
-            
-			nftName = selectedNFT.nftName ?? ""
-			nftImageURL = selectedNFT.nftImageURL ?? ""
-			collectionSlug = selectedNFT.collectionSlug
-        } else {
-            
-			coreDataService.getAllAssets() { assets in
-		
-				if !assets.isEmpty, let randomNFT = assets.randomElement() {
-						
-					nftName = randomNFT.nftName ?? ""
-					nftImageURL = randomNFT.nftImageURL ?? ""
-					collectionSlug = randomNFT.collectionSlug
+		coreDataService.getAllAssets() { assets in
+			
+			if !assets.isEmpty {
+				
+				var nftName = ""
+				var nftImageURL = ""
+				var collectionSlug: String?
+			
+				if let selectedNFT = configuration.nft {
+				
+					nftName = selectedNFT.nftName ?? ""
+					nftImageURL = selectedNFT.nftImageURL ?? ""
+					collectionSlug = selectedNFT.collectionSlug
+				} else {
+				
+					if let randomNFT = assets.randomElement() {
+					
+						nftName = randomNFT.nftName ?? ""
+						nftImageURL = randomNFT.nftImageURL ?? ""
+						collectionSlug = randomNFT.collectionSlug
+					}
 				}
-            }
-        }
-        
-		guard let collectionSlug = collectionSlug else { return }
-		
-        self.openSeaService.getCollection(collectionSlug) { result in
-            
-			if case .success(let value) = result, let floorPrice = value.collection.stats.floor_price {
+			
+				guard let collectionSlug = collectionSlug else { return }
+			
+				self.openSeaService.getCollection(collectionSlug) { result in
 				
-				let floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
+					if case .success(let value) = result, let floorPrice = value.collection.stats.floor_price {
+					
+						let floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
+					
+						let entry = NFTEntry(date: currentDate, nftImageURL: nftImageURL, nftName: nftName, floorPrice: floorText, isEmpty: false, configuration: configuration)
+						let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
+						completion(timeline)
+					}
+				}
+			} else {
 				
-				let entry = NFTEntry(date: currentDate, nftImageURL: nftImageURL, nftName: nftName, floorPrice: floorText, isEmpty: false, configuration: configuration)
+				let entry = NFTEntry(date: currentDate, nftImageURL: "", nftName: "", floorPrice: "", isEmpty: true, configuration: configuration)
 				let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
 				completion(timeline)
 			}
-        }
+		}
     }
 }
