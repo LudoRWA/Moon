@@ -86,7 +86,7 @@ class WelcomeViewModel: NSObject {
 				}
 			}
 			
-			group.notify(queue: DispatchQueue.main) {
+			group.notify(queue: .main) {
 				completion(wallets)
 			}
 		} catch let error as NSError {

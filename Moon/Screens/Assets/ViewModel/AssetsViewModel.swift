@@ -23,6 +23,7 @@ class AssetsViewModel: NSObject {
     
     let availableCurrencies = ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF"]
     
+	var isFirstLoad = true
     var shouldStopSync = false
 	var isSyncActive = false {
 		didSet {
@@ -35,6 +36,7 @@ class AssetsViewModel: NSObject {
             updateHeader()
         }
     }
+	
     var assetHeaderViewModel = AssetHeaderViewModel() {
         didSet {
             updateHeaderTableView?(assetHeaderViewModel)
@@ -43,7 +45,10 @@ class AssetsViewModel: NSObject {
     
     var assetCellViewModels = [AssetCellViewModel]() {
         didSet {
-            updateCellsTableView?(getTableViewReady(oldArray: oldValue, newArray: assetCellViewModels))
+			if !isFirstLoad {
+				updateCellsTableView?(getTableViewReady(oldArray: oldValue, newArray: assetCellViewModels))
+			}
+			isFirstLoad = false
         }
     }
     
@@ -120,6 +125,7 @@ class AssetsViewModel: NSObject {
             removeFromCoreData(oldArray: self.assets, newArray: finalAssets)
 			
 			for (i, asset) in finalAssets.enumerated() {
+
 				group.enter()
 				if asset.reference == nil {
 					CoreDataStack.sharedInstance.viewContext.add(asset: asset) { objectID in
@@ -133,10 +139,10 @@ class AssetsViewModel: NSObject {
 				}
 			}
         }
-		
+
 		group.notify(queue: .main) {
 			self.assets = finalAssets
-			
+
 			self.updateHeader()
 			self.getCellsReady()
 		}
