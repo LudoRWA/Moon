@@ -10,4 +10,5 @@ import Foundation
 enum TransactionError: String, Error {
 	case error = "Alert.Failure.Error.Try"
 	case disabled = "Alert.Failure.Transaction.Disabled"
+	case cancel
 }

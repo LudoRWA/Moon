@@ -64,6 +64,7 @@ class TipsViewModel: NSObject, SKProductsRequestDelegate, SKPaymentTransactionOb
 				break
 			case .failed:
 				SKPaymentQueue.default().finishTransaction(transaction)
+				self.transaction?(.failure(.cancel))
 				break
 			default: break
 			}

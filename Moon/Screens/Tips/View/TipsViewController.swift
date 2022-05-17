@@ -65,16 +65,17 @@ class TipsViewController: UIViewController, UICollectionViewDelegate, UICollecti
 					SPConfetti.startAnimating(.centerWidthToDown, particles: [.circle, .arc, .heart], duration: 4)
 					
 				case .failure(let error):
+					if (error == .disabled) {
+						var config = SwiftMessages.defaultConfig
+						config.duration = .seconds(seconds: 6)
 					
-					var config = SwiftMessages.defaultConfig
-					config.duration = .seconds(seconds: 6)
-					
-					let view = MessageView.viewFromNib(layout: .cardView)
-					view.configureTheme(.error)
-					view.configureDropShadow()
-					view.configureContent(title: "", body: error.rawValue.localized)
-					view.button?.isHidden = true
-					SwiftMessages.show(config: config, view: view)
+						let view = MessageView.viewFromNib(layout: .cardView)
+						view.configureTheme(.error)
+						view.configureDropShadow()
+						view.configureContent(title: "", body: error.rawValue.localized)
+						view.button?.isHidden = true
+						SwiftMessages.show(config: config, view: view)
+					}
 				}
 				
 				self?.JGProgress?.dismiss(animated: true)
