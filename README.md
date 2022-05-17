@@ -44,6 +44,11 @@ Add your favorites NFTs to your homescreen!
 - [x] Each widget is independent, you can add many of them on your home screen.
 - [X] Data is automatically updated every 45 minutes.
 
+### Tips
+Tip the developer!
+- [x] Choose to tip the developer $0.99 or $3.99.
+- [x] Great animation with confettis when you tip (you should 🥸).
+
 
 ## Stack
 <a href="https://developer.apple.com/swift/"><img src="https://github.com/sebjvidal/Popflash/blob/main/Images/Swift.png?raw=true" width="50" height="50" title="Swift"></a> <a href="https://developer.apple.com/xcode/swiftui/"><img src="https://github.com/sebjvidal/Popflash/blob/main/Images/SwiftUI.png?raw=true" width="50" height="50" title="SwiftUI"></a> <a href="https://developer.apple.com/documentation/uikit/"><img src="https://github.com/sebjvidal/Popflash/blob/main/Images/UIKit.png?raw=true" width="50" height="50" title="UIKit"></a> <a href="https://firebase.google.com"><img src="https://github.com/sebjvidal/Popflash/blob/main/Images/Firebase.png?raw=true" width="50" height="50" title="Google Firebase"></a>
