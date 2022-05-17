@@ -123,13 +123,15 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
 					}
 					
 				case .failure(let error):
-							
-					let view = MessageView.viewFromNib(layout: .cardView)
-					view.configureTheme(.error)
-					view.configureDropShadow()
-					view.configureContent(title: "", body: error.rawValue.localized)
-					view.button?.isHidden = true
-					SwiftMessages.show(view: view)
+		
+					if error != .cancel {
+						let view = MessageView.viewFromNib(layout: .cardView)
+						view.configureTheme(.error)
+						view.configureDropShadow()
+						view.configureContent(title: "", body: error.rawValue.localized)
+						view.button?.isHidden = true
+						SwiftMessages.show(view: view)
+					}
 				}
 			
 				JGProgress.dismiss(animated: true)

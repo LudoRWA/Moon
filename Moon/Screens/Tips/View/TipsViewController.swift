@@ -65,7 +65,8 @@ class TipsViewController: UIViewController, UICollectionViewDelegate, UICollecti
 					SPConfetti.startAnimating(.centerWidthToDown, particles: [.circle, .arc, .heart], duration: 4)
 					
 				case .failure(let error):
-					if (error == .disabled) {
+					
+					if error != .cancel {
 						var config = SwiftMessages.defaultConfig
 						config.duration = .seconds(seconds: 6)
 					

@@ -11,4 +11,5 @@ enum OpenSeaError: String, Error {
 	case error = "Alert.Failure.OpenSea.Error.Try"
 	case unknownWallet = "Alert.Failure.OpenSea.Unknown.Try"
 	case duplicateWallet = "Alert.Failure.Duplicate.Wallet"
+	case cancel
 }

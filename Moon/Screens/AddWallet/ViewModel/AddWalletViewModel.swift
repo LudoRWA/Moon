@@ -44,6 +44,9 @@ class AddWalletViewModel: NSObject {
 					completion(.failure(error))
 				}
             }
-        }
+		} else {
+			
+			completion(.failure(.cancel))
+		}
     }
 }
