@@ -7,12 +7,12 @@
 
 import UIKit
 import SwiftMessages
-import StoreKit
 import WidgetKit
 
 class AssetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var walletButton: UIButton!
+	@IBOutlet weak var tipsButton: UIButton!
+	@IBOutlet weak var walletButton: UIButton!
     @IBOutlet weak var mainTableView: UITableView!
     
     lazy var viewModel = { AssetsViewModel() }()
@@ -38,12 +38,12 @@ class AssetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self?.dismiss(animated: true, completion: nil)
             }
         }
-        viewModel.updateCellsTableView = { [weak self] movedRows in
+        viewModel.updateCellsTableView = { [weak self] movedRows, isFirstLoad in
             DispatchQueue.main.async {
-                if #available(iOS 14.0, *) {
-                    WidgetCenter.shared.reloadAllTimelines()
-                }
-                if (self?.mainTableView.window != nil) {
+                if self?.mainTableView.window != nil && !isFirstLoad {
+					if #available(iOS 14.0, *) {
+						WidgetCenter.shared.reloadAllTimelines()
+					}
                     self?.updateRows(insertedRows: movedRows.0, deletedRows: movedRows.1)
                 } else {
                     self?.mainTableView.reloadData()
@@ -75,11 +75,6 @@ class AssetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 		viewModel.syncInProgress = { (isDisable) in
 			DispatchQueue.main.async {
 				UIApplication.shared.isIdleTimerDisabled = isDisable
-			}
-		}
-		viewModel.askForReview = {
-			DispatchQueue.main.async {
-				SKStoreReviewController.requestReview()
 			}
 		}
     }
@@ -154,5 +149,6 @@ class AssetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLayoutSubviews()
         
         walletButton.layer.cornerRadius = walletButton.frame.height/2
+		tipsButton.layer.cornerRadius = tipsButton.frame.height/2
     }
 }

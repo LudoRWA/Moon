@@ -28,6 +28,26 @@
 		2214ECD62816C5D900AC564C /* OpenSeaServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214ECD52816C5D900AC564C /* OpenSeaServiceTests.swift */; };
 		2214ECDD2816CEF900AC564C /* CoinbaseServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214ECDC2816CEF900AC564C /* CoinbaseServiceTests.swift */; };
 		22183ABA2825147000BD76E2 /* OpenSeaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22183AB92825147000BD76E2 /* OpenSeaError.swift */; };
+		221A1563282E46ED00E4E10C /* TipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A1561282E46ED00E4E10C /* TipCell.swift */; };
+		221A1564282E46ED00E4E10C /* TipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221A1562282E46ED00E4E10C /* TipCell.xib */; };
+		221A1567282E4A3200E4E10C /* TipCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A1566282E4A3200E4E10C /* TipCellViewModel.swift */; };
+		221A1569282E4D6100E4E10C /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A1568282E4D6100E4E10C /* SKProduct+LocalizedPrice.swift */; };
+		221A156B282E5C8E00E4E10C /* TransactionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A156A282E5C8E00E4E10C /* TransactionError.swift */; };
+		221A156D282E783500E4E10C /* Array+SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A156C282E783500E4E10C /* Array+SafeIndex.swift */; };
+		221A1570282E7E3F00E4E10C /* TipHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221A156E282E7E3F00E4E10C /* TipHeaderCell.swift */; };
+		221A1571282E7E3F00E4E10C /* TipHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221A156F282E7E3F00E4E10C /* TipHeaderCell.xib */; };
+		222CEEDE2832759B00EAC120 /* SPConfetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEECD2832759B00EAC120 /* SPConfetti.swift */; };
+		222CEEDF2832759B00EAC120 /* SPConfettiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEECE2832759B00EAC120 /* SPConfettiDelegate.swift */; };
+		222CEEE02832759B00EAC120 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222CEED02832759B00EAC120 /* Assets.xcassets */; };
+		222CEEE12832759B00EAC120 /* SPConfettiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEED22832759B00EAC120 /* SPConfettiConfiguration.swift */; };
+		222CEEE22832759B00EAC120 /* SPConfettiParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEED32832759B00EAC120 /* SPConfettiParticle.swift */; };
+		222CEEE32832759B00EAC120 /* SPConfettiAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEED42832759B00EAC120 /* SPConfettiAnimation.swift */; };
+		222CEEE42832759B00EAC120 /* SPConfettiParticlesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEED52832759B00EAC120 /* SPConfettiParticlesConfig.swift */; };
+		222CEEE52832759B00EAC120 /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEED72832759B00EAC120 /* Delay.swift */; };
+		222CEEE62832759B00EAC120 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEED82832759B00EAC120 /* UIImageExtension.swift */; };
+		222CEEE72832759B00EAC120 /* SPConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEED92832759B00EAC120 /* SPConfettiView.swift */; };
+		222CEEE82832759B00EAC120 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEEDB2832759B00EAC120 /* Images.swift */; };
+		222CEEE92832759B00EAC120 /* SPConfettiModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222CEEDD2832759B00EAC120 /* SPConfettiModifier.swift */; };
 		224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */; };
 		224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27D280D675700C2CC61 /* AssetModel.swift */; };
 		224FF280280D676100C2CC61 /* NFTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FF27F280D676100C2CC61 /* NFTModel.swift */; };
@@ -73,6 +93,9 @@
 		22BD88EC280AD59600CCD372 /* CoinbaseServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */; };
 		22C85B782825531400490311 /* OpenSeaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22183AB92825147000BD76E2 /* OpenSeaError.swift */; };
 		22C85B7A282557C800490311 /* CoinbaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C85B79282557C800490311 /* CoinbaseError.swift */; };
+		22CA226A282D56C400279970 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA2269282D56C400279970 /* TipsViewController.swift */; };
+		22CA226C282D5E0200279970 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CA226B282D5E0200279970 /* StoreKit.framework */; };
+		22CA226E282D5F1900279970 /* TipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CA226D282D5F1900279970 /* TipsViewModel.swift */; };
 		2CB5ADAEC48630AE7B32844D /* Pods_ConfigurableMoonWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3271C55FFA86BC9FAC133CE3 /* Pods_ConfigurableMoonWidget.framework */; };
 		433E402E27848614004AB117 /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433E402C27848614004AB117 /* AssetCell.swift */; };
 		433E402F27848614004AB117 /* AssetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433E402D27848614004AB117 /* AssetCell.xib */; };
@@ -159,6 +182,26 @@
 		2214ECD52816C5D900AC564C /* OpenSeaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaServiceTests.swift; sourceTree = "<group>"; };
 		2214ECDC2816CEF900AC564C /* CoinbaseServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseServiceTests.swift; sourceTree = "<group>"; };
 		22183AB92825147000BD76E2 /* OpenSeaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaError.swift; sourceTree = "<group>"; };
+		221A1561282E46ED00E4E10C /* TipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCell.swift; sourceTree = "<group>"; };
+		221A1562282E46ED00E4E10C /* TipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipCell.xib; sourceTree = "<group>"; };
+		221A1566282E4A3200E4E10C /* TipCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCellViewModel.swift; sourceTree = "<group>"; };
+		221A1568282E4D6100E4E10C /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
+		221A156A282E5C8E00E4E10C /* TransactionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionError.swift; sourceTree = "<group>"; };
+		221A156C282E783500E4E10C /* Array+SafeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SafeIndex.swift"; sourceTree = "<group>"; };
+		221A156E282E7E3F00E4E10C /* TipHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipHeaderCell.swift; sourceTree = "<group>"; };
+		221A156F282E7E3F00E4E10C /* TipHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipHeaderCell.xib; sourceTree = "<group>"; };
+		222CEECD2832759B00EAC120 /* SPConfetti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConfetti.swift; sourceTree = "<group>"; };
+		222CEECE2832759B00EAC120 /* SPConfettiDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConfettiDelegate.swift; sourceTree = "<group>"; };
+		222CEED02832759B00EAC120 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		222CEED22832759B00EAC120 /* SPConfettiConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConfettiConfiguration.swift; sourceTree = "<group>"; };
+		222CEED32832759B00EAC120 /* SPConfettiParticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConfettiParticle.swift; sourceTree = "<group>"; };
+		222CEED42832759B00EAC120 /* SPConfettiAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConfettiAnimation.swift; sourceTree = "<group>"; };
+		222CEED52832759B00EAC120 /* SPConfettiParticlesConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConfettiParticlesConfig.swift; sourceTree = "<group>"; };
+		222CEED72832759B00EAC120 /* Delay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		222CEED82832759B00EAC120 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		222CEED92832759B00EAC120 /* SPConfettiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConfettiView.swift; sourceTree = "<group>"; };
+		222CEEDB2832759B00EAC120 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		222CEEDD2832759B00EAC120 /* SPConfettiModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPConfettiModifier.swift; sourceTree = "<group>"; };
 		224FF27B280D4A4400C2CC61 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		224FF27D280D675700C2CC61 /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		224FF27F280D676100C2CC61 /* NFTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModel.swift; sourceTree = "<group>"; };
@@ -195,6 +238,9 @@
 		22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaServiceModel.swift; sourceTree = "<group>"; };
 		22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseServiceModel.swift; sourceTree = "<group>"; };
 		22C85B79282557C800490311 /* CoinbaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseError.swift; sourceTree = "<group>"; };
+		22CA2269282D56C400279970 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		22CA226B282D5E0200279970 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		22CA226D282D5F1900279970 /* TipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewModel.swift; sourceTree = "<group>"; };
 		2AE874ABD5AD206E0D935F03 /* Pods-Moon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moon.release.xcconfig"; path = "Target Support Files/Pods-Moon/Pods-Moon.release.xcconfig"; sourceTree = "<group>"; };
 		3271C55FFA86BC9FAC133CE3 /* Pods_ConfigurableMoonWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfigurableMoonWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		433E402C27848614004AB117 /* AssetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCell.swift; sourceTree = "<group>"; };
@@ -257,6 +303,7 @@
 				22135844280E9C0D00FDBEC6 /* FirebaseCrashlytics in Frameworks */,
 				44ED1C568CE821189238D650 /* Pods_Moon.framework in Frameworks */,
 				22135842280E9C0D00FDBEC6 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				22CA226C282D5E0200279970 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +373,92 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		221A155E282E46B200E4E10C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				221A1561282E46ED00E4E10C /* TipCell.swift */,
+				221A1562282E46ED00E4E10C /* TipCell.xib */,
+				221A156E282E7E3F00E4E10C /* TipHeaderCell.swift */,
+				221A156F282E7E3F00E4E10C /* TipHeaderCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		221A1565282E4A2500E4E10C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				221A1566282E4A3200E4E10C /* TipCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		222CEEC62832744800EAC120 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				222CEECC2832759B00EAC120 /* SPConfetti */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		222CEECC2832759B00EAC120 /* SPConfetti */ = {
+			isa = PBXGroup;
+			children = (
+				222CEECD2832759B00EAC120 /* SPConfetti.swift */,
+				222CEECE2832759B00EAC120 /* SPConfettiDelegate.swift */,
+				222CEECF2832759B00EAC120 /* Resources */,
+				222CEED12832759B00EAC120 /* Models */,
+				222CEED62832759B00EAC120 /* Extensions */,
+				222CEED92832759B00EAC120 /* SPConfettiView.swift */,
+				222CEEDA2832759B00EAC120 /* Services */,
+				222CEEDC2832759B00EAC120 /* SwiftUI */,
+			);
+			path = SPConfetti;
+			sourceTree = "<group>";
+		};
+		222CEECF2832759B00EAC120 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				222CEED02832759B00EAC120 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		222CEED12832759B00EAC120 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				222CEED22832759B00EAC120 /* SPConfettiConfiguration.swift */,
+				222CEED32832759B00EAC120 /* SPConfettiParticle.swift */,
+				222CEED42832759B00EAC120 /* SPConfettiAnimation.swift */,
+				222CEED52832759B00EAC120 /* SPConfettiParticlesConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		222CEED62832759B00EAC120 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				222CEED72832759B00EAC120 /* Delay.swift */,
+				222CEED82832759B00EAC120 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		222CEEDA2832759B00EAC120 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				222CEEDB2832759B00EAC120 /* Images.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		222CEEDC2832759B00EAC120 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				222CEEDD2832759B00EAC120 /* SPConfettiModifier.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		224763D62816863A0051DBE9 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +501,7 @@
 				22A38F5628099E0B00E368E7 /* Details */,
 				22A38F4F28099D6900E368E7 /* Wallets */,
 				2214ECDF2816D4B600AC564C /* AddWallet */,
+				22CA2265282D566200279970 /* Tips */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -375,8 +509,8 @@
 		22A38F4928099C5A00E368E7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				22A38F4B28099C6D00E368E7 /* View */,
 				22A38F4A28099C6400E368E7 /* Model */,
+				22A38F4B28099C6D00E368E7 /* View */,
 				22A38F4D28099C7E00E368E7 /* ViewModel */,
 			);
 			path = Assets;
@@ -554,6 +688,8 @@
 				228243ED28129C8E000701A5 /* UILabel+Localizable.swift */,
 				228243EF28129CAE000701A5 /* UIButton+Localizable.swift */,
 				228243F128129D5F000701A5 /* String+Localized.swift */,
+				221A1568282E4D6100E4E10C /* SKProduct+LocalizedPrice.swift */,
+				221A156C282E783500E4E10C /* Array+SafeIndex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -562,11 +698,39 @@
 			isa = PBXGroup;
 			children = (
 				22BD88E9280AD57E00CCD372 /* OpenSeaServiceModel.swift */,
+				221A156A282E5C8E00E4E10C /* TransactionError.swift */,
 				22BD88EB280AD59600CCD372 /* CoinbaseServiceModel.swift */,
 				22183AB92825147000BD76E2 /* OpenSeaError.swift */,
 				22C85B79282557C800490311 /* CoinbaseError.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		22CA2265282D566200279970 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				22CA2266282D567700279970 /* View */,
+				22CA2268282D568300279970 /* ViewModel */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		22CA2266282D567700279970 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				221A155E282E46B200E4E10C /* Cell */,
+				22CA2269282D56C400279970 /* TipsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22CA2268282D568300279970 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				221A1565282E4A2500E4E10C /* Cell */,
+				22CA226D282D5F1900279970 /* TipsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		433E403127848DEB004AB117 /* Resources */ = {
@@ -619,6 +783,7 @@
 				22A38F4E28099CEE00E368E7 /* CoreData */,
 				22BD88E3280AD44100CCD372 /* Extensions */,
 				433E403127848DEB004AB117 /* Resources */,
+				222CEEC62832744800EAC120 /* Libraries */,
 			);
 			path = Moon;
 			sourceTree = "<group>";
@@ -662,6 +827,7 @@
 		5150B21DA69F37917DD0132C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22CA226B282D5E0200279970 /* StoreKit.framework */,
 				43CDB60827835F8B00FC3AB9 /* WidgetKit.framework */,
 				43CDB60A27835F8B00FC3AB9 /* SwiftUI.framework */,
 				43D2FC3527919D8200B19A2C /* Intents.framework */,
@@ -831,9 +997,12 @@
 				439B3485278F01FC007AE1DC /* WalletCell.xib in Resources */,
 				43CDB5F92783521000FC3AB9 /* Assets.xcassets in Resources */,
 				228243E928129C1C000701A5 /* Localizable.strings in Resources */,
+				221A1564282E46ED00E4E10C /* TipCell.xib in Resources */,
+				221A1571282E7E3F00E4E10C /* TipHeaderCell.xib in Resources */,
 				43CDB5F72783520F00FC3AB9 /* Main.storyboard in Resources */,
 				439B3488278F195F007AE1DC /* Localizable.stringsdict in Resources */,
 				433E402F27848614004AB117 /* AssetCell.xib in Resources */,
+				222CEEE02832759B00EAC120 /* Assets.xcassets in Resources */,
 				433E40372784C4E4004AB117 /* AssetHeaderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -980,20 +1149,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				22A38F672809AE8B00E368E7 /* AssetCellViewModel.swift in Sources */,
+				221A156D282E783500E4E10C /* Array+SafeIndex.swift in Sources */,
 				22A38F652809A71500E368E7 /* CoinbaseServiceProtocol.swift in Sources */,
 				228243F62812A637000701A5 /* UITextView+Localizable.swift in Sources */,
 				439B3484278F01FC007AE1DC /* WalletCell.swift in Sources */,
 				22A38F692809B90A00E368E7 /* AmountModel.swift in Sources */,
+				22CA226A282D56C400279970 /* TipsViewController.swift in Sources */,
+				222CEEDE2832759B00EAC120 /* SPConfetti.swift in Sources */,
+				221A1567282E4A3200E4E10C /* TipCellViewModel.swift in Sources */,
 				228243F028129CAE000701A5 /* UIButton+Localizable.swift in Sources */,
 				43A6A2A9278D866900330C47 /* WelcomeViewController.swift in Sources */,
 				22A5E1F32807097900A65EA1 /* Moon.xcdatamodeld in Sources */,
+				222CEEE12832759B00EAC120 /* SPConfettiConfiguration.swift in Sources */,
 				434D7BB92788999F00A6D711 /* CenterCellCollectionViewFlowLayout.swift in Sources */,
+				222CEEE32832759B00EAC120 /* SPConfettiAnimation.swift in Sources */,
 				224FF28C280DC52000C2CC61 /* Array+Insertion.swift in Sources */,
 				224FF285280D891900C2CC61 /* WalletsViewModel.swift in Sources */,
 				22BD88EC280AD59600CCD372 /* CoinbaseServiceModel.swift in Sources */,
 				22A38F5F2809A01900E368E7 /* CoreDataServiceProtocol.swift in Sources */,
 				2213584E280EBEFA00FDBEC6 /* URL+StoreURL.swift in Sources */,
 				433E40362784C4E4004AB117 /* AssetHeaderCell.swift in Sources */,
+				221A156B282E5C8E00E4E10C /* TransactionError.swift in Sources */,
+				222CEEE42832759B00EAC120 /* SPConfettiParticlesConfig.swift in Sources */,
 				22BD88DD280ABF5400CCD372 /* AssetsViewModel+Online.swift in Sources */,
 				434D7BB72788983200A6D711 /* NFTCell.swift in Sources */,
 				43CDB5F42783520F00FC3AB9 /* AssetsViewController.swift in Sources */,
@@ -1001,13 +1178,16 @@
 				43FA476A2791C0D90039F936 /* AppGroup.swift in Sources */,
 				22BD88E7280AD48400CCD372 /* UIVIew+LongTouchEffect.swift in Sources */,
 				226719CA2829603700732D84 /* AssetRawModel.swift in Sources */,
+				221A1570282E7E3F00E4E10C /* TipHeaderCell.swift in Sources */,
 				43A6A2AB278DBF2C00330C47 /* AddWalletViewController.swift in Sources */,
 				226719C42829562600732D84 /* WalletRawModel.swift in Sources */,
 				22A38F6B2809C34300E368E7 /* AssetHeaderViewModel.swift in Sources */,
 				22A38F632809A56200E368E7 /* OpenSeaServiceProtocol.swift in Sources */,
 				22A38F5C28099F5700E368E7 /* AssetsViewModel.swift in Sources */,
 				439B3481278EECAE007AE1DC /* WalletsViewController.swift in Sources */,
+				222CEEE82832759B00EAC120 /* Images.swift in Sources */,
 				228243F228129D5F000701A5 /* String+Localized.swift in Sources */,
+				222CEEE92832759B00EAC120 /* SPConfettiModifier.swift in Sources */,
 				228243F42812A50A000701A5 /* UITextField+Localizable.swift in Sources */,
 				228243EE28129C8E000701A5 /* UILabel+Localizable.swift in Sources */,
 				22BD88E0280AC02F00CCD372 /* AssetsViewModel+Amount.swift in Sources */,
@@ -1016,19 +1196,27 @@
 				226719CE2829640900732D84 /* NSManagedObjectContext.swift in Sources */,
 				43CDB5F02783520F00FC3AB9 /* AppDelegate.swift in Sources */,
 				433E402E27848614004AB117 /* AssetCell.swift in Sources */,
+				22CA226E282D5F1900279970 /* TipsViewModel.swift in Sources */,
 				226719BF2829556A00732D84 /* NSManagedObjectContext+Wallet.swift in Sources */,
 				22A9194C28084AF5009C23FD /* CoreDataStack.swift in Sources */,
 				43D2FC5827919F4800B19A2C /* NFTWidget.intentdefinition in Sources */,
 				224FF280280D676100C2CC61 /* NFTModel.swift in Sources */,
+				222CEEE72832759B00EAC120 /* SPConfettiView.swift in Sources */,
 				224FF288280D9AB800C2CC61 /* NFTCellViewModel.swift in Sources */,
 				226719D02829645200732D84 /* NSManagedObjectContext+Asset.swift in Sources */,
 				22BD88EA280AD57E00CCD372 /* OpenSeaServiceModel.swift in Sources */,
+				222CEEE22832759B00EAC120 /* SPConfettiParticle.swift in Sources */,
 				22183ABA2825147000BD76E2 /* OpenSeaError.swift in Sources */,
 				224FF27E280D675700C2CC61 /* AssetModel.swift in Sources */,
 				224FF27C280D4A4400C2CC61 /* DetailsViewModel.swift in Sources */,
 				226719C6282957C300732D84 /* VoidResult.swift in Sources */,
+				222CEEE62832759B00EAC120 /* UIImageExtension.swift in Sources */,
+				221A1569282E4D6100E4E10C /* SKProduct+LocalizedPrice.swift in Sources */,
 				22BD88E5280AD45500CCD372 /* UITextField+Padding.swift in Sources */,
+				222CEEDF2832759B00EAC120 /* SPConfettiDelegate.swift in Sources */,
+				221A1563282E46ED00E4E10C /* TipCell.swift in Sources */,
 				434D7BB5278846F000A6D711 /* DetailsViewController.swift in Sources */,
+				222CEEE52832759B00EAC120 /* Delay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

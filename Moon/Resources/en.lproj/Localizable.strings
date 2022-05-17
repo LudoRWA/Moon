@@ -25,6 +25,9 @@
 "Label.Address" = "Address";
 "Label.Loading" = "Loading…";
 "Label.Unknown" = "Unknown";
+"Label.Tip" = "Tip";
+"Label.Tip.Hello" = "Hello.\nI'm Ludo.\nI created Moon.";
+"Label.Tip.Description" = "Moon is ad-free and always will be. If you enjoy using the app and want to support an indie developer, feel free to tip to help me maintain Moon.";
 
 //MARK: - UITextField
 "TextField.Placeholder.Wallet.Address" = "0xab1b584fc90d73B529av4346jk830ee3D2061681";
@@ -37,6 +40,8 @@
 "Alert.Failure.Coinbase.Error" = "Coinbase is not accessible at the moment.";
 "Alert.Failure.OpenSea.Unknown.Try" = "OpenSea doesn't know this wallet. Please verify your wallet address and try again.";
 "Alert.Failure.OpenSea.Error.Try" = "OpenSea is not accessible at the moment. Please try again later or check @apiopensea on Twitter.";
+"Alert.Failure.Transaction.Disabled" = "In-app purchases are disabled on your device.";
+"Alert.Success.Transaction" = "Thank you for your support 🎊";
 
 //MARK: - Widgets
 "Widgets.Display.Name" = "Your NFTs";

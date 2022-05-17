@@ -19,12 +19,12 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     
     lazy var viewModel = { AddWalletViewModel() }()
     
-    var JGProgress: JGProgressHUD?
     var welcomeViewController: WelcomeViewController?
     var walletsViewController: WalletsViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		
         initView()
     }
     
@@ -102,15 +102,14 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
     
     func addWallet() {
         
-        JGProgress = JGProgressHUD(style: .dark)
-        JGProgress?.interactionType = .blockNoTouches
-        JGProgress?.show(in: view)
+        let JGProgress = JGProgressHUD(style: .dark)
+        JGProgress.interactionType = .blockNoTouches
+        JGProgress.show(in: view)
         
         viewModel.addWallet(address: self.walletAddressTextView.text) { [weak self] result in
-			switch result {
-			case .success(let wallet):
-				
-				DispatchQueue.main.async {
+			DispatchQueue.main.async {
+				switch result {
+				case .success(let wallet):
 					
 					if (self?.walletsViewController != nil) {
 							
@@ -123,12 +122,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
 						}
 					}
 					
-					self?.JGProgress?.dismiss(animated: true)
-				}
-					
-			case .failure(let error):
-				
-				DispatchQueue.main.async {
+				case .failure(let error):
 							
 					let view = MessageView.viewFromNib(layout: .cardView)
 					view.configureTheme(.error)
@@ -136,9 +130,9 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
 					view.configureContent(title: "", body: error.rawValue.localized)
 					view.button?.isHidden = true
 					SwiftMessages.show(view: view)
-						
-					self?.JGProgress?.dismiss(animated: true)
 				}
+			
+				JGProgress.dismiss(animated: true)
 			}
         }
     }

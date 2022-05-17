@@ -25,7 +25,7 @@ class WalletCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        mainContentView.layer.cornerRadius = 12
+        mainContentView.layer.cornerRadius = 26
         trashView.layer.cornerRadius = trashView.frame.height/2
     }
 }

@@ -40,10 +40,10 @@ class AssetCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        mainContentView.layer.cornerRadius = 12
+        mainContentView.layer.cornerRadius = 26
         collectionImageView.layer.cornerRadius = collectionImageView.frame.height/2
-        numbersInCollectionView.layer.cornerRadius = 6
-        priceCollectionView.layer.cornerRadius = 6
+        numbersInCollectionView.layer.cornerRadius = 12
+        priceCollectionView.layer.cornerRadius = 12
     }
     
     func setImage(with url: URL) {

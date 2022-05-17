@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import StoreKit
 
 class AssetsViewModel: NSObject {
     var coreDataService: CoreDataServiceProtocol
     var openSeaService: OpenSeaServiceProtocol
     var coinbaseService: CoinbaseServiceProtocol
     
-	var askForReview: (() -> Void)?
 	var syncInProgress: ((Bool) -> Void)?
-    var updateCellsTableView: ((([IndexPath], [IndexPath])) -> Void)?
+	var updateCellsTableView: ((([IndexPath], [IndexPath]), Bool) -> Void)?
     var updateHeaderTableView: ((AssetHeaderViewModel) -> Void)?
     var showErrorMessage: ((String?) -> Void)?
     var logout: (() -> Void)?
@@ -46,9 +46,7 @@ class AssetsViewModel: NSObject {
     
     var assetCellViewModels = [AssetCellViewModel]() {
         didSet {
-			if !isFirstLoad {
-				updateCellsTableView?(getTableViewReady(oldArray: oldValue, newArray: assetCellViewModels))
-			}
+			updateCellsTableView?(getTableViewReady(oldArray: oldValue, newArray: assetCellViewModels), isFirstLoad)
 			isFirstLoad = false
         }
     }
@@ -84,7 +82,6 @@ class AssetsViewModel: NSObject {
         getLocalData(forceSync)
     }
     
-    
     //MARK: - Actions
     func startSync() {
         
@@ -92,8 +89,8 @@ class AssetsViewModel: NSObject {
             
 			let currentCount = UserDefaults.standard.integer(forKey: "syncCount")
 			UserDefaults.standard.set(currentCount-1, forKey:"syncCount")
-			if currentCount % 15 == 0 && currentCount != 0 {
-				askForReview?()
+			if currentCount % 8 == 0 && currentCount != 0 {
+				SKStoreReviewController.requestReview()
 			}
 			
             isSyncActive = true

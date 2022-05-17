@@ -11,6 +11,8 @@ target 'Moon' do
   pod 'JGProgressHUD'
   pod 'SwiftMessages'
   pod 'SQLite.swift'
+  pod 'Pastel'
+  pod 'SkeletonView'
 end
 
 target 'MoonWidgetExtension' do

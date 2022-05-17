@@ -154,15 +154,31 @@
                                             <action selector="openWallet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eco-4g-sVi"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9p-vC-oCg">
+                                        <rect key="frame" x="296" y="7.6666666666666643" width="35" height="35"/>
+                                        <color key="backgroundColor" name="colorSecondary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="8rN-HV-Mld"/>
+                                            <constraint firstAttribute="height" constant="35" id="Hdq-rh-0y0"/>
+                                        </constraints>
+                                        <color key="tintColor" name="colorAccent"/>
+                                        <inset key="imageEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                        <state key="normal" image="tipsIcon"/>
+                                        <connections>
+                                            <segue destination="IBQ-Ef-j15" kind="presentation" id="2LP-h6-r6W"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="colorMain"/>
                                 <constraints>
+                                    <constraint firstItem="U9p-vC-oCg" firstAttribute="centerY" secondItem="SZq-C1-Kg3" secondAttribute="centerY" id="1IE-xQ-OdA"/>
+                                    <constraint firstItem="U9p-vC-oCg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="29h-FF-dwu" secondAttribute="trailing" constant="16" id="3Jm-ey-bSE"/>
                                     <constraint firstItem="29h-FF-dwu" firstAttribute="centerY" secondItem="SZq-C1-Kg3" secondAttribute="centerY" id="EHD-2L-n4Q"/>
                                     <constraint firstItem="c3N-fh-Ogp" firstAttribute="centerY" secondItem="SZq-C1-Kg3" secondAttribute="centerY" id="LLg-Rk-mFp"/>
                                     <constraint firstAttribute="trailing" secondItem="c3N-fh-Ogp" secondAttribute="trailing" constant="16" id="eB7-ni-Gg6"/>
                                     <constraint firstItem="29h-FF-dwu" firstAttribute="leading" secondItem="SZq-C1-Kg3" secondAttribute="leading" constant="16" id="hNP-Ey-GAv"/>
+                                    <constraint firstItem="c3N-fh-Ogp" firstAttribute="leading" secondItem="U9p-vC-oCg" secondAttribute="trailing" constant="8" id="ksS-KK-dWQ"/>
                                     <constraint firstAttribute="height" constant="50" id="sFG-YQ-TbK"/>
-                                    <constraint firstItem="c3N-fh-Ogp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="29h-FF-dwu" secondAttribute="trailing" constant="16" id="ySh-xM-tOO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -181,6 +197,7 @@
                     <navigationItem key="navigationItem" id="H4U-T0-bCJ"/>
                     <connections>
                         <outlet property="mainTableView" destination="rA0-w5-AiA" id="sJx-QS-tu0"/>
+                        <outlet property="tipsButton" destination="U9p-vC-oCg" id="RRE-1T-2mM"/>
                         <outlet property="walletButton" destination="c3N-fh-Ogp" id="kox-Qj-YBS"/>
                         <segue destination="FwN-H8-WOL" kind="show" identifier="showDetails" id="88v-94-id5"/>
                         <segue destination="7ak-3b-7G9" kind="presentation" identifier="showWallets" id="yaI-nW-Fxl"/>
@@ -189,6 +206,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-700" y="56"/>
+        </scene>
+        <!--Tips View Controller-->
+        <scene sceneID="Rll-cm-WtW">
+            <objects>
+                <viewController id="IBQ-Ef-j15" customClass="TipsViewController" customModule="Moon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YzI-mK-66D">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-rQ-AQq">
+                                <rect key="frame" x="22" y="22" width="35" height="35"/>
+                                <color key="backgroundColor" name="colorMain"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="5Cr-JW-hiK"/>
+                                    <constraint firstAttribute="width" constant="35" id="I9p-kB-oe8"/>
+                                </constraints>
+                                <color key="tintColor" name="colorAccent"/>
+                                <inset key="imageEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                <state key="normal" image="arrowBottom"/>
+                                <connections>
+                                    <action selector="backAction:" destination="rLK-bh-C8c" eventType="touchUpInside" id="Phq-6d-TfG"/>
+                                    <action selector="backAction:" destination="IBQ-Ef-j15" eventType="touchUpInside" id="VO9-CK-8kS"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Rl-NJ-0J8">
+                                <rect key="frame" x="0.0" y="65" width="390" height="725"/>
+                                <color key="backgroundColor" name="colorSecondary"/>
+                                <collectionViewLayout key="collectionViewLayout" id="TFt-EX-GNh"/>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="IBQ-Ef-j15" id="hCU-TB-uNI"/>
+                                    <outlet property="delegate" destination="IBQ-Ef-j15" id="C7T-pn-FmM"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="k2P-zv-7ww"/>
+                        <color key="backgroundColor" name="colorSecondary"/>
+                        <constraints>
+                            <constraint firstItem="cO3-rQ-AQq" firstAttribute="top" secondItem="k2P-zv-7ww" secondAttribute="top" constant="22" id="0uO-0j-AOd"/>
+                            <constraint firstAttribute="bottom" secondItem="3Rl-NJ-0J8" secondAttribute="bottom" id="Dv8-cy-42B"/>
+                            <constraint firstItem="3Rl-NJ-0J8" firstAttribute="top" secondItem="cO3-rQ-AQq" secondAttribute="bottom" constant="8" id="H4M-Ar-YNG"/>
+                            <constraint firstItem="cO3-rQ-AQq" firstAttribute="leading" secondItem="k2P-zv-7ww" secondAttribute="leading" constant="22" id="bUl-SJ-AYG"/>
+                            <constraint firstItem="3Rl-NJ-0J8" firstAttribute="trailing" secondItem="k2P-zv-7ww" secondAttribute="trailing" id="eDt-qw-Xec"/>
+                            <constraint firstItem="3Rl-NJ-0J8" firstAttribute="leading" secondItem="k2P-zv-7ww" secondAttribute="leading" id="jAD-rP-SQL"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="cO3-rQ-AQq" id="pPi-SE-E7Z"/>
+                        <outlet property="mainCollectionView" destination="3Rl-NJ-0J8" id="pb5-5A-shZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eeg-jY-upa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-700" y="747.86729857819898"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="YTy-QK-MKn">
@@ -730,6 +802,7 @@ your OpenSea account.</string>
         <image name="arrowBottom" width="75" height="75"/>
         <image name="arrowLeft" width="75" height="75"/>
         <image name="moonImage" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="tipsIcon" width="75" height="67"/>
         <image name="walletIcon" width="75" height="67"/>
         <namedColor name="colorAccent">
             <color red="0.21199999749660492" green="0.21600000560283661" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

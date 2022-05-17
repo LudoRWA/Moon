@@ -74,7 +74,7 @@ class AssetHeaderCell: UITableViewHeaderFooterView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        mainContentView.layer.cornerRadius = 12
+        mainContentView.layer.cornerRadius = 26
         syncButtonView.layer.cornerRadius = syncButtonView.frame.height/2
     }
     

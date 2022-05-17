@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="TipHeaderCell" customModule="Moon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="463"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFm-X9-6EH">
+                    <rect key="frame" x="0.0" y="0.0" width="462" height="263.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amg-Jf-gWO" customClass="LocalisableLabel" customModule="Moon" customModuleProvider="target">
+                            <rect key="frame" x="12" y="30" width="262" height="125.5"/>
+                            <string key="text">Hello.
+I'm Ludo.
+I created Moon.</string>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Label.Tip.Hello"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVD-Jp-wZ1" customClass="LocalisableLabel" customModule="Moon" customModuleProvider="target">
+                            <rect key="frame" x="12" y="177.5" width="438" height="56"/>
+                            <string key="text">Moon is ad-free and always will be. If you enjoy using the app and want to support an indie developer, feel free to tip to help me maintain Moon.</string>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                            <color key="textColor" name="colorSubtitleText"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localisedKey" value="Label.Tip.Description"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="colorSecondary"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OVD-Jp-wZ1" secondAttribute="trailing" constant="12" id="52J-I4-a51"/>
+                        <constraint firstItem="OVD-Jp-wZ1" firstAttribute="leading" secondItem="hFm-X9-6EH" secondAttribute="leading" constant="12" id="Ezu-ex-FZw"/>
+                        <constraint firstItem="amg-Jf-gWO" firstAttribute="top" secondItem="hFm-X9-6EH" secondAttribute="top" constant="30" id="Kxw-Hh-JMu"/>
+                        <constraint firstItem="amg-Jf-gWO" firstAttribute="leading" secondItem="hFm-X9-6EH" secondAttribute="leading" constant="12" id="O7e-MQ-t5j"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="amg-Jf-gWO" secondAttribute="trailing" constant="12" id="cyZ-Tm-cvT"/>
+                        <constraint firstAttribute="bottom" secondItem="OVD-Jp-wZ1" secondAttribute="bottom" constant="30" id="dzc-fy-S46"/>
+                        <constraint firstItem="OVD-Jp-wZ1" firstAttribute="top" secondItem="amg-Jf-gWO" secondAttribute="bottom" constant="22" id="t9f-FX-rbP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="hFm-X9-6EH" secondAttribute="trailing" id="FLu-JR-BWn"/>
+                <constraint firstItem="hFm-X9-6EH" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="QiI-3P-TNI"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hFm-X9-6EH" secondAttribute="bottom" id="T8S-gn-czd"/>
+                <constraint firstItem="hFm-X9-6EH" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="vVV-ZH-kEG"/>
+            </constraints>
+            <connections>
+                <outlet property="titleLabel" destination="amg-Jf-gWO" id="cx5-1M-cvU"/>
+            </connections>
+            <point key="canvasLocation" x="240.57971014492756" y="203.90625"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <namedColor name="colorSecondary">
+            <color red="0.97299998998641968" green="0.97299998998641968" blue="0.97299998998641968" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="colorSubtitleText">
+            <color red="0.34900000691413879" green="0.34900000691413879" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
