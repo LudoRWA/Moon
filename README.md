@@ -15,7 +15,7 @@ Moon is **available on the App Store**: https://apps.apple.com/app/moon-opensea-
 ## Recruiters
 Thank you for taking a look at my project. 
 
-Launch **Moon.xcworkspace** with Xcode.  
+Launch **Moon.xcodeproj** with Xcode.  
 If you have any problems related to Package Dependencies :  
 In Xcode, click on File -> Packages -> Reset Package Caches.  
 
