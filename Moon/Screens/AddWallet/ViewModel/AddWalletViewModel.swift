@@ -37,7 +37,7 @@ class AddWalletViewModel: NSObject {
 						}
 					} else {
 						
-						completion(.failure(.duplicateWallet))
+						completion(.failure(.duplicate))
 					}
 				case .failure(let error):
 					

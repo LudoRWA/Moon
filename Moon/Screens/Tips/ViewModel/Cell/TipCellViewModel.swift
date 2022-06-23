@@ -5,7 +5,6 @@
 //  Created by Ludovic Roullier on 13/05/2022.
 //
 
-import Foundation
 import StoreKit
 
 struct TipCellViewModel: Equatable {

@@ -312,7 +312,7 @@
                                 <rect key="frame" x="0.0" y="94" width="390" height="696"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYP-MA-wGb">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="642"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="643"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rJc-Z8-rcH">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="390"/>
@@ -348,7 +348,7 @@
                                                 </connections>
                                             </collectionView>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAU-cB-BPj">
-                                                <rect key="frame" x="16" y="440" width="358" height="92"/>
+                                                <rect key="frame" x="16" y="440" width="358" height="93"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSK-0d-5qk">
                                                         <rect key="frame" x="16" y="16" width="326" height="25"/>
@@ -381,11 +381,12 @@
                                                             <constraint firstItem="WmC-eR-ZtS" firstAttribute="centerY" secondItem="WSK-0d-5qk" secondAttribute="centerY" id="avj-tU-YPZ"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Unknown" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bN-ms-MZJ" customClass="LocalisableTextView" customModule="Moon" customModuleProvider="target">
-                                                        <rect key="frame" x="12" y="47" width="334" height="33"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Unknown" translatesAutoresizingMaskIntoConstraints="NO" id="0bN-ms-MZJ" customClass="LocalisableTextView" customModule="Moon" customModuleProvider="target">
+                                                        <rect key="frame" x="12" y="47" width="334" height="34"/>
                                                         <color key="backgroundColor" name="colorSecondary"/>
+                                                        <color key="tintColor" name="colorAccent"/>
                                                         <color key="textColor" name="colorSubtitleText"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                         <userDefinedRuntimeAttributes>

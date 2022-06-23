@@ -20,14 +20,14 @@ class DetailsViewModel: NSObject {
     
     var nftCellViewModels = [NFTCellViewModel]()
     
-    func getCellsReady(nfts: [NFT]) -> [NFTCellViewModel] {
+	func getCellsReady(nfts: [Asset.NFT]) -> [NFTCellViewModel] {
         
         var newNFTCellViewModels = [NFTCellViewModel]()
         
         for (i, nft) in nfts.enumerated() {
             
-            let name = nft.nftName ?? "Unknown"
-            let imageURL = URL(string: nft.nftImageURL ?? "")
+			let name = nft.nftName
+			let imageURL = URL(string: nft.nftImageURL)
             let pager = "\(i+1) / \(nfts.count)"
             
             let newCell = NFTCellViewModel(name: name, imageURL: imageURL, pager: pager)

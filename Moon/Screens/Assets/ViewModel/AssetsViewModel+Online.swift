@@ -60,16 +60,16 @@ extension AssetsViewModel {
 				value.assets.forEach {
 					
 					let id = $0.id
-					let tokenId = $0.token_id
-					let nftImageURL = $0.image_url
+					let tokenId = $0.tokenId
+					let nftImageURL = $0.imageUrl
 					var nftName = $0.name
 					let nftPermalink = $0.permalink
 					let collectionSlug = $0.collection.slug
 					let collectionName = $0.collection.name
 					let collectionDescription = $0.collection.description
-					let collectionImageURL = $0.collection.image_url
+					let collectionImageURL = $0.collection.imageUrl
 					
-					if (nftName == nil) { nftName = "#\(tokenId ?? "Unknown")" }
+					if (nftName == nil) { nftName = "#\(tokenId ?? "Label.Unknown".localized)" }
 					let foundAsset = oldAssets.filter({ $0.id == id }).first?.reference
 					
 					let newAsset = AssetRaw(reference: foundAsset,
@@ -145,13 +145,16 @@ extension AssetsViewModel {
 							switch result {
 							case .success(let value):
 								
-								let roundedFloorPrice = round(100 * (Double(value.collection.stats.floor_price ?? 0.0))) / 100
-								let roundedAveragePrice = round(100 * Double(value.collection.stats.average_price ?? 0.0)) / 100
+								let roundedFloorPrice = round(100 * (Double(value.collection.stats.floorPrice ?? 0.0))) / 100
+								let roundedAveragePrice = round(100 * Double(value.collection.stats.averagePrice ?? 0.0)) / 100
 								
 								currentUserAssets[i].floorPrice = roundedFloorPrice
 								currentUserAssets[i].averagePrice = roundedAveragePrice
 								
 								let newCollection = Asset(collectionSlug: originalCollectionSlug,
+														  collectionName: "",
+														  collectionImageURL: "",
+														  collectionDescription: "",
 														  floorPrice: roundedFloorPrice,
 														  averagePrice: roundedAveragePrice)
 								usedSlugs.append(newCollection)

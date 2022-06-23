@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Pastel
 import SkeletonView
 
 class TipCell: UICollectionViewCell {

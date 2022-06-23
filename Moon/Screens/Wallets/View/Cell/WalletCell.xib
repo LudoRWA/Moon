@@ -47,7 +47,7 @@
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5w-vo-JDS">
                                 <rect key="frame" x="274" y="20.5" width="28" height="28"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="a0w-yI-q8y" customClass="GIFImageView" customModule="Gifu">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trashIcon" translatesAutoresizingMaskIntoConstraints="NO" id="a0w-yI-q8y">
                                         <rect key="frame" x="5" y="5" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="18" id="jkq-UY-csq"/>

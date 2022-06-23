@@ -11,23 +11,17 @@ extension AssetsViewModel {
     
     func getTotalAmounts(_ currentAssets: [AssetRaw]) {
         
-        var totalAmountFloor = 0.0
-        var totalAmountAverage = 0.0
-        
-        currentAssets.forEach {
-            totalAmountFloor += ($0.floorPrice)
-            totalAmountAverage += ($0.averagePrice)
-        }
-        
-        totalAmountFloor = Double(round(100 * totalAmountFloor) / 100)
-        totalAmountAverage = Double(round(100 * totalAmountAverage) / 100)
+		let availableCurrencies = ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF"]
+		
+        let totalAmountFloor = Double(round(100 * currentAssets.map({$0.floorPrice}).reduce(0, +)) / 100)
+        let totalAmountAverage = Double(round(100 * currentAssets.map({$0.averagePrice}).reduce(0, +)) / 100)
         
         totalAmount.floor.eth = "Ξ \(String(totalAmountFloor))"
         totalAmount.average.eth = "Ξ \(String(totalAmountAverage))"
         
-        let currentCurrency = availableCurrencies.first(where: {$0 == Locale.current.currencyCode}) ?? "USD"
+        let currency = availableCurrencies.first(where: {$0 == Locale.current.currencyCode}) ?? "USD"
         
-        coinbaseService.getFiatPrice(currentCurrency) { [weak self] result in
+        coinbaseService.getFiatPrice(currency) { [weak self] result in
 			guard let self = self else { return } 
 			if case .success(let value) = result {
 				
@@ -35,18 +29,18 @@ extension AssetsViewModel {
 				let totalFloorPrice = totalAmountFloor * fiatPrice
 				let totalAveragePrice = totalAmountAverage * fiatPrice
 				
-				self.totalAmount.floor.fiat = self.convertToFiat(totalFloorPrice, currentCurrency)
-				self.totalAmount.average.fiat = self.convertToFiat(totalAveragePrice, currentCurrency)
+				self.totalAmount.floor.fiat = self.convertToFiat(totalFloorPrice, currency)
+				self.totalAmount.average.fiat = self.convertToFiat(totalAveragePrice, currency)
 			}
         }
     }
     
-    func convertToFiat(_ amount : Double, _ currentCurrency: String) -> String {
+    func convertToFiat(_ amount : Double, _ currency: String) -> String {
         let localeSymbol = Locale
             .availableIdentifiers
             .lazy
             .map { Locale(identifier: $0) }
-            .first { $0.currencyCode == currentCurrency }
+            .first { $0.currencyCode == currency }
         
         if let locale = localeSymbol {
             let formatter = NumberFormatter()

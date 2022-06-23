@@ -36,7 +36,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3XJ-wf-Axq">
                                         <rect key="frame" x="0.0" y="28.5" width="44.5" height="26"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="GRG-ij-2Re" customClass="GIFImageView" customModule="Gifu">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="GRG-ij-2Re">
                                                 <rect key="frame" x="8" y="4" width="18" height="18"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="18" id="VBD-IP-eFe"/>
@@ -101,7 +101,7 @@
                                     <constraint firstAttribute="height" constant="65" id="P4J-cO-QKG"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="kp3-qp-Ni1" customClass="GIFImageView" customModule="Gifu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="kp3-qp-Ni1">
                                 <rect key="frame" x="258" y="35.5" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="J8T-xu-pSl"/>

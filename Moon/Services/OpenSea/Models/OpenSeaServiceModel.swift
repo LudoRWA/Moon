@@ -12,9 +12,9 @@ struct OpenseaAssets: Decodable {
 
 struct OpenseaAssetsCollection: Decodable {
     let id: Int32
-    let token_id: String?
+    let tokenId: String?
     let collection: OpenseaAssetsCollectionSlug
-    let image_url: String?
+    let imageUrl: String?
     let name: String?
     let permalink: String?
 }
@@ -22,7 +22,7 @@ struct OpenseaAssetsCollection: Decodable {
 struct OpenseaAssetsCollectionSlug: Decodable {
     let slug: String?
     let name: String?
-    let image_url: String?
+    let imageUrl: String?
     let description: String?
 }
 
@@ -35,6 +35,6 @@ struct OpenseaCollectionStats: Decodable {
 }
 
 struct OpenseaCollectionStatsFloor: Decodable {
-    let floor_price: Double?
-    let average_price: Double?
+    let floorPrice: Double?
+    let averagePrice: Double?
 }

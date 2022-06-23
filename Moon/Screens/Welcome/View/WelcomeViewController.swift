@@ -49,6 +49,6 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        addButton.layer.cornerRadius = 16
+        addButton.layer.cornerRadius = 22
     }
 }

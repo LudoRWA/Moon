@@ -144,7 +144,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLayoutSubviews()
         
 		backButton.layer.cornerRadius = backButton.frame.height/2
-        continueButton.layer.cornerRadius = 16
+        continueButton.layer.cornerRadius = 22
         walletAddressTextView.layer.cornerRadius = 12
     }
 }

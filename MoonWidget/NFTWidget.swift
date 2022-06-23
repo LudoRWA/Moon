@@ -40,7 +40,7 @@ struct Provider: IntentTimelineProvider {
 					
 					var floorText = "---"
 					
-					if case .success(let value) = result, let floorPrice = value.collection.stats.floor_price {
+					if case .success(let value) = result, let floorPrice = value.collection.stats.floorPrice {
 						floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
 					}
 						
@@ -87,7 +87,7 @@ struct Provider: IntentTimelineProvider {
 			
 				self.openSeaService.getCollection(collectionSlug) { result in
 				
-					if case .success(let value) = result, let floorPrice = value.collection.stats.floor_price {
+					if case .success(let value) = result, let floorPrice = value.collection.stats.floorPrice {
 					
 						let floorText = "Ξ \(String(Double(round(100 * Double(floorPrice)) / 100)))"
 					

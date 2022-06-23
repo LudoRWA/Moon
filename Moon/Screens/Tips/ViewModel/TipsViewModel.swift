@@ -5,7 +5,6 @@
 //  Created by Ludovic Roullier on 12/05/2022.
 //
 
-import Foundation
 import StoreKit
 
 class TipsViewModel: NSObject, SKProductsRequestDelegate, SKPaymentTransactionObserver {

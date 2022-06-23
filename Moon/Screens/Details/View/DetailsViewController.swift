@@ -50,7 +50,7 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
             collectionDescriptionTextView.text = asset.collectionDescription
             
             let pipeline = ImagePipeline.shared
-            let request = ImageRequest(url: URL(string: asset.collectionImageURL ?? ""))
+			let request = ImageRequest(url: URL(string: asset.collectionImageURL))
             
             if let image = pipeline.cache[request] {
                 return display(image)
@@ -158,6 +158,6 @@ class DetailsViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.layer.cornerRadius = 12
         collectionImageView.layer.cornerRadius = collectionImageView.frame.height/2
         pagerView.layer.cornerRadius = 12
-        copyButton.layer.cornerRadius = 16
+        copyButton.layer.cornerRadius = 22
     }
 }

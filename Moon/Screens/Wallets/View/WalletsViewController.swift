@@ -70,8 +70,8 @@ class WalletsViewController: UIViewController, UITableViewDelegate,  UITableView
         super.viewDidLayoutSubviews()
         
         backButton.layer.cornerRadius = backButton.frame.height/2
-        addButton.layer.cornerRadius = 16
-        logoutButton.layer.cornerRadius = 16
+        addButton.layer.cornerRadius = 22
+        logoutButton.layer.cornerRadius = 22
     }
     
     //MARK: - UIButton Action
