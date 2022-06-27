@@ -11,22 +11,22 @@ extension AssetsViewModel {
     
     func getOnlineData(completion: @escaping ([AssetRaw]) -> ()) {
         
-        let oldAssets = assets
-        var currentAssets = [AssetRaw]()
+		let assets = self.assets
+        var newAssets = [AssetRaw]()
         
         DispatchQueue.global(qos: .userInitiated).async {
-            
+			
             let semaphore = DispatchSemaphore(value: 0)
             
             for wallet in self.wallets {
                 
                 if (self.shouldStopSync) { break }
                 
-                self.getAssets(oldAssets, currentAssets, nil, wallet) {  [weak self] result in
+				self.getAssets(assets, newAssets, nil, wallet) {  [weak self] result in
 					switch result {
-					case .success(let updatedUserAssets):
+					case .success(let updatedAssets):
 						
-						currentAssets = updatedUserAssets
+						newAssets = updatedAssets
 					case .failure(let error):
 						
 						self?.shouldStopSync = true
@@ -41,16 +41,16 @@ extension AssetsViewModel {
             
             self.assetHeaderViewModel.progress = 0.15
             
-            self.getPrice(currentAssets) { finalUserAssets in
+            self.getValues(newAssets) { updatedAssets in
                 
-                completion(finalUserAssets)
+                completion(updatedAssets)
             }
         }
     }
     
-    func getAssets(_ oldAssets: [AssetRaw], _ currentAssets: [AssetRaw], _ cursor: String?, _ wallet: WalletRaw, completion: @escaping (Result<[AssetRaw], OpenSeaError>) -> ()) {
+    func getAssets(_ assets: [AssetRaw], _ newAssets: [AssetRaw], _ cursor: String?, _ wallet: WalletRaw, completion: @escaping (Result<[AssetRaw], OpenSeaError>) -> ()) {
         
-        var currentUserAssets = currentAssets
+        var newAssets = newAssets
         
         openSeaService.getAssets(50, wallet.address ?? "", cursor) { [weak self] result in
 
@@ -70,9 +70,9 @@ extension AssetsViewModel {
 					let collectionImageURL = $0.collection.imageUrl
 					
 					if (nftName == nil) { nftName = "#\(tokenId ?? "Label.Unknown".localized)" }
-					let foundAsset = oldAssets.filter({ $0.id == id }).first?.reference
+					let foundAsset = assets.filter({ $0.id == id }).first?.reference
 					
-					let newAsset = AssetRaw(reference: foundAsset,
+					let asset = AssetRaw(reference: foundAsset,
 											id: id,
 											collectionSlug: collectionSlug,
 											collectionName: collectionName,
@@ -85,7 +85,7 @@ extension AssetsViewModel {
 											nftImageURL: nftImageURL,
 											wallet: wallet)
 					
-					currentUserAssets.append(newAsset)
+					newAssets.append(asset)
 				}
 				
 				let nextCursor = value.next
@@ -93,14 +93,14 @@ extension AssetsViewModel {
 				
 				if (maxReached) {
 					
-					completion(.success(currentUserAssets))
+					completion(.success(newAssets))
 				} else {
 					
-					self?.getAssets(oldAssets, currentUserAssets, nextCursor, wallet) { result  in
+					self?.getAssets(assets, newAssets, nextCursor, wallet) { result  in
 						switch result {
-						case .success(let updatedUserAssets):
+						case .success(let updatedAssets):
 							
-							completion(.success(updatedUserAssets))
+							completion(.success(updatedAssets))
 						case .failure(_):
 							
 							completion(.failure(.error))
@@ -115,49 +115,49 @@ extension AssetsViewModel {
         }
     }
     
-    func getPrice(_ userAssets: [AssetRaw], completionHandler: @escaping ([AssetRaw]) -> ()) {
+    func getValues(_ assets: [AssetRaw], completionHandler: @escaping ([AssetRaw]) -> ()) {
         
-		var currentUserAssets = userAssets
+		var assets = assets
         
         DispatchQueue.global(qos: .userInitiated).async {
             
             let semaphore = DispatchSemaphore(value: 0)
             
-            for (i, dict) in currentUserAssets.enumerated() {
+            for (i, dict) in assets.enumerated() {
                 
                 if (self.shouldStopSync) { break }
                 
-                self.assetHeaderViewModel.progress = Float(0.15) + (Float(0.85) / Float(currentUserAssets.count) * Float(i))
+                self.assetHeaderViewModel.progress = Float(0.15) + (Float(0.85) / Float(assets.count) * Float(i))
                 
-                var usedSlugs = [Asset]()
+                var usedCollections = [Asset]()
                 
-                if let originalCollectionSlug = dict.collectionSlug {
+                if let collectionSlug = dict.collectionSlug {
                     
-                    if let currentCollection = usedSlugs.filter({$0.collectionSlug == originalCollectionSlug}).first {
+                    if let currentCollection = usedCollections.filter({$0.collectionSlug == collectionSlug}).first {
                         
-                        currentUserAssets[i].floorPrice = currentCollection.floorPrice
-                        currentUserAssets[i].averagePrice = currentCollection.floorPrice
+						assets[i].floorPrice = currentCollection.floorPrice
+						assets[i].averagePrice = currentCollection.floorPrice
                         
                         semaphore.signal()
                     } else {
-						self.openSeaService.getCollection(originalCollectionSlug) { result in
+						self.openSeaService.getCollection(collectionSlug) { result in
 						
 							switch result {
 							case .success(let value):
 								
-								let roundedFloorPrice = round(100 * (Double(value.collection.stats.floorPrice ?? 0.0))) / 100
-								let roundedAveragePrice = round(100 * Double(value.collection.stats.averagePrice ?? 0.0)) / 100
+								let roundedFloor = round(100 * (Double(value.collection.stats.floorPrice ?? 0.0))) / 100
+								let roundedAverage = round(100 * Double(value.collection.stats.averagePrice ?? 0.0)) / 100
 								
-								currentUserAssets[i].floorPrice = roundedFloorPrice
-								currentUserAssets[i].averagePrice = roundedAveragePrice
+								assets[i].floorPrice = roundedFloor
+								assets[i].averagePrice = roundedAverage
 								
-								let newCollection = Asset(collectionSlug: originalCollectionSlug,
+								let collection = Asset(collectionSlug: collectionSlug,
 														  collectionName: "",
 														  collectionImageURL: "",
 														  collectionDescription: "",
-														  floorPrice: roundedFloorPrice,
-														  averagePrice: roundedAveragePrice)
-								usedSlugs.append(newCollection)
+														  floorPrice: roundedFloor,
+														  averagePrice: roundedAverage)
+								usedCollections.append(collection)
 								
 							case .failure(_):
 								
@@ -171,7 +171,7 @@ extension AssetsViewModel {
                 semaphore.wait()
             }
             
-            completionHandler(currentUserAssets)
+            completionHandler(assets)
         }
     }
 }

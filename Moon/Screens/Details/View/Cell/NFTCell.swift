@@ -35,11 +35,6 @@ class NFTCell: UICollectionViewCell {
             return displayImage(image)
         }
         
-        ImageDecoderRegistry.shared.register { context in
-            let isSVG = context.urlResponse?.url?.absoluteString.hasSuffix(".svg") ?? false
-            return isSVG ? ImageDecoders.Empty() : nil
-        }
-        
         task = pipeline.loadImage(with: request) { [weak self] result in
             if let self = self, case let .success(response) = result {
                 if let data = response.container.data, self.isSVG(request: request) {

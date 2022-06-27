@@ -30,8 +30,8 @@ class CoreDataService: CoreDataServiceProtocol {
 			
 			for asset in assetsMO {
 				
-				let newWallet = WalletRaw(reference: asset.wallet?.objectID, address: asset.wallet?.address)
-				let newAsset = AssetRaw(reference: asset.objectID,
+				let wallet = WalletRaw(reference: asset.wallet?.objectID, address: asset.wallet?.address)
+				let asset = AssetRaw(reference: asset.objectID,
 										id: asset.id,
 										collectionSlug: asset.collectionSlug,
 										collectionName: asset.collectionName,
@@ -42,9 +42,9 @@ class CoreDataService: CoreDataServiceProtocol {
 										nftName: asset.nftName,
 										nftPermalink: asset.nftPermalink,
 										nftImageURL: asset.nftImageURL,
-										wallet: newWallet)
+										wallet: wallet)
 				
-				assets.append(newAsset)
+				assets.append(asset)
 			}
         } catch {
             
@@ -65,8 +65,8 @@ class CoreDataService: CoreDataServiceProtocol {
 			
 			for asset in assetsMO {
 				
-				let newWallet = WalletRaw(reference: asset.wallet?.objectID, address: asset.wallet?.address)
-				let newAsset = AssetRaw(reference: asset.objectID,
+				let wallet = WalletRaw(reference: asset.wallet?.objectID, address: asset.wallet?.address)
+				let asset = AssetRaw(reference: asset.objectID,
 										id: asset.id,
 										collectionSlug: asset.collectionSlug,
 										collectionName: asset.collectionName,
@@ -77,9 +77,9 @@ class CoreDataService: CoreDataServiceProtocol {
 										nftName: asset.nftName,
 										nftPermalink: asset.nftPermalink,
 										nftImageURL: asset.nftImageURL,
-										wallet: newWallet)
+										wallet: wallet)
 				
-				assets.append(newAsset)
+				assets.append(asset)
 			}
         } catch {
             
@@ -100,10 +100,10 @@ class CoreDataService: CoreDataServiceProtocol {
 			let walletsMO = try CoreDataStack.sharedInstance.viewContext.fetch(request)
 			
 			for wallet in walletsMO {
-				if let walletAddress = wallet.address {
+				if let address = wallet.address {
 					
-					let newWallet = WalletRaw(reference: wallet.objectID, address: walletAddress)
-					wallets.append(newWallet)
+					let wallet = WalletRaw(reference: wallet.objectID, address: address)
+					wallets.append(wallet)
 				}
 			}
 		} catch {

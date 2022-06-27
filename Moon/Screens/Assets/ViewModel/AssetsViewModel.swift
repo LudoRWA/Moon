@@ -119,19 +119,19 @@ class AssetsViewModel: NSObject {
 	func processFetchedData(assets: [AssetRaw], _ isOnline: Bool = false) {
 		
 		let group = DispatchGroup()
-		var finalAssets = assets
-		getTotalAmounts(finalAssets)
+		var assets = assets
+		getTotalAmounts(assets)
 		
 		if (isOnline) {
-			removeFromCoreData(oldArray: self.assets, newArray: finalAssets)
+			removeFromCoreData(oldArray: self.assets, newArray: assets)
 			
-			for (i, asset) in finalAssets.enumerated() {
+			for (i, asset) in assets.enumerated() {
 				
 				group.enter()
 				if asset.reference == nil {
 					CoreDataStack.sharedInstance.viewContext.add(asset: asset) { objectID in
 						
-						finalAssets[i].reference = objectID
+						assets[i].reference = objectID
 						group.leave()
 					}
 				} else {
@@ -142,7 +142,7 @@ class AssetsViewModel: NSObject {
 		}
 		
 		group.notify(queue: .main) {
-			self.assets = finalAssets
+			self.assets = assets
 			
 			self.updateHeader()
 			self.getCellsReady()
@@ -221,26 +221,26 @@ class AssetsViewModel: NSObject {
 				let floorPrice = asset.floorPrice
 				let averagePrice = asset.averagePrice
 				
-				let newNFT = Asset.NFT(id: tokenId,
+				let NFT = Asset.NFT(id: tokenId,
 									   nftImageURL: nftImageUrl,
 									   nftName: nftName,
 									   nftPermalink: nftPermalink)
 				
 				if let index = friendlyAssets.firstIndex(where: { $0.collectionSlug == collectionSlug }) {
 					
-					let insertionIndex = friendlyAssets[index].nfts.insertionIndexOf(newNFT) { $0.id < $1.id }
-					friendlyAssets[index].nfts.insert(newNFT, at: insertionIndex)
+					let insertionIndex = friendlyAssets[index].nfts.insertionIndexOf(NFT) { $0.id < $1.id }
+					friendlyAssets[index].nfts.insert(NFT, at: insertionIndex)
 				} else {
 					
-					let newAsset = Asset(collectionSlug: collectionSlug,
+					let asset = Asset(collectionSlug: collectionSlug,
 										 collectionName: collectionName,
 										 collectionImageURL: collectionImageURL,
 										 collectionDescription: collectionDescription,
 										 floorPrice: floorPrice,
 										 averagePrice: averagePrice,
-										 nfts: [newNFT])
+										 nfts: [NFT])
 					
-					friendlyAssets.append(newAsset)
+					friendlyAssets.append(asset)
 				}
 			}
 		}

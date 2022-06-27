@@ -106,7 +106,7 @@ class AddWalletViewController: UIViewController, UITextFieldDelegate {
         JGProgress.interactionType = .blockNoTouches
         JGProgress.show(in: view)
         
-        viewModel.addWallet(address: self.walletAddressTextView.text) { [weak self] result in
+        viewModel.add(wallet: self.walletAddressTextView.text) { [weak self] result in
 			DispatchQueue.main.async {
 				switch result {
 				case .success(let wallet):

@@ -5,7 +5,6 @@
 	<key>com.apple.security.application-groups</key>
 	<array>
 		<string>group.co.luggy.moon</string>
-		<string>group.co.luggy.moon.group</string>
 	</array>
 </dict>
 </plist>

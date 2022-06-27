@@ -28,6 +28,11 @@ class WelcomeViewModel: NSObject {
         }
         
         ImagePipeline.shared = pipeline
+		
+		ImageDecoderRegistry.shared.register { context in
+			let isSVG = context.urlResponse?.url?.absoluteString.hasSuffix(".svg") ?? false
+			return isSVG ? ImageDecoders.Empty() : nil
+		}
         
         Analytics.logEvent(AnalyticsEventAppOpen, parameters: nil)
     }

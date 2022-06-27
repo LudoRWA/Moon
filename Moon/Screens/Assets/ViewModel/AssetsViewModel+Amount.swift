@@ -9,15 +9,15 @@ import Foundation
 
 extension AssetsViewModel {
     
-    func getTotalAmounts(_ currentAssets: [AssetRaw]) {
+    func getTotalAmounts(_ assets: [AssetRaw]) {
         
 		let availableCurrencies = ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF"]
 		
-        let totalAmountFloor = Double(round(100 * currentAssets.map({$0.floorPrice}).reduce(0, +)) / 100)
-        let totalAmountAverage = Double(round(100 * currentAssets.map({$0.averagePrice}).reduce(0, +)) / 100)
+        let totalFloor = Double(round(100 * assets.map({$0.floorPrice}).reduce(0, +)) / 100)
+        let totalAverage = Double(round(100 * assets.map({$0.averagePrice}).reduce(0, +)) / 100)
         
-        totalAmount.floor.eth = "Ξ \(String(totalAmountFloor))"
-        totalAmount.average.eth = "Ξ \(String(totalAmountAverage))"
+        totalAmount.floor.eth = "Ξ \(String(totalFloor))"
+        totalAmount.average.eth = "Ξ \(String(totalAverage))"
         
         let currency = availableCurrencies.first(where: {$0 == Locale.current.currencyCode}) ?? "USD"
         
@@ -26,11 +26,9 @@ extension AssetsViewModel {
 			if case .success(let value) = result {
 				
 				let fiatPrice = Double(value.data.amount ?? "0.0") ?? 0.0
-				let totalFloorPrice = totalAmountFloor * fiatPrice
-				let totalAveragePrice = totalAmountAverage * fiatPrice
 				
-				self.totalAmount.floor.fiat = self.convertToFiat(totalFloorPrice, currency)
-				self.totalAmount.average.fiat = self.convertToFiat(totalAveragePrice, currency)
+				self.totalAmount.floor.fiat = self.convertToFiat(totalFloor * fiatPrice, currency)
+				self.totalAmount.average.fiat = self.convertToFiat(totalAverage * fiatPrice, currency)
 			}
         }
     }

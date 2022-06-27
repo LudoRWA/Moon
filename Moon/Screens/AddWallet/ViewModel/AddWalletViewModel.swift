@@ -19,9 +19,9 @@ class AddWalletViewModel: NSObject {
 		self.coreDataService = coreDataService
     }
     
-    func addWallet(address: String?, completion: @escaping (Result<WalletRaw, OpenSeaError>) -> ()) {
+    func add(wallet: String?, completion: @escaping (Result<WalletRaw, OpenSeaError>) -> ()) {
         
-        if let address = address?.trimmingCharacters(in: .whitespacesAndNewlines), !address.isEmpty {
+        if let address = wallet?.trimmingCharacters(in: .whitespacesAndNewlines), !address.isEmpty {
             
             openSeaService.getAssets(1, address, nil) { [weak self] result in
 					
